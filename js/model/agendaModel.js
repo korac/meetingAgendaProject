@@ -1,12 +1,12 @@
 // JavaScript Document
 
 // The possible activity types
-var ActivityType = ["Presentation","Group Work","Discussion","Break"]
+var ActivityType = ["Presentation","Group Work","Discussion","Break"];
 
 // This is an activity constructor
 // When you want to create a new activity you just call
 // var act = new Activity("some activity",20,1,"Some description);
-function Activity(name,length,typeid,description){
+function Activity(model,name,length,typeid,description){
 	var _name = name;
 	var _length = length;
 	var _typeid = typeid;
@@ -211,27 +211,24 @@ function Model(){
 	};
 	
 	//*** OBSERVABLE PATTERN ***
-	var listeners = [];
+	this.listeners = [];
 	
 	this.notifyObservers = function (args) {
-	    for (var i = 0; i < listeners.length; i++){
-	        listeners[i].update(args);
+	    for (var i = 0; i < this.listeners.length; i++){
+	       this.listeners[i].update(args);
 	    }
 	};
 	
 	this.addObserver = function (listener) {
-	    listeners.push(listener);
+	    this.listeners.push(listener);
 	};
 	//*** END OBSERVABLE PATTERN ***
 }
 
-// this is the instance of our main model
-// this is what you should use in your application
-var model = new Model();
 
 
 // you can use this method to create some test data and test your implementation
-function createTestData(){
+function createTestData(model){
 	model.addDay();
 	model.addActivity(new Activity("Introduction",10,0,""),0);
 	model.addActivity(new Activity("Idea 1",30,0,""),0);
