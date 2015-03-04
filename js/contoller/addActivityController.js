@@ -9,9 +9,8 @@ var AddActivityController = function (view, model, activity) {
 
     var _this = this;
 
-    console.log(this._view.saveButton);
-
     $('#saveButton').on('click', function() {
-		console.log("you clicked me!!");
+        _this._activity.setName($("#inputName").val());
+        _this._activity.setLength($("#inputLength").val());
 	});
 }
