@@ -15,4 +15,6 @@ $(function(){
     var mainView = new MainView($("mainView"), model, act);
 
     var mainViewController = new MainViewController(mainView, model, act);
+    var addMainController = new MainController;
+
 });
