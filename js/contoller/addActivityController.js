@@ -12,7 +12,6 @@ var AddActivityController = function (view, model, activity) {
     console.log(this._view.saveButton);
 
     $('#saveButton').on('click', function() {
-		// pass the selected dish to the detail view
 		console.log("you clicked me!!");
 	});
 }
