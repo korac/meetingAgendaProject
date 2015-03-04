@@ -19,11 +19,19 @@ var MainController = function (view, model, activity) {
 		$("#MainView").show();
 	});
 
+	$('#addActivityCancelButton').on('click', function() {
+		//console.log("Clicked saveButton to change view to MainView");
+		$(".page").hide();
+		$("#MainView").show();
+	});
+
+
  	$('#addActBtn').on('click', function() {
 		//console.log("Clicked saveButton to change view to MainView");
 		$(".page").hide();
 		$("#addActivityView").show();
 	});
+
 /*
   	$('#').on('click', function() {
 		//console.log("Clicked saveButton to change view to MainView");
