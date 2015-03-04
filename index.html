@@ -54,7 +54,7 @@
                             </div>
 
                             <div class="col-sm-4 col-sm-offset-8">
-                                <button class="btn btn-danger" type="button">Cancel</button>
+                                <button class="btn btn-danger" type="button" id="addActivityCancelButton">Cancel</button>
                                 <button class="btn btn-success" type="button" id="saveButton">Save</button>
                             </div>
                         </fieldset>
@@ -67,11 +67,11 @@
     <!--Second view-->
     <div id="MainView" class="page">
         <div class="container">
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-4">
               <div class="jumbotron">
                 <div class="row">
                   <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="addActBtn">+ Add Activity</button>
+                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="addActBtn"><span class="glyphicon glyphicon-plus"></span> Add Activity</button>
                     <hr>
                   </div>
                   <div class="col-md-9">
@@ -89,12 +89,27 @@
             <div class="col-md-4">
               <div class="jumbotron">
                 <div class="row">
-                  <div>
-                    <p>Start Time:</p>
-                    <input type="text" class="form-control" id="startTime">
-                    <p>End Time: 8:10</p>
-                    <p>Total Length: 0 min</p>
-                  </div>
+                  <div class ="row">
+                        <div class="col-md-6">
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-success" style="width: 35%">
+                                <span class="sr-only">35% Complete (success)</span>
+                              </div>
+                              <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+                                <span class="sr-only">20% Complete (warning)</span>
+                              </div>
+                              <div class="progress-bar progress-bar-danger" style="width: 10%">
+                                <span class="sr-only">10% Complete (danger)</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Start Time:</p>
+                            <input type="text" class="form-control" id="startTime">
+                            <p>End Time: 8:10</p>
+                            <p>Total Length: 0 min</p>
+                        </div>
+                    </div>
                     <ul id="sortable2" class="connectedSortable">
                     <li class="list-group-item">Item 1</li>
                     <li class="list-group-item">Item 2</li>
@@ -104,6 +119,9 @@
                     </ul>
                 </div>
               </div>
+            </div>
+            <div>
+                <button type="button" class="btn-lg btn-primary col-md-2" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDay"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
             </div>
             <div class="col-md-2">
               <div class="list-group">
