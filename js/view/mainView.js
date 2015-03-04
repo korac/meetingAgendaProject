@@ -1,5 +1,5 @@
 
-var mainView = function (container, model, activity) {
+var MainView = function (container, model, activity) {
 
     model.addObserver(this);
 

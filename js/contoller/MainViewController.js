@@ -1,4 +1,4 @@
-var mainViewController = function (view, model, activity) {
+var MainViewController = function (view, model, activity) {
 
 	console.log("mainController running!");
 
@@ -8,7 +8,7 @@ var mainViewController = function (view, model, activity) {
 
     var _this = this;
 
-
+/*
     this.addActBtn.click(function(){
         alert("jump to addactivitypage.");
         //console.log("hey hey");

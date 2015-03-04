@@ -12,9 +12,10 @@ $(function(){
 
     var addActivityController = new AddActivityController(addActivityView, model, act);
 
-    var mainView = new MainView($("mainView"), model, act);
+    var mainView = new MainView($("MainView"), model, act);
 
     var mainViewController = new MainViewController(mainView, model, act);
+
     var addMainController = new MainController;
 
 });
