@@ -10,7 +10,7 @@ var AddActivityView = function (container, model, activity) {
     this._activity = activity;
 
     this.inputName = this._container.find("#inputName");
-    this.inputLength = this._container.find("#inputLength");
+    this.inputDuration = this._container.find("#inputDuration");
     this.inputType = this._container.find("#inputType");
     this.inputDescription = this._container.find("#inputDescription");
     this.saveButton = this._container.find("#saveButton");
