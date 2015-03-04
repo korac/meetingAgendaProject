@@ -52,9 +52,10 @@
                                     <textarea name="activityDescription" id="inputDescription" cols="30" rows="4" class="form-control" placeholder="Describe your activity briefly" maxlength="80"></textarea>
                                 </div>
                             </div>
+
                             <div class="col-sm-4 col-sm-offset-8">
-                            <button class="btn btn-danger" type="button">Cancel</button>
-                            <button class="btn btn-success" type="button">Save</button>
+                                <button class="btn btn-danger" type="button">Cancel</button>
+                                <button class="btn btn-success" type="button" id="saveButton">Save</button>
                             </div>
                         </fieldset>
                     </form>
@@ -63,5 +64,14 @@
         </div>
     </div>
 
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/model/agendaModel.js"></script>
+    <script src="js/view/addActivityView.js"></script>
+    <script src="js/contoller/addActivityController.js"></script>
 </body>
 </html>
