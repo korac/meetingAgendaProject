@@ -11,4 +11,5 @@ $(function(){
     var addActivityView = new AddActivityView($("addActivityView"), model, act);
 
     var addActivityController = new AddActivityController(addActivityView, model, act);
+    var addMainController = new MainController;
 });
