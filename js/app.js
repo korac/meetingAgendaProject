@@ -18,4 +18,8 @@ $(function(){
 
     var addMainController = new MainController;
 
+  //  var actDisplayView = new ActDisplayView($("actDisplayView"), model, act);
+
+  //  var actDisplayController = new ActDisplayController(actDisplayView, model, act);
+
 });

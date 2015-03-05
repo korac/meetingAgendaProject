@@ -8,4 +8,9 @@ var actDisplayController = function (view, model, activity) {
 
     var _this = this;
 
+    $ ('#saveButton').click(function() {
+    	$('#li').append(activity.getName());
+
+    });
+
 }
