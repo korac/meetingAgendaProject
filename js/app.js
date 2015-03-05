@@ -6,20 +6,21 @@ $(function(){
     // this is the instance of our main model
     // this is what you should use in your application
     var model = new Model();
-    var act = new Activity(model);
+    var act = new Activity(model); //  <---- This is in questionable (check comments in "actDisplayView.js")
 
-    var addActivityView = new AddActivityView($("addActivityView"), model, act);
 
+    // Views
+    var addActivityView = new AddActivityView($("#addActivityView"), model, act);
+    var actDisplayView = new ActDisplayView($("#actDisplayView"), model, act);
+    var mainView = new MainView($("#MainView"), model, act);
+
+    // Controllers
     var addActivityController = new AddActivityController(addActivityView, model, act);
-
-    var mainView = new MainView($("MainView"), model, act);
-
+    var actDisplayController = new ActDisplayController(actDisplayView, model, act);
     var mainViewController = new MainViewController(mainView, model, act);
 
-    var addMainController = new MainController;
+    var mainController = new MainController;
 
-  //  var actDisplayView = new ActDisplayView($("actDisplayView"), model, act);
 
-  //  var actDisplayController = new ActDisplayController(actDisplayView, model, act);
 
 });

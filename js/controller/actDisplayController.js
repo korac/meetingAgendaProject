@@ -1,6 +1,4 @@
-var MainViewController = function (view, model, activity) {
-
-	console.log("mainController running!");
+var ActDisplayController = function (view, model, activity) {
 
     this._view = view;
     this._model = model;
@@ -8,7 +6,7 @@ var MainViewController = function (view, model, activity) {
 
     var _this = this;
 
-     $ ('#saveButton').click(function() {
+    $ ('#saveButton').click(function() {
     	$('#li').append(activity.getName());
 
     });

@@ -18,6 +18,8 @@ var AddActivityView = function (container, model, activity) {
     this.update = function () {
         console.log(this._activity.getName());
         console.log(this._activity.getLength());
+        console.log(this._activity.getType());
+        console.log(this._activity.getDescription());
     }
 
 }
