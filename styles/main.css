@@ -1,3 +1,25 @@
+html, body{
+    height: 100%;
+}
 textarea{
     resize: none;
+}
+
+ul{
+    padding: 0;
+}
+
+.columns{
+    height: 70vh;
+}
+
+.row{
+    height: 100%;
+}
+
+#activityCont{
+    height: 100%;
+    border: thin solid black;
+    border-radius: 10px;
+    padding: 0;
 }

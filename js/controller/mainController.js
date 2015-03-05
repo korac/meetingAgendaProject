@@ -1,9 +1,9 @@
 /**
  * Created by Jonathan on 4.3.2015..
  */
-var MainController = function (view, model, activity) {
+var MainController = function (container, model, activity) {
 
-    this._view = view;
+    this._container = container;
     this._model = model;
     this._activity = activity;
 
