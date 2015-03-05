@@ -9,7 +9,9 @@ var MainViewController = function (view, model, activity) {
     var _this = this;
 
      $ ('#saveButton').click(function() {
-    	$('#li').append(activity.getName());
+    	$('#activityName').append(activity.getName());
+    	$('#activityTime').append(activity.getLength());
+
 
     });
 

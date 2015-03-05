@@ -1,3 +1,12 @@
 textarea{
     resize: none;
 }
+
+.header-p {
+    text-align: center;
+    font-size: 32pt;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: grey solid;
+    font-family: Arial;
+}
