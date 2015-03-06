@@ -5,15 +5,6 @@ textarea{
     resize: none;
 }
 
-
-#topBar{
-    text-align: center;
-    font-size: 32pt;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    border-bottom: grey solid;
-    font-family: Arial;
-
 ul{
     padding: 0;
 }
@@ -33,7 +24,6 @@ ul{
     padding: 0;
 }
 
-.progress{
-	transform: translate(0px, 0px) rotate(-90deg) scale(5, 3);
-	padding-bottom: -20px;
+#percentage{
+	transform: translate(0px, 45px) rotate(-90deg) scale(5, 2);
 }

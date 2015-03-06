@@ -6,10 +6,6 @@ var MainViewController = function (view, model, activity) {
 
     var _this = this;
 
-     $ ('#saveButton').click(function() {
-    	$('#activityName').append(activity.getName());
-    	$('#activityTime').append(activity.getLength());
-
-    });
     
+
 }

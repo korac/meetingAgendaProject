@@ -1,6 +1,6 @@
 var ActDisplayView = function (container, model, activity) {
 
-    model.addObserver(this);
+    model.addObserver(this);// register this view.
 
     this._container = container;
     this._model = model;
@@ -26,6 +26,11 @@ var ActDisplayView = function (container, model, activity) {
 
             this.listbody.append(htmlCode);
         }
+        // add a tooltip to the activity with its description
+            actDisplayView.tooltip({
+                title: 'Description: ' + activities[i].getDescription(),
+                placement:  'bottom'
+            });
 
        
 
@@ -34,7 +39,6 @@ var ActDisplayView = function (container, model, activity) {
         // I believe then we cannot instantiate our "var act = new Activity(model)" in our "app.js"
         // Because we already create one activity by doing this "var act = new Activity(model);"
         // We need to figure this out how to create others
-        
         /*activityName = activity.getName();
 
         for(var i=0; i< activityName.length; i++){

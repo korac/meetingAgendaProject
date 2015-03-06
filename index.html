@@ -8,7 +8,7 @@
 
     <!-- Bootstrap & Custom CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css"/>
 
 </head>
 <body>
@@ -17,7 +17,7 @@
     <div id="topBar">
         <div class="container">
             <h2>Meeting Agenda</h2>
-
+            <hr/>   
         </div>
     </div>
 <div id="View">
@@ -77,25 +77,8 @@
     <!--Main view-->
     <div id="MainView" class="page">
         <div class="container">
-<!-- <<<<<< HEAD -->
-            
-            <div class="col-md-4" id="actDisplayView">
-                <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="addActBtn"><span class="glyphicon glyphicon-plus"></span> Add Activity</button>
-                    <hr>
-                  </div>
-                <div class="jumbotron" id="parkedactivitiesContainer">
-                </div>
-                
 
-             <!--   <div class="parked-activity-wrapper" data-original-title="" title="">
-                    <div class="row parked-activity activity-presentation" draggable="true">
-                        <span class="col-md-3" id="activityTime"></span>
-                        <span class="col-md-7" id="activityName"></span>
-                        <span class="col-md-1 glyphicon glyphicon-remove"></span> 
-
-
-                <div class="col-md-4 columns">
+            <div class="col-md-4 columns">
                 <div class="row">
                   <div class="col-md-8 col-md-offset-2">
                     <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addActBtn"><span class="glyphicon glyphicon-plus"></span> Add Activity</button>
@@ -103,28 +86,26 @@
                   </div>
                   <div class="col-md-8 col-md-offset-2" id="activityCont">
                      <div id="actDisplayView">
-                        <ul id="activityList" >
-                          
+                        <ul id="activityList" class="connectedSortable">
+                      
                         </ul>
                     </div>
+                  </div>
                 </div>
-<<<<<<< HEAD
-                </div>
-            </div> -->
+            </div>
 
-            
-                    <div class="col-md-4 columns">
-                       <div class ="row">
-                        <div class="col-md-8 col-md-offset-2">
 
+            <!--middle bar-->
+            <div class="col-md-4 columns">
+                <div class ="row" id="dayView">
+                        <div class="col-md-6 col-md-offset-2">
                             <p>Start Time:</p>
                             <input type="text" class="form-control" id="startTime">
                             <p>End Time: 8:10</p>
                             <p>Total Length: 0 min</p>
                         </div>
                         <div class="col-md-2">
-                           <div class="progress">
-
+                           <div class="progress" id="percentage">
                               <div class="progress-bar progress-bar-success" style="width: 35%">
                                   <span class="sr-only">35% Complete (success)</span>
                               </div>
