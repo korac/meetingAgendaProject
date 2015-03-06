@@ -31,16 +31,16 @@ var AddActivityController = function (view, model, activity) {
         _this._activity.setTypeId(temporaryType);
         _this._activity.setDescription(this._view.inputDescription.val());*/
 
-        var activity = new Activity(_this._model, _this._view.inputName.val(), _this._view.inputLength.val(), _this.temporaryType, _this._view.inputDescription.val());
+
+        var activity = new Activity(_this._model, _this._view.inputName.val(), _this._view.inputLength.val(), temporaryType, _this._view.inputDescription.val());
         var day = new Day(8,0);
 
         _this._model.addDay(day);
-
         _this._model.addActivity(activity);
 
         console.log(_this._model.parkedActivities[0].getName());
 
-        _this._view.update();
+
 
 	});
 }
