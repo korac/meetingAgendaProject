@@ -1,5 +1,5 @@
 
-var MainViewView = function (container, model, activity) {
+var MainView = function (container, model, activity) {
 
     model.addObserver(this);
 
@@ -7,10 +7,11 @@ var MainViewView = function (container, model, activity) {
     this._model = model;
     this._activity = activity;
 
-    
+
     this.addActBtn = this._container.find("#addActBtn");
     
     this.update = function () {
+       
         
     }
 
