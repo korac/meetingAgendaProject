@@ -100,25 +100,26 @@
             <div class="col-md-4 columns">
                 <div class ="row" id="dayView">
                         <div class="col-md-6 col-md-offset-2">
-                            <p>Start Time:</p>
-                            <input type="text" class="form-control" id="startTime">
+                            <p>Start Time:<input type="text" class="form-control" id="startTime"></p>
                             <p>End Time: 8:10</p>
                             <p>Total Length: 0 min</p>
                         </div>
                         <div class="col-md-2">
                            <div class="progress" id="percentage">
-                              <div class="progress-bar progress-bar-success" style="width: 35%">
-                                <!-- we need to put in some variables for the percentage instead of the hard coded things -->
-                                  <span class="sr-only progress-bar-info">35% Complete (success)</span>
-                              </div>
-                              
-                              <div class="progress-bar progress-bar-danger" style="width: 45%">
-                                  <span class="sr-only">45% Complete (danger)</span>
-                              </div>
-                              <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
-                                  <span class="sr-only">20% Complete (warning)</span>
-                              </div>
-                           </div>
+                    <!-- we need to put in some variables for the percentage instead of the hard coded things -->
+                               <div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: 10%">
+                                  <span class="sr-only">25% Complete (discussion)</span>
+                                </div>
+                                <div class="progress-bar progress-bar-danger" id="groupworkPercentage" style="width: 20%">
+                                  <span class="sr-only">25% Complete (groupwork)</span>
+                                </div>
+                                <div class="progress-bar progress-bar-info" id="presentationPercentage" style="width: 25%">
+                                  <span class="sr-only">25% Complete (presentation)</span>
+                                </div>
+                                 <div class="progress-bar progress-bar-warning" id="breakPercentage" style="width: 45%">
+                                  <span class="sr-only">25% Complete (break)</span>
+                                </div>
+                            </div>
                         </div>
                 <div class="row">
                         <div class="col-md-8 col-md-offset-2">
@@ -135,18 +136,19 @@
             </div>
 
             <div class="col-md-2 columns">
-                <button type="button" class="btn-lg btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDay"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
-            </div>
-
-            <div class="col-md-2 columns">
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-success">Mon</li>
-                <li class="list-group-item list-group-item-info">Tue</li>
-                <li class="list-group-item list-group-item-warning">Wed</li>
-                <li class="list-group-item list-group-item-danger">Thu</li>
-                <li class="list-group-item list-group-item-warning">Fri</li>
-                <li class="list-group-item list-group-item-danger">Sat</li>
-              </ul>
+                <div>  
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success">Mon, Mar 25. 2015</li>
+                        <li class="list-group-item list-group-item-info">Tue, Mar 26. 2015</li>
+                        <li class="list-group-item list-group-item-warning">Wed, Mar 27. 2015</li>
+                        <li class="list-group-item list-group-item-danger">Thu, Mar 28. 2015</li>
+                        <li class="list-group-item list-group-item-warning">Fri, Mar 29. 2015</li>
+                        <li class="list-group-item list-group-item-danger">Sat, Mar 30. 2015</li>
+                     </ul>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDay"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
+                </div>
             </div>
         </div>
     </div>
