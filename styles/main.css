@@ -24,3 +24,6 @@ ul{
     padding: 0;
 }
 
+.progress{
+	transform: translate(0px, 0px) rotate(-90deg) scale(0.5, 5);
+}
