@@ -21,10 +21,25 @@ var ActDisplayView = function (container, model, activity) {
 
         for(var i = 0; i < this._model.parkedActivities.length; i++)
         {
-             htmlCode = '<li class="list-group-item" id="li">'
+            var colorClass;
+            switch(_this._model.parkedActivities[i].getType()){
+
+                case "Presentation": colorClass = "blueBack"; break;
+                case "Group Work": colorClass = "greenBack"; break;
+                case "Discussion": colorClass = "redBack"; break;
+                case "Break": colorClass = "yellowBack"; break;
+
+            }
+
+             htmlCode = '<li class="list-group-item parkedActivity">'
+            + _this._model.parkedActivities[i].getLength()
+            + " min" + "  |   "
             + _this._model.parkedActivities[i].getName() + '</li>';
 
+
+
             this.listbody.append(htmlCode);
+            $(".parkedActivity").addClass(colorClass);
         }
 
        
