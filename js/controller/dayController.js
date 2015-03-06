@@ -7,9 +7,10 @@ var MainViewController = function (view, model, activity) {
     this._activity = activity;
 
     var _this = this;
+    var _startTime = model._start;
 
 	$('#dayView').keyup(function() {
-		model._start($("#startTime").val());
+		_startTime($("#startTime").val());
 		console.log("input smth");
 	});
 
