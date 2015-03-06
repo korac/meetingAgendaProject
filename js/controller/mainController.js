@@ -32,6 +32,9 @@ var MainController = function (container, model, activity) {
 		$("#addActivityView").show();
 	});
 
+ 	$('#view').ready(function(){
+    	$('#progress-bar').tooltip();
+	});
 /*
   	$('#').on('click', function() {
 		//console.log("Clicked saveButton to change view to MainView");
