@@ -17,6 +17,7 @@
     <div id="topBar">
         <div class="container">
             <h2>Meeting Agenda</h2>
+
         </div>
     </div>
 <div id="View">
@@ -76,24 +77,37 @@
     <!--Main view-->
     <div id="MainView" class="page">
         <div class="container">
+<!-- <<<<<< HEAD
             <div class="col-md-4" id="actDisplayView">
-              <div class="jumbotron" id="activitiesContainer">
-                <div class="parked-activity-wrapper" data-original-title="" title="">
-                    <div class="row parked-activity activity-presentation" draggable="true">
-                        <span class="col-md-3" id="activityTime"></span>
-                        <span class="col-md-7" id="activityName"></span>
-                        <span class="col-md-1 glyphicon glyphicon-remove"></span>
-                    </div>
+                <div class="jumbotron" id="parkedactivitiesContainer">
                 </div>
-                
                 <div class="col-md-6">
                     <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="addActBtn"><span class="glyphicon glyphicon-plus"></span> Add Activity</button>
                     <hr>
                   </div>
 
-              </div>
-            </div>
+                <div class="parked-activity-wrapper" data-original-title="" title="">
+                    <div class="row parked-activity activity-presentation" draggable="true">
+                        <span class="col-md-3" id="activityTime"></span>
+                        <span class="col-md-7" id="activityName"></span>
+                        <span class="col-md-1 glyphicon glyphicon-remove"></span> -->
 
+
+            <div class="col-md-4 columns">
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2">
+                    <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addActBtn"><span class="glyphicon glyphicon-plus"></span> Add Activity</button>
+                    <hr>
+                  </div>
+                  <div class="col-md-8 col-md-offset-2" id="activityCont">
+                     <div id="actDisplayView">
+                        <ul id="activityList" >
+                          
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
 
             <div class="col-md-4">
               <div class="jumbotron">
@@ -101,8 +115,8 @@
                   <div class ="row">
                         <div class="col-md-6">
                             <div class="progress">
-            <div class="col-md-4 columns">
-                <div class ="row">
+                    <div class="col-md-4 columns">
+                       <div class ="row">
 
                         <div class="col-md-8 col-md-offset-2">
                             <p>Start Time:</p>

@@ -9,16 +9,25 @@ var ActDisplayView = function (container, model, activity) {
     var _this = this;
 
     //this.activityName;
-    this.listbody = this._container.find("activityList");
-    console.log(this.listbody);
+    this.listbody = this._container.find("#activityList");
+
     var activityName;
     
     this.update = function () {
 
         console.log(this._model.parkedActivities);
 
-        htmlCode = '<li class="list-group-item" id="li">'
-        + this._activity.getName() + '</li>';
+        this.listbody.empty();
+
+        for(var i = 0; i < this._model.parkedActivities.length; i++)
+        {
+             htmlCode = '<li class="list-group-item" id="li">'
+            + _this._model.parkedActivities[i].getName() + '</li>';
+
+            this.listbody.append(htmlCode);
+        }
+
+       
 
         // Loop in not functioning because there is nothing in our "parkedActivities" array
         // Every activity we create should go to "parkedActivities" array
@@ -35,7 +44,7 @@ var ActDisplayView = function (container, model, activity) {
               ul.appendChild(li);
             listbody.append(ul);
         }*/
-        this.listbody.append(htmlCode);
+        
     }    
 
 
