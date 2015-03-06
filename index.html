@@ -12,6 +12,15 @@
 
 </head>
 <body>
+
+    <!-- Top Bar -->
+    <div id="topBar">
+        <div class="container">
+            <h2>Meeting Agenda</h2>
+        </div>
+    </div>
+<div id="View">
+    <!-- Add Activity -->
     <div id="addActivityView" class="page">
         <div class="container">
             <div class="row">
@@ -39,8 +48,8 @@
                                     <input type="text" list="activityTypes" id="inputType" class="form-control" placeholder="Type"/>
                                     <datalist id="activityTypes">
                                         <option value="Presentation"></option>
-                                        <option value="Discussion"></option>
                                         <option value="Group work"></option>
+                                        <option value="Discussion"></option>
                                         <option value="Break"></option>
                                     </datalist>
                                 </div>
@@ -64,16 +73,9 @@
         </div>
     </div>
 
-    <!--Second view-->
+    <!--Main view-->
     <div id="MainView" class="page">
         <div class="container">
-            <div>
-                <p class="header-p">
-                    Meeting Agenda Project
-                </p>
-                <hr>
-            </div>
-
             <div class="col-md-4" id="actDisplayView">
               <div class="jumbotron" id="activitiesContainer">
                 <div class="parked-activity-wrapper" data-original-title="" title="">
@@ -92,56 +94,68 @@
               </div>
             </div>
 
+
             <div class="col-md-4">
               <div class="jumbotron">
                 <div class="row">
                   <div class ="row">
                         <div class="col-md-6">
                             <div class="progress">
-                              <div class="progress-bar progress-bar-success" style="width: 35%">
-                                <span class="sr-only">35% Complete (success)</span>
-                              </div>
-                              <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
-                                <span class="sr-only">20% Complete (warning)</span>
-                              </div>
-                              <div class="progress-bar progress-bar-danger" style="width: 10%">
-                                <span class="sr-only">10% Complete (danger)</span>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
+            <div class="col-md-4 columns">
+                <div class ="row">
+
+                        <div class="col-md-8 col-md-offset-2">
                             <p>Start Time:</p>
                             <input type="text" class="form-control" id="startTime">
                             <p>End Time: 8:10</p>
                             <p>Total Length: 0 min</p>
                         </div>
-                    </div>
-                    <ul id="Schedule" class="connectedSortable">
-                    <li class="list-group-item">Item 1</li>
-                    <li class="list-group-item">Item 2</li>
-                    <li class="list-group-item">Item 3</li>
-                    <li class="list-group-item">Item 4</li>
-                    <li class="list-group-item">Item 5</li>
-                    </ul>
-                </div>
-              </div>
-            </div>
-            <div>
-                <button type="button" class="btn-lg btn-primary col-md-2" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDay"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
-            </div>
-            <div class="col-md-2">
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-success">Mon</a>
-                <a href="#" class="list-group-item list-group-item-info">Tue</a>
-                <a href="#" class="list-group-item list-group-item-warning">Wed</a>
-                <a href="#" class="list-group-item list-group-item-danger">Thu</a>
-                <a href="#" class="list-group-item list-group-item-warning">Fri</a>
-                <a href="#" class="list-group-item list-group-item-danger">Sat</a>
-              </div>
-            </div>
-          </div>
-      </div>
 
+                        <div class="col-md-8 col-md-offset-2">
+                           <div class="progress">
+
+                              <div class="progress-bar progress-bar-success" style="width: 35%">
+                                  <span class="sr-only">35% Complete (success)</span>
+                              </div>
+                              <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+                                  <span class="sr-only">20% Complete (warning)</span>
+                              </div>
+                              <div class="progress-bar progress-bar-danger" style="width: 45%">
+                                  <span class="sr-only">45% Complete (danger)</span>
+                              </div>
+                           </div>
+                        </div>
+
+
+                        <div class="col-md-8 col-md-offset-2">
+                            <ul id="Schedule" class="connectedSortable">
+                                <li class="list-group-item">Item 1</li>
+                                <li class="list-group-item">Item 2</li>
+                                <li class="list-group-item">Item 3</li>
+                                <li class="list-group-item">Item 4</li>
+                                <li class="list-group-item">Item 5</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 columns">
+                <button type="button" class="btn-lg btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDay"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
+            </div>
+
+            <div class="col-md-2 columns">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-success">Mon</li>
+                <li class="list-group-item list-group-item-info">Tue</li>
+                <li class="list-group-item list-group-item-warning">Wed</li>
+                <li class="list-group-item list-group-item-danger">Thu</li>
+                <li class="list-group-item list-group-item-warning">Fri</li>
+                <li class="list-group-item list-group-item-danger">Sat</li>
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
 
@@ -150,11 +164,11 @@
     <script src="js/model/agendaModel.js"></script>
     <script src="js/view/addActivityView.js"></script>
     <script src="js/view/mainView.js"></script>
-    <script src="js/contoller/addActivityController.js"></script>
-    <script src="js/contoller/MainController.js"></script>
-    <script src="js/contoller/MainViewController.js"></script>
+    <script src="js/controller/addActivityController.js"></script>
+    <script src="js/controller/mainController.js"></script>
+    <script src="js/controller/mainViewController.js"></script>
     <script src="js/view/actDisplayView.js"></script>
-    <script src="js/contoller/actDisplayController.js"></script>
+    <script src="js/controller/actDisplayController.js"></script>
     
 
 

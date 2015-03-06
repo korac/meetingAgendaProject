@@ -1,6 +1,4 @@
-var actDisplayController = function (view, model, activity) {
-
-	console.log("actDisplayController run!");
+var ActDisplayController = function (view, model, activity) {
 
     this._view = view;
     this._model = model;
