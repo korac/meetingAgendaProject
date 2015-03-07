@@ -22,11 +22,11 @@ var ProgressBarView = function(container, model){
         this._container.empty();
         console.log(_this._model.days);
 
-        time = _this._model.days[0].getLengthByType(0)/_this._model.days[0].getLength() * 100;
+        //time = _this._model.days[0].getLengthByType(0)/_this._model.days[0].getLength() * 100;
 
         var htmlCode = '<div class="progress-bar progress-bar-success" id="discussionPercentage" style="width:'
             + time + '% "><span class="sr-only">25% Complete (discussion)</span></div>';
 
-        this._container.firstChild(htmlCode);
+        this._container.append(htmlCode);
     }
 }
