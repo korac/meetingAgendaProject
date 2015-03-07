@@ -1,11 +1,11 @@
 /**
  * Created by Jonathan on 4.3.2015..
  */
-var MainController = function (container, model, activity) {
+var MainController = function (container, model) {
 
     this._container = container;
     this._model = model;
-    this._activity = activity;
+
 
     var _this = this;
 
