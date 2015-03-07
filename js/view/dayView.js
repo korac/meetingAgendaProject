@@ -1,11 +1,11 @@
 
-var DayView = function (container, model, activity) {
+var DayView = function (container, model) {
 
     model.addObserver(this);
 
     this._container = container;
     this._model = model;
-    this._activity = activity;
+
 
 
     this.addActBtn = this._container.find("#addActBtn");
