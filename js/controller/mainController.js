@@ -30,6 +30,7 @@ var MainController = function (container, model, activity) {
 		//console.log("Clicked saveButton to change view to MainView");
 		$(".page").hide();
 		$("#addActivityView").show();
+		
 	});
 
  	$('#view').ready(function(){

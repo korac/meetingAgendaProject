@@ -11,13 +11,15 @@ $(function(){
 
     // Views
     var addActivityView = new AddActivityView($("#addActivityView"), model, act);
-    var actDisplayView = new ActDisplayView($("#actDisplayView"), model, act);
+    var parkedActivityView = new ParkedActivityView($("#parkedActivityView"), model, act);
     var mainView = new MainView($("#MainView"), model, act);
+   // var dayView = new dayView($("#dayView"),model,act)
 
     // Controllers
     var addActivityController = new AddActivityController(addActivityView, model, act);
-    var actDisplayController = new ActDisplayController(actDisplayView, model, act);
+    var parkedActivityController = new ParkedActivityController(parkedActivityView, model, act);
     var mainViewController = new MainViewController(mainView, model, act);
+    //var dayController = new dayController(dayView,model, act);
 
     var mainController = new MainController;
 

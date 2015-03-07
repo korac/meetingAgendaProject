@@ -10,8 +10,7 @@ var AddActivityController = function (view, model, activity) {
     var _this = this;
 
     var temporaryType;
-
-
+  
     this._view.inputType.change(function(){
         console.log("changed!");
         switch(_this._view.inputType.val()){
@@ -43,4 +42,5 @@ var AddActivityController = function (view, model, activity) {
 
 
 	});
+    
 }

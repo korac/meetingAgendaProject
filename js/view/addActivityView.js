@@ -8,12 +8,14 @@ var AddActivityView = function (container, model, activity) {
     this._container = container;
     this._model = model;
     this._activity = activity;
+    var currentActivity;
 
     this.inputName = this._container.find("#inputName");
     this.inputLength = this._container.find("#inputLength");
     this.inputType = this._container.find("#inputType");
     this.inputDescription = this._container.find("#inputDescription");
     this.saveButton = this._container.find("#saveButton");
+
     
     this.update = function () {
         console.log(this._activity.getName());
@@ -21,5 +23,7 @@ var AddActivityView = function (container, model, activity) {
         console.log(this._activity.getType());
         console.log(this._activity.getDescription());
     }
+
+
 
 }

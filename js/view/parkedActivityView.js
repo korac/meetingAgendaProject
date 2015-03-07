@@ -1,4 +1,4 @@
-var ActDisplayView = function (container, model, activity) {
+var ParkedActivityView = function (container, model, activity) {
 
     model.addObserver(this);
 
@@ -40,7 +40,10 @@ var ActDisplayView = function (container, model, activity) {
 
             this.listbody.append(htmlCode);
             $(".parkedActivity").addClass(colorClass);
+             $(".parkedActivity").attr('draggable', true);
+
         }
+        
 
        
 

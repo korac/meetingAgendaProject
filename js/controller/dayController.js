@@ -1,4 +1,4 @@
-var MainViewController = function (view, model, activity) {
+var dayController = function (view, model, activity) {
 /**
  * Created by Jonathan, Mar. 6th
  */
@@ -14,4 +14,6 @@ var MainViewController = function (view, model, activity) {
 		console.log("input smth");
 	});
 
+	
+	
 }
