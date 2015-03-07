@@ -11,16 +11,19 @@ $(function(){
 
     // Views
     var addActivityView = new AddActivityView($("#addActivityView"), model);
-    var actDisplayView = new ActDisplayView($("#actDisplayView"), model);
+
     var mainView = new MainView($("#MainView"), model);
+    var parkedActivityView = new ParkedActivityView($("#parkedActivityView"), model);
+    var dayView = new DayView($("#dayView"), model);
     var progressBarView = new ProgressBarView($("#percentage"), model);
 
     // Controllers
     var addActivityController = new AddActivityController(addActivityView, model);
-    var actDisplayController = new ActDisplayController(actDisplayView, model);
+    var parkedActivityController = new ParkedActivityController(parkedActivityView, model);
     var mainViewController = new MainViewController(mainView, model);
+    var dayController = new DayController(dayView, model);
 
-    var mainController = new MainController;
+    var mainController = new MainController(mainView, model);
 
 
 

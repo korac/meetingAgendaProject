@@ -1,4 +1,6 @@
-var MainViewController = function (view, model) {
+
+var DayController = function (view, model) {
+
 /**
  * Created by Jonathan, Mar. 6th
  */
