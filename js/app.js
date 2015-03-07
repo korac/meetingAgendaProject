@@ -13,6 +13,7 @@ $(function(){
     var addActivityView = new AddActivityView($("#addActivityView"), model);
     var actDisplayView = new ActDisplayView($("#actDisplayView"), model);
     var mainView = new MainView($("#MainView"), model);
+    var progressBarView = new ProgressBarView($("#percentage"), model);
 
     // Controllers
     var addActivityController = new AddActivityController(addActivityView, model);
