@@ -19,22 +19,18 @@ ul{
 
 #activityCont{
     height: 100%;
-    border: thin solid black;
-    border-width: 5px;
     border-radius: 10px;
     padding: 0;
-    border-style: double;
+    border: 5px double black;
     overflow: auto;
 }
 
 
 #dayBox{
     height: 100%;
-    border: thin solid black;
     border-radius: 10px;
     padding: 0;
-    border-width: 5px;
-    border-style: double;
+    border: 5px double black;
     overflow: auto;
 }
 

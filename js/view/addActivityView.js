@@ -1,13 +1,13 @@
 /**
  * Created by Kristijan on 3.3.2015..
  */
-var AddActivityView = function (container, model, activity) {
+var AddActivityView = function (container, model) {
 
     model.addObserver(this);
 
     this._container = container;
     this._model = model;
-    this._activity = activity;
+
 
     this.inputName = this._container.find("#inputName");
     this.inputLength = this._container.find("#inputLength");
@@ -16,10 +16,11 @@ var AddActivityView = function (container, model, activity) {
     this.saveButton = this._container.find("#saveButton");
     
     this.update = function () {
-        console.log(this._activity.getName());
-        console.log(this._activity.getLength());
-        console.log(this._activity.getType());
-        console.log(this._activity.getDescription());
+
+        this.inputName.val('');
+        this.inputLength.val('');
+        this.inputType.val('');
+        this.inputDescription.val('');
     }
 
 }
