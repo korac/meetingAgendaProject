@@ -1,4 +1,4 @@
-var MainViewController = function (view, model, activity) {
+var DayController = function (view, model, activity) {
 /**
  * Created by Jonathan, Mar. 6th
  */

@@ -22,5 +22,10 @@ var AddActivityView = function (container, model) {
         this.inputType.val('');
         this.inputDescription.val('');
     }
+   
+
+
+
+   
 
 }

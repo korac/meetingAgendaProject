@@ -1,10 +1,10 @@
-var ActDisplayView = function (container, model) {
+var ParkedActivityView = function (container, model, activity) {
 
     model.addObserver(this);
 
     this._container = container;
     this._model = model;
-
+    this._activity = activity;
 
     var _this = this;
 
@@ -15,14 +15,13 @@ var ActDisplayView = function (container, model) {
     
     this.update = function () {
 
+        console.log(this._model.parkedActivities);
 
         this.listbody.empty();
-        console.log(this._model.parkedActivities.length);
 
         for(var i = 0; i < this._model.parkedActivities.length; i++)
         {
-            //console.log(this._model.parkedActivities[i].getName());
-            var colorClass = "";
+            var colorClass;
             switch(_this._model.parkedActivities[i].getType()){
 
                 case "Presentation": colorClass = "blueBack"; break;
@@ -32,16 +31,20 @@ var ActDisplayView = function (container, model) {
 
             }
 
-
-             htmlCode = '<li class="list-group-item parkedActivity '
-            + colorClass + '">'
+             htmlCode = '<li class="list-group-item parkedActivity"><a>'
             + _this._model.parkedActivities[i].getLength()
             + " min" + "  |   "
-            + _this._model.parkedActivities[i].getName() + '</li>';
+            + _this._model.parkedActivities[i].getName() + '</a></li>';
+
 
 
             this.listbody.append(htmlCode);
+            $(".parkedActivity").addClass(colorClass);
+             $(".parkedActivity").attr('draggable', true);
+      
+
         }
+        
 
        
 
