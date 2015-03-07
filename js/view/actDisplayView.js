@@ -32,13 +32,12 @@ var ActDisplayView = function (container, model) {
 
             }
 
-            
+
              htmlCode = '<li class="list-group-item parkedActivity '
             + colorClass + '">'
             + _this._model.parkedActivities[i].getLength()
             + " min" + "  |   "
             + _this._model.parkedActivities[i].getName() + '</li>';
-
 
 
             this.listbody.append(htmlCode);
