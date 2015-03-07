@@ -6,9 +6,13 @@ var MainViewController = function (view, model) {
 
     var _this = this;
 
-     /*$('#saveButton').click(function() {
-    	$('#li').append(activity.getName());
 
-    });*/
+    this._view.addDayBtn.on("click", function(){
+
+        var day = new Day(8,0);
+        _this._model.addDay(day);
+        console.log(_this._model.days);
+    });
+
 
 }

@@ -131,29 +131,31 @@ function drop(ev) {
                                </div>
                            </div>
                         </div>
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2" id= "dayBox" ondrop="drop(event)" ondragover="allowDrop(event)">
-                            <ul id="Schedule" class="connectedSortable" draggable="true" ondragstart="drag(event)">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2" id= "dayBox" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <ul id="Schedule" class="connectedSortable" draggable="true" ondragstart="drag(event)">
 
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
 
             <div class="col-md-2 columns">
-                <div>  
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-success">Mon, Mar 25. 2015</li>
-                        <li class="list-group-item list-group-item-info">Tue, Mar 26. 2015</li>
-                        <li class="list-group-item list-group-item-warning">Wed, Mar 27. 2015</li>
-                        <li class="list-group-item list-group-item-danger">Thu, Mar 28. 2015</li>
-                        <li class="list-group-item list-group-item-warning">Fri, Mar 29. 2015</li>
-                        <li class="list-group-item list-group-item-danger">Sat, Mar 30. 2015</li>
-                     </ul>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDay"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
+                <div id="scheduleView">
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-success">Mon, Mar 25. 2015</li>
+                            <li class="list-group-item list-group-item-info">Tue, Mar 26. 2015</li>
+                            <li class="list-group-item list-group-item-warning">Wed, Mar 27. 2015</li>
+                            <li class="list-group-item list-group-item-danger">Thu, Mar 28. 2015</li>
+                            <li class="list-group-item list-group-item-warning">Fri, Mar 29. 2015</li>
+                            <li class="list-group-item list-group-item-danger">Sat, Mar 30. 2015</li>
+                         </ul>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" id="addDayBtn"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ var MainView = function (container, model) {
     this._model = model;
 
 
-    this.addActBtn = this._container.find("#addActBtn");
+    this.addDayBtn = this._container.find("#addDayBtn");
     
     this.update = function () {
        

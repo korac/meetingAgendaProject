@@ -31,7 +31,8 @@ var ParkedActivityView = function (container, model, activity) {
 
             }
 
-             htmlCode = '<li class="list-group-item parkedActivity"><a>'
+            htmlCode = '<li class="list-group-item parkedActivity '
+            + colorClass + '" draggable="true">'
             + _this._model.parkedActivities[i].getLength()
             + " min" + "  |   "
             + _this._model.parkedActivities[i].getName() + '</a></li>';
@@ -39,9 +40,6 @@ var ParkedActivityView = function (container, model, activity) {
 
 
             this.listbody.append(htmlCode);
-            $(".parkedActivity").addClass(colorClass);
-             $(".parkedActivity").attr('draggable', true);
-      
 
         }
         

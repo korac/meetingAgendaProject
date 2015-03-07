@@ -8,11 +8,9 @@ var DayView = function (container, model) {
 
 
 
-    this.addActBtn = this._container.find("#addActBtn");
-    
     this.update = function () {
-       
-        
+
+
     }
 
 }

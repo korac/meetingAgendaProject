@@ -31,9 +31,7 @@ var AddActivityController = function (view, model) {
 
 
         var activity = new Activity(_this._model, _this._view.inputName.val(), _this._view.inputLength.val(), temporaryType, _this._view.inputDescription.val());
-        var day = new Day(8,0);
 
-        _this._model.addDay(day);
         _this._model.addActivity(activity);
 
         console.log(_this._model.parkedActivities[0].getName());

@@ -11,8 +11,9 @@ var DayController = function (view, model) {
     var _startTime = model._start;
 
 	$('#dayView').keyup(function() {
-		_startTime($("#startTime").val());
-		console.log("input smth");
-	});
+        _startTime($("#startTime").val());
+        console.log("input smth");
+    });
+
 
 }
