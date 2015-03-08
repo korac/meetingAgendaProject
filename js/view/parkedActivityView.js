@@ -22,18 +22,7 @@ var ParkedActivityView = function (container, model, activity) {
         for(var i = 0; i < this._model.parkedActivities.length; i++)
         {
             var colorClass;
-            
-             htmlCode = '<li class="list-group-item parkedActivity"><a>'
-            + _this._model.parkedActivities[i].getLength()
-            + " min" + "  |   "
-            + _this._model.parkedActivities[i].getName() + '</a></li>';
 
-
-
-            this.listbody.append(htmlCode);
-            $(".parkedActivity").addClass(colorClass);
-             $(".parkedActivity").attr('draggable', true);
-      
             switch(_this._model.parkedActivities[i].getType()){
 
                 case "Presentation": colorClass = "blueBack"; break;
@@ -42,6 +31,16 @@ var ParkedActivityView = function (container, model, activity) {
                 case "Break": colorClass = "yellowBack"; break;
 
             }
+
+           htmlCode = '<li class="list-group-item parkedActivity"><a>'
+            + colorClass + '" draggable="true">'
+            + _this._model.parkedActivities[i].getLength()
+            + " min" + "  |   "
+            + _this._model.parkedActivities[i].getName() + '</a></li>';
+
+
+
+            this.listbody.append(htmlCode);
 
 
         }
