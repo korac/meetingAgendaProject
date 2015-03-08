@@ -65,3 +65,16 @@ ul{
 .yellowBack{
     background-color: rgba(255, 255, 0, 0.44);
 }
+
+.parkedActivity{
+    cursor: move;
+}
+
+#Schedule{
+    height: 95%;
+}
+
+#parkedActivityView, #activityList{
+    height: 95%;
+}
+

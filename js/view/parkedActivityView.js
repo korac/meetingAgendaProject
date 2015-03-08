@@ -28,8 +28,9 @@ var ParkedActivityView = function (container, model) {
 
             }
 
-            htmlCode = '<li class="list-group-item parkedActivity '
-            + colorClass + '" draggable="true">'
+            htmlCode = '<li id="drag'
+            + i + '" class="list-group-item parkedActivity '
+            + colorClass + '" draggable="true"  ondragstart="drag(event)">'
             + _this._model.parkedActivities[i].getLength()
             + " min" + "  |   "
             + _this._model.parkedActivities[i].getName() + '</a></li>';
