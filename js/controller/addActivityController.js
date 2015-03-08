@@ -37,7 +37,9 @@ var AddActivityController = function (view, model) {
 
         console.log(_this._model.parkedActivities[0].getName());
 
+
     });
+
 /*
         if( ($('#inputName').val()!= "") && ($('#inputLength').val()!= "") && ($("#inputDescription").val()!="") )
         {   

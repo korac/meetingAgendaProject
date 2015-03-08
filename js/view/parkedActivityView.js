@@ -1,18 +1,14 @@
-var ParkedActivityView = function (container, model, activity) {
+var ParkedActivityView = function (container, model) {
 
     model.addObserver(this);
 
     this._container = container;
     this._model = model;
-    this._activity = activity;
 
     var _this = this;
 
-    //this.activityName;
     this.listbody = this._container.find("#activityList");
 
-    var activityName;
-    
     this.update = function () {
 
         console.log(this._model.parkedActivities);
@@ -32,7 +28,7 @@ var ParkedActivityView = function (container, model, activity) {
 
             }
 
-           htmlCode = '<li class="list-group-item parkedActivity"><a>'
+            htmlCode = '<li class="list-group-item parkedActivity '
             + colorClass + '" draggable="true">'
             + _this._model.parkedActivities[i].getLength()
             + " min" + "  |   "
