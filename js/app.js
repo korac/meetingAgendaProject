@@ -24,5 +24,16 @@ $(function(){
     var mainController = new MainController(mainView, model);
 
 
+    
+   
+
+    //The global variable so we can access it from other controller and views
+    //window.stage = function(act)
+    //{
+      //  $("#addActivityView").toggle();
+       //addActivityView.updateFields(act);
+    //}
+    // Code binding the model to the rest of the controllers and views
+   
 
 });

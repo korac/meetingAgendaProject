@@ -26,6 +26,28 @@ var AddActivityView = function (container, model) {
 
 
 
-   
-
+  /* function updateFields(act)
+    {
+        if(act != null)
+        {
+            this.currentActivity = act;
+           
+            $(inputName).val(act.getName());
+            $(inputLength).val(act.getLength());
+           
+            $(inputDescription).val(act.getDescription());
+        }
+        else
+        {
+            this.currentActivity = null;
+            
+            $(inputName).val("");
+            $(inputLength).val("");
+          
+            $(inputDescription).val("");
+        }
+        
+    }
+this.updateFields = updateFields;
+*/
 }
