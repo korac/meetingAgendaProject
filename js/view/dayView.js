@@ -7,10 +7,10 @@ var DayView = function (container, model) {
     this._model = model;
 
 
-
     this.update = function () {
 
 
     }
+
 
 }
