@@ -24,25 +24,20 @@ var AddActivityController = function (view, model) {
 
 
     this._view.saveButton.on('click', function() {
-       _this._activity.setName(this._view.inputName.val());
-        _this._activity.setLength(this._view.inputLength.val());
+    /*   _this._activity.setName(_this._view.inputName.val());
+        _this._activity.setLength(_this._view.inputLength.val());
         _this._activity.setTypeId(temporaryType);
-        _this._activity.setDescription(this._view.inputDescription.val());
+        _this._activity.setDescription(_this._view.inputDescription.val());*/
 
 
-/*
-     var activity = new Activity(_this._model, _this._view.inputName.val(), _this._view.inputLength.val(), temporaryType, _this._view.inputDescription.val());
-        var day = new Day(8,0);
+
         var activity = new Activity(_this._model, _this._view.inputName.val(), _this._view.inputLength.val(), temporaryType, _this._view.inputDescription.val());
-
 
         _this._model.addActivity(activity);
 
         console.log(_this._model.parkedActivities[0].getName());
 
-*/
-
-	});
+    });
 /*
         if( ($('#inputName').val()!= "") && ($('#inputLength').val()!= "") && ($("#inputDescription").val()!="") )
         {   
