@@ -1,10 +1,10 @@
-var ActDisplayView = function (container, model, activity) {
+var ActDisplayView = function (container, model) {
 
-    model.addObserver(this);// register this view.
+    model.addObserver(this);
 
     this._container = container;
     this._model = model;
-    this._activity = activity;
+
 
     var _this = this;
 
@@ -15,22 +15,33 @@ var ActDisplayView = function (container, model, activity) {
     
     this.update = function () {
 
-        console.log(this._model.parkedActivities);
 
         this.listbody.empty();
+        console.log(this._model.parkedActivities.length);
 
         for(var i = 0; i < this._model.parkedActivities.length; i++)
         {
-             htmlCode = '<li class="list-group-item" id="li">'
+            //console.log(this._model.parkedActivities[i].getName());
+            var colorClass = "";
+            switch(_this._model.parkedActivities[i].getType()){
+
+                case "Presentation": colorClass = "blueBack"; break;
+                case "Group Work": colorClass = "greenBack"; break;
+                case "Discussion": colorClass = "redBack"; break;
+                case "Break": colorClass = "yellowBack"; break;
+
+            }
+
+
+             htmlCode = '<li class="list-group-item parkedActivity '
+            + colorClass + '">'
+            + _this._model.parkedActivities[i].getLength()
+            + " min" + "  |   "
             + _this._model.parkedActivities[i].getName() + '</li>';
+
 
             this.listbody.append(htmlCode);
         }
-        // add a tooltip to the activity with its description
-            actDisplayView.tooltip({
-                title: 'Description: ' + activities[i].getDescription(),
-                placement:  'bottom'
-            });
 
        
 

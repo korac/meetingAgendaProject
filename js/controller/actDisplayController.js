@@ -1,14 +1,11 @@
-var ActDisplayController = function (view, model, activity) {
+var ActDisplayController = function (view, model) {
 
     this._view = view;
     this._model = model;
-    this._activity = activity;
+
 
     var _this = this;
 
-    $ ('#saveButton').click(function() {
-    	$('#li').append(activity.getName());
 
-    });
 
 }
