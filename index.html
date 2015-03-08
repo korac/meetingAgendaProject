@@ -53,7 +53,7 @@ function drop(ev) {
                             <div class="form-group">
                                 <label for="inputLength" class="col-sm-2 control-label">Length</label>
                                 <div class="col-sm-10">
-                                    <input type="number" id="inputLength" class="form-control" placeholder="Length"/>
+                                    <input type="time" id="inputLength" class="form-control" placeholder="Length" value="01:00"/>
                                 </div>
                             </div>
 
@@ -108,11 +108,14 @@ function drop(ev) {
                 </div>
             </div>
             <div class="col-md-4 columns">
-                <div class ="row" id="dayView">
+                <div class="row" id="dayView">
                         <div class="col-md-6 col-md-offset-2">
-                            <p>Start Time:<input type="text" class="form-control" id="startTime"></p>
-                            <p>End Time: 8:10</p>
-                            <p>Total Length: 0 min</p>
+                            Start Time:
+                            <p>
+                            <input type="time" class="form-control" id="startTimeHour" value="08:00">
+                            </p>
+                            <p>End Time: VarEndTime</p>
+                            <p>Total Length: VarCalcLength min</p>
                         </div>
                         <div class="col-md-2">
                         <div class="stroke"></div>
@@ -148,10 +151,6 @@ function drop(ev) {
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-success">Mon, Mar 25. 2015</li>
                             <li class="list-group-item list-group-item-info">Tue, Mar 26. 2015</li>
-                            <li class="list-group-item list-group-item-warning">Wed, Mar 27. 2015</li>
-                            <li class="list-group-item list-group-item-danger">Thu, Mar 28. 2015</li>
-                            <li class="list-group-item list-group-item-warning">Fri, Mar 29. 2015</li>
-                            <li class="list-group-item list-group-item-danger">Sat, Mar 30. 2015</li>
                          </ul>
                     </div>
                     <div>
@@ -168,19 +167,25 @@ function drop(ev) {
     <!-- Scripts -->
     <script src="js/app.js"></script>
     <script src="js/model/agendaModel.js"></script>
+    <!-- Views -->
     <script src="js/view/addActivityView.js"></script>
     <script src="js/view/mainView.js"></script>
-       <script src="js/view/dayView.js"></script>
+    <script src="js/view/dayView.js"></script>
+    <script src="js/view/parkedActivityView.js"></script>
+    <script src="js/view/progressBarView.js"></script>
+    <!-- Controller -->
     <script src="js/controller/addActivityController.js"></script>
     <script src="js/controller/mainController.js"></script>
     <script src="js/controller/mainViewController.js"></script>
-    <script src="js/view/parkedActivityView.js"></script>
     <script src="js/controller/parkedActivityController.js"></script>
     <script src="js/controller/dayController.js"></script>
-    <script src="js/view/progressBarView.js"></script>
+
     
-
-
+    <!-- Time Spinner -->
+    <!-- link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" -->
+    <!-- script src="/resources/demos/external/globalize/globalize.js"></script>
+    <script src="/resources/demos/external/globalize/globalize.culture.de-DE.js"></script>
+    <!--script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script-->
 
 </body>
 </html>
