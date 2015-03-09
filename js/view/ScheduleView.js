@@ -12,5 +12,4 @@ var scheduleView = function(container, model){
     var _this = this;
 
    
-    }
 }
