@@ -23,11 +23,13 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
+    console.log(data);
 }
-function shouhui() { 
+
+function mouseon() { 
         document.getElementById('div').style.display='block'; 
         } 
-function fangzou() { 
+function mouseoff() { 
         document.getElementById('div').style.display='none'; 
         }     
 </script>
@@ -108,10 +110,12 @@ function fangzou() {
                     <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addActBtn"><span class="glyphicon glyphicon-plus"></span> Add Activity</button>
                     <hr>
                   </div>
-                  <div class="col-md-8 col-md-offset-2" id="activityCont" ondrop="drop(event)" ondragover="allowDrop(event)">
-                     <div id="parkedActivityView" >
-                        <ul id="activityList" class="connectedSortable" draggable="true" ondragstart="drag(event)">
-                            <div id="div" style="display: none"></div>
+
+                  <div class="col-md-8 col-md-offset-2" id="activityCont">
+                     <div id="parkedActivityView">
+                        <ul id="activityList" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+                        <div id="div" style="display: none"></div>
                         </ul>
                     </div>
                   </div>
@@ -146,8 +150,9 @@ function fangzou() {
                            </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-2" id= "dayBox" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                <ul id="Schedule" class="connectedSortable" draggable="true" ondragstart="drag(event)">
+
+                            <div class="col-md-8 col-md-offset-2" id= "dayBox">
+                                <ul id="Schedule" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                                 </ul>
                             </div>
@@ -196,7 +201,9 @@ function fangzou() {
     <!-- link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" -->
     <!-- script src="/resources/demos/external/globalize/globalize.js"></script>
     <script src="/resources/demos/external/globalize/globalize.culture.de-DE.js"></script>
-    <!-  script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script-->
+
+    <!-script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script-->
+
 
 </body>
 </html>

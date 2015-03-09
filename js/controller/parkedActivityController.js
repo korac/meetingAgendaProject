@@ -6,7 +6,6 @@ var ParkedActivityController = function (view, model) {
 
     var _this = this;
 
-     
 
 
 
