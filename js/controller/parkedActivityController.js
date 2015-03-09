@@ -6,7 +6,9 @@ var ParkedActivityController = function (view, model) {
 
     var _this = this;
 
-
+   // $('.parkedActivity').mouseover(function() {
+   //console.log('id');
+   //});
 
 
 }

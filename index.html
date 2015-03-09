@@ -34,6 +34,43 @@ function mouseoff() {
         </div>
     </div>
 <div id="View">
+
+    <!--div class="modal-hide" id="newDayDate">
+        <div class="modal-header">
+            <h3>New Day</h3>
+        </div>
+
+        <div class="modal-body">
+            <p>This is amodal dialogue</p>
+        </div>
+
+        <div class="modal-footer">
+            <a href="#" class="btn">close</a>
+            <a href="#" class="btn btn-primary">Save</a>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <!--<div class="modal fade" id="newDayDate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">New Day</h4>
+          </div>
+          <div class="modal-body">
+            Datepicker
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+
     <!-- Add Activity -->
     <div id="addActivityView" class="page">
         <div class="container">
@@ -113,7 +150,7 @@ function mouseoff() {
                         <div class="col-md-6 col-md-offset-2">
                             Start Time:
                             <p>
-                            <input type="time" class="form-control" id="startTimeHour" value="08:00">
+                            <input type="time" class="form-control" id="startTime" value="08:00">
                             </p>
                             <p>End Time: VarEndTime</p>
                             <p>Total Length: VarCalcLength min</p>
@@ -147,16 +184,19 @@ function mouseoff() {
                 </div>
             </div>
 
-            <div class="col-md-2 columns">
-                <div id="scheduleView">
+            <div class="col-md-4 columns">
+                <div class="col-md-8 col-md">
                     <div>
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-success">Mon, Mar 25. 2015</li>
-                            <li class="list-group-item list-group-item-info">Tue, Mar 26. 2015</li>
-                         </ul>
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDayBtn">
+                            <span class="glyphicon glyphicon-plus"></span> Add Day
+                        </button>
+                        <hr>
                     </div>
-                    <div>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" id="addDayBtn"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
+                    <div class="btn-group-vertical" id="scheduleView" role="group" aria-label="...">
+                        <button type="button" class="btn btn-lg btn-default" id="dayButton">Mon | March 25, '15</button>
+                        <button type="button" class="btn btn-lg btn-default" id="dayButton">Tuesday</button>
+                        <button type="button" class="btn btn-lg btn-default" id="dayButton">Wednesday</button>
+                        <!-- Here we are adding the buttons with a for loop by getting the info at a click on the "Add Day"-button. Every Button in this list triggers a certain view. -->
                     </div>
                 </div>
             </div>
@@ -175,6 +215,7 @@ function mouseoff() {
     <script src="js/view/dayView.js"></script>
     <script src="js/view/parkedActivityView.js"></script>
     <script src="js/view/progressBarView.js"></script>
+    <script src="js/view/ScheduleView.js"></script>
     
     <!-- Controller -->
     <script src="js/controller/addActivityController.js"></script>
@@ -182,15 +223,7 @@ function mouseoff() {
     <script src="js/controller/mainViewController.js"></script>
     <script src="js/controller/parkedActivityController.js"></script>
     <script src="js/controller/dayController.js"></script>
-
-    
-    <!-- Time Spinner -->
-    <!-- link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" -->
-    <!-- script src="/resources/demos/external/globalize/globalize.js"></script>
-    <script src="/resources/demos/external/globalize/globalize.culture.de-DE.js"></script>
-
-    <!-script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script-->
-
+    <script src="js/controller/ScheduleController.js"></script>
 
 </body>
 </html>

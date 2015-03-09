@@ -34,7 +34,7 @@ ul{
     overflow: auto;
 }
 
-/*pinting the red 30% line*/
+/*printing the red 30% line*/
 .stroke {
   position:absolute;
   z-index: 10;
@@ -44,7 +44,6 @@ ul{
   left:0px;
   transform: translate(0px, 78px) rotate(0deg) scale(1, 1);
 }
-
 
 #percentage{
 	transform: translate(0px, 45px) rotate(90deg) scale(3.5, 2);
