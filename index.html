@@ -22,9 +22,21 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
+
+    console.log(data);
 }
+
+function mouseon() { 
+        document.getElementById('div').style.display='block'; 
+        } 
+function mouseoff() { 
+        document.getElementById('div').style.display='none'; 
+        }     
 </script>
 </head>
+<style type="text/css"> 
+#div{ background:#CCC; width:500px; height:400px; display:none; } 
+</style>
 <body>
 
     <!-- Top Bar -->
@@ -98,10 +110,12 @@ function drop(ev) {
                     <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addActBtn"><span class="glyphicon glyphicon-plus"></span> Add Activity</button>
                     <hr>
                   </div>
-                  <div class="col-md-8 col-md-offset-2" id="activityCont" ondrop="drop(event)" ondragover="allowDrop(event)">
-                     <div id="parkedActivityView" >
-                        <ul id="activityList" class="connectedSortable" draggable="true" ondragstart="drag(event)">
 
+                  <div class="col-md-8 col-md-offset-2" id="activityCont">
+                     <div id="parkedActivityView">
+                        <ul id="activityList" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+                        <div id="div" style="display: none"></div>
                         </ul>
                     </div>
                   </div>
@@ -136,8 +150,9 @@ function drop(ev) {
                            </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-2" id= "dayBox" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                <ul id="Schedule" class="connectedSortable" draggable="true" ondragstart="drag(event)">
+
+                            <div class="col-md-8 col-md-offset-2" id= "dayBox">
+                                <ul id="Schedule" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                                 </ul>
                             </div>
@@ -182,7 +197,6 @@ function drop(ev) {
     <script src="js/controller/parkedActivityController.js"></script>
     <script src="js/controller/dayController.js"></script>
     <script src="js/controller/ScheduleController.js"></script>
-
 
 </body>
 </html>

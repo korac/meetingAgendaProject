@@ -47,6 +47,7 @@ ul{
 
 #percentage{
 	transform: translate(0px, 45px) rotate(90deg) scale(3.5, 2);
+
 }
 
 .blueBack{
@@ -64,3 +65,17 @@ ul{
 .yellowBack{
     background-color: rgba(255, 255, 0, 0.44);
 }
+
+.parkedActivity{
+    cursor: move;
+}
+
+#Schedule{
+    height: 95%;
+}
+
+#parkedActivityView, #activityList{
+    height: 95%;
+
+}
+
