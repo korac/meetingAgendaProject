@@ -13,25 +13,33 @@ var DayView = function (container, model) {
 
         this.dayActivities.empty();
 
-        for(var i = 0; i < this._model.days[0]._activities.length; i++)
-        {
+        for(var i = 0; i < this._model.days.length; i++) {
+            for (var j = 0; j < this._model.days[i]._activities.length; j++){
 
+                var colorClass;
 
+                switch(_this._model.days[i]._activities[j].getType()){
 
-            var htmlCode = '<li  id="drag'
-            + i + '" class="list-group-item '
-            + '" draggable="true"  ondragstart="drag(event)">'
-            + _this._model.days[0]._activities[i].getLength()
-            + " min" + "  |   "
-            + _this._model.days[0]._activities[i].getName() + '</a></li>';
+                    case "Presentation": colorClass = "blueBack"; break;
+                    case "Group Work": colorClass = "greenBack"; break;
+                    case "Discussion": colorClass = "redBack"; break;
+                    case "Break": colorClass = "yellowBack"; break;
 
-            console.log(htmlCode);
+                }
 
-            this.dayActivities.append(htmlCode);
+                var htmlCode = '<li  id="drag'
+                    + i + '" class="list-group-item '
+                    + colorClass + '" draggable="true"  ondragstart="drag(event)">'
+                    + _this._model.days[i]._activities[j].getLength()
+                    + " min" + "  |   "
+                    + _this._model.days[i]._activities[j].getName() + '</a></li>';
 
+                this.dayActivities.append(htmlCode);
+
+            }
         }
 
+    };
 
-    }
     this.update();
 }
