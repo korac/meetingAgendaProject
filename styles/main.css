@@ -34,7 +34,7 @@ ul{
     overflow: auto;
 }
 
-/*pinting the red 30% line*/
+/*printing the red 30% line*/
 .stroke {
   position:absolute;
   z-index: 10;
