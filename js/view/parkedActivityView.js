@@ -7,7 +7,9 @@ var ParkedActivityView = function (container, model) {
 
     var _this = this;
 
+
     this.listbody = this._container.find("#activityList");
+    this.acttip = this._container.find("#div");
 
     this.update = function () {
 
@@ -28,7 +30,8 @@ var ParkedActivityView = function (container, model) {
 
             }
 
-            htmlCode = '<li id="drag'
+
+            htmlCode = '<li onmouseover="mouseon()" onmouseout="mouseoff()" id="drag'
             + i + '" class="list-group-item parkedActivity '
             + colorClass + '" draggable="true"  ondragstart="drag(event)">'
             + _this._model.parkedActivities[i].getLength()
@@ -36,8 +39,12 @@ var ParkedActivityView = function (container, model) {
             + _this._model.parkedActivities[i].getName() + '</a></li>';
 
 
+            tip = '_this._model.parkedActivities[i].getName()';
+
 
             this.listbody.append(htmlCode);
+            this.acttip.append(tip);
+
 
 
         }

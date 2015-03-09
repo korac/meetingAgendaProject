@@ -48,6 +48,7 @@ ul{
 
 #percentage{
 	transform: translate(0px, 45px) rotate(90deg) scale(3.5, 2);
+
 }
 
 .blueBack{
@@ -76,5 +77,6 @@ ul{
 
 #parkedActivityView, #activityList{
     height: 95%;
+
 }
 
