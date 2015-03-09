@@ -19,10 +19,12 @@ function drag(ev) {
 }
 
 function drop(ev) {
+
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-    console.log(data);
+  
+
 }
 </script>
 </head>
@@ -30,15 +32,15 @@ function drop(ev) {
 
     <!-- Top Bar -->
     <div id="topBar">
-        <div class="container">
+        <div id="heading">
             <h2>Meeting Agenda</h2>
             <hr/>   
         </div>
     </div>
-<div id="View">
+<div id="container">
     <!-- Add Activity -->
     <div id="addActivityView" class="page">
-        <div class="container">
+       
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <form class="form-horizontal">
@@ -86,41 +88,32 @@ function drop(ev) {
                     </form>
                 </div>
             </div>
-        </div>
+        
     </div>
 
     <!--Main view-->
     <div id="MainView" class="page">
-        <div class="container">
-
-            <div class="col-md-4 columns">
-                <div class="row">
-                  <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-3 columns" id="leftbox">
+               <div class="col-md-8 col-md-offset-2">
                     <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addActBtn"><span class="glyphicon glyphicon-plus"></span> Add Activity</button>
                     <hr>
                   </div>
-                  <div class="col-md-8 col-md-offset-2" id="activityCont">
-                     <div id="parkedActivityView">
-                        <ul id="activityList" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="col-md-8 col-md-offset-2" id="activityCont" ondrop="drop(event)" ondragover="allowDrop(event)">
+                     <div id="parkedActivityView" >
+                        <ul id="activityList" class="connectedSortable" draggable="true" ondragstart="drag(event)">
 
                         </ul>
                     </div>
                   </div>
-                </div>
+                
             </div>
-            <div class="col-md-4 columns">
+            <div class="col-md-9 columns" id="rightbox">
                 <div class="row" id="dayView">
-                        <div class="col-md-6 col-md-offset-2">
-                            Start Time:
-                            <p>
-                            <input type="time" class="form-control" id="startTimeHour" value="08:00">
-                            </p>
-                            <p>End Time: VarEndTime</p>
-                            <p>Total Length: VarCalcLength min</p>
-                        </div>
-                        <div class="col-md-2">
-                        <div class="stroke"></div>
+                            <div class="col-md-5 ">
+                             <div class="stroke"></div>
                            <div class="progress" id="percentage">
+
+                                
                                 <!-- we need to put in some variables for the percentage instead of the hard coded things --> <!--We will ;) -->
                                <div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: 10%">
                                   <span class="sr-only">25% Complete (discussion)</span>
@@ -131,35 +124,36 @@ function drop(ev) {
                                <div class="progress-bar progress-bar-info" id="presentationPercentage" style="width: 40%">
                                   <span class="sr-only">20% Complete (presentation)</span>
                                </div>
+                               
                                <div class="progress-bar progress-bar-warning" id="breakPercentage" style="width: 30%">
                                   <span class="sr-only">30% Complete (break)</span>
                                </div>
                            </div>
+                           </div>
+                        <hr>
+                        <div class="col-md-6 col-md-offset-2" 
+                            Start Time:
+                            <p>
+                            <input type="time" class="form-control" id="startTimeHour" value="08:00">
+                            </p>
+                            <p>End Time: VarEndTime</p>
+                            <p>Total Length: VarCalcLength min</p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2" id= "dayBox">
-                                <ul id="Schedule" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        
+                        <div class="dayOverviewContainer" id = "dayOverviewContainer">
+                            <div class="col-md-8 col-md-offset-2 dayOverview" id= "dayOverview" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                            </div>
+                             <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" id="addDayBtn"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
+                        </div>
 
-                                </ul>
-                            </div>
-                        </div>
+                
+
                 </div>
+
             </div>
 
-            <div class="col-md-2 columns">
-                <div id="scheduleView">
-                    <div>
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-success">Mon, Mar 25. 2015</li>
-                            <li class="list-group-item list-group-item-info">Tue, Mar 26. 2015</li>
-                         </ul>
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" id="addDayBtn"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            
+        
     </div>
 </div>
     <!-- jQuery -->
