@@ -10,28 +10,12 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css"/>
 <script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-
-    console.log(data);
-}
-
-function mouseon() { 
-        document.getElementById('div').style.display='block'; 
-        } 
-function mouseoff() { 
-        document.getElementById('div').style.display='none'; 
-        }     
+/*function mouseon() {
+        document.getElementById('div').style.display='block';
+        }
+function mouseoff() {
+        document.getElementById('div').style.display='none';
+        }*/
 </script>
 </head>
 <style type="text/css"> 
@@ -47,6 +31,40 @@ function mouseoff() {
         </div>
     </div>
 <div id="View">
+
+    <!--div class="modal-hide" id="newDayDate">
+        <div class="modal-header">
+            <h3>New Day</h3>
+        </div>
+        <div class="modal-body">
+            <p>This is amodal dialogue</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn">close</a>
+            <a href="#" class="btn btn-primary">Save</a>
+        </div>
+    </div>
+    <!-- Modal -->
+    <!--<div class="modal fade" id="newDayDate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">New Day</h4>
+          </div>
+          <div class="modal-body">
+            Datepicker
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+
     <!-- Add Activity -->
     <div id="addActivityView" class="page">
         <div class="container">
@@ -113,7 +131,7 @@ function mouseoff() {
 
                   <div class="col-md-8 col-md-offset-2" id="activityCont">
                      <div id="parkedActivityView">
-                        <ul id="activityList" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <ul id="activityList" class="connectedSortant"  ondragover="return false">
 
                         <div id="div" style="display: none"></div>
                         </ul>
@@ -126,7 +144,7 @@ function mouseoff() {
                         <div class="col-md-6 col-md-offset-2">
                             Start Time:
                             <p>
-                            <input type="time" class="form-control" id="startTimeHour" value="08:00">
+                            <input type="time" class="form-control" id="startTime" value="08:00">
                             </p>
                             <p>End Time: VarEndTime</p>
                             <p>Total Length: VarCalcLength min</p>
@@ -152,7 +170,7 @@ function mouseoff() {
                         <div class="row">
 
                             <div class="col-md-8 col-md-offset-2" id= "dayBox">
-                                <ul id="Schedule" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <ul id="schedule" class="connectedSortable" ondragover="return false">
 
                                 </ul>
                             </div>
