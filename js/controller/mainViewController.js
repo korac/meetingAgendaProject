@@ -5,6 +5,8 @@ var MainViewController = function (view, model) {
 
 
     var _this = this;
+    var _newDayDate = "March 15";
+    var _newDayName = "Meeting";
 
 
 
@@ -12,8 +14,7 @@ var MainViewController = function (view, model) {
         var day = new Day(8,0);
         _this._model.addDay(day);
         //console.log(_this._model.days);
-        $('<button type="button" class="btn btn-lg btn-default" id="dayButton">Wednesday</button>').appendTo('#scheduleView');
+        $('<button type="button" class="btn btn-lg btn-default" id="dayButton">'+ _newDayDate +'<br>'+ _newDayName +'</button>').appendTo('#scheduleView');
     	});
-
 
 }

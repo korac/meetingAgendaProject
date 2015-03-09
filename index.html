@@ -160,15 +160,16 @@ function mouseoff() {
                 </div>
             </div>
 
-            <div class="col-md-3 columns">
-                <div>
-
-                    <div class="col-md-8 col-md-offset-2">
-                    <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDayBtn"><span class="glyphicon glyphicon-plus"></span> Add Day</button>
-                    <hr>
+            <div class="col-md-4 columns">
+                <div class="col-md-8 col-md">
+                    <div>
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDayBtn">
+                            <span class="glyphicon glyphicon-plus"></span> Add Day
+                        </button>
+                        <hr>
                     </div>
                     <div class="btn-group-vertical" id="scheduleView" role="group" aria-label="...">
-                        <button type="button" class="btn btn-lg btn-default" id="dayButton">Monday|March 25, 2025</button>
+                        <button type="button" class="btn btn-lg btn-default" id="dayButton">Mon | March 25, '15</button>
                         <button type="button" class="btn btn-lg btn-default" id="dayButton">Tuesday</button>
                         <button type="button" class="btn btn-lg btn-default" id="dayButton">Wednesday</button>
                         <!-- Here we are adding the buttons with a for loop by getting the info at a click on the "Add Day"-button. Every Button in this list triggers a certain view. -->
