@@ -8,6 +8,8 @@ var MainView = function (container, model) {
 
 
     this.addDayBtn = this._container.find("#addDayBtn");
+    this.draggedAct = this._container.find("#drag0");
+    this.dragTarget = this._container.find("#Schedule");
 
     this.update = function () {
        
