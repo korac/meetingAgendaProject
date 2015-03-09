@@ -10,28 +10,15 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css"/>
 <script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
 
-    console.log(data);
-}
-
-function mouseon() { 
-        document.getElementById('div').style.display='block'; 
-        } 
-function mouseoff() { 
-        document.getElementById('div').style.display='none'; 
-        }     
+/*function mouseon() {
+        document.getElementById('div').style.display='block';
+        }
+function mouseoff() {
+        document.getElementById('div').style.display='none';
+        }*/
 </script>
 </head>
 <style type="text/css"> 
@@ -113,7 +100,7 @@ function mouseoff() {
 
                   <div class="col-md-8 col-md-offset-2" id="activityCont">
                      <div id="parkedActivityView">
-                        <ul id="activityList" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <ul id="activityList" class="connectedSortant"  ondragover="return false">
 
                         <div id="div" style="display: none"></div>
                         </ul>
@@ -152,7 +139,7 @@ function mouseoff() {
                         <div class="row">
 
                             <div class="col-md-8 col-md-offset-2" id= "dayBox">
-                                <ul id="Schedule" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <ul id="schedule" class="connectedSortable" ondragover="return false">
 
                                 </ul>
                             </div>
