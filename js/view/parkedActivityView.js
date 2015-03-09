@@ -1,28 +1,25 @@
-var ActDisplayView = function (container, model) {
+var ParkedActivityView = function (container, model) {
 
     model.addObserver(this);
 
     this._container = container;
     this._model = model;
 
-
     var _this = this;
 
-    //this.activityName;
-    this.listbody = this._container.find("#activityList");
 
-    var activityName;
-    
+    this.listbody = this._container.find("#activityList");
+    this.acttip = this._container.find("#div");
     this.update = function () {
 
+        console.log(this._model.parkedActivities);
 
         this.listbody.empty();
-        console.log(this._model.parkedActivities.length);
 
         for(var i = 0; i < this._model.parkedActivities.length; i++)
         {
-            //console.log(this._model.parkedActivities[i].getName());
-            var colorClass = "";
+            var colorClass;
+
             switch(_this._model.parkedActivities[i].getType()){
 
                 case "Presentation": colorClass = "blueBack"; break;
@@ -32,16 +29,22 @@ var ActDisplayView = function (container, model) {
 
             }
 
-
-             htmlCode = '<li class="list-group-item parkedActivity '
-            + colorClass + '">'
+            htmlCode = '<li onmouseover="shouhui()" onmouseout="fangzou()" class="list-group-item parkedActivity '
+            + colorClass + '" draggable="true">'
             + _this._model.parkedActivities[i].getLength()
             + " min" + "  |   "
-            + _this._model.parkedActivities[i].getName() + '</li>';
+            + _this._model.parkedActivities[i].getName() + '</a></li>';
+
+            tip = '_this._model.parkedActivities[i].getName()';
 
 
             this.listbody.append(htmlCode);
+            this.acttip.append(tip);
+
+
+
         }
+        
 
        
 

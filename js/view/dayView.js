@@ -1,5 +1,5 @@
 
-var MainView = function (container, model) {
+var DayView = function (container, model) {
 
     model.addObserver(this);
 
@@ -7,11 +7,10 @@ var MainView = function (container, model) {
     this._model = model;
 
 
-    this.addDayBtn = this._container.find("#addDayBtn");
-    
     this.update = function () {
-       
-        
+
+
     }
+
 
 }
