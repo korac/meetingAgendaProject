@@ -9,9 +9,10 @@ var MainViewController = function (view, model) {
 
     this._view.addDayBtn.on("click", function(){
 
-        var day = new Day(8,0);
-        _this._model.addDay(day);
+       // var day = new Day(8,0);
+        model.addDay();
         console.log(_this._model.days);
+        console.log('#days = ' + model.days.length);
     });
 
 
