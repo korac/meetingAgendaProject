@@ -26,17 +26,12 @@ function drop(ev) {
     console.log(data);
 }
 
-function mouseon() { 
-        document.getElementById('div').style.display='block'; 
-        } 
-function mouseoff() { 
-        document.getElementById('div').style.display='none'; 
-        }     
+
 </script>
 </head>
-<style type="text/css"> 
+<!--<style type="text/css"> 
 #div{ background:#CCC; width:500px; height:400px; display:none; } 
-</style>
+</style>-->
 <body>
 
     <!-- Top Bar -->
@@ -115,7 +110,7 @@ function mouseoff() {
                      <div id="parkedActivityView">
                         <ul id="activityList" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
 
-                        <div id="div" style="display: none"></div>
+                        <!--<div id="div" style="display: block"></div>-->
                         </ul>
                     </div>
                   </div>

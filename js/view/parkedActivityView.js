@@ -7,9 +7,9 @@ var ParkedActivityView = function (container, model) {
 
     var _this = this;
 
+    var printactivity;
 
     this.listbody = this._container.find("#activityList");
-    this.acttip = this._container.find("#div");
 
     this.update = function () {
 
@@ -30,25 +30,42 @@ var ParkedActivityView = function (container, model) {
 
             }
 
+           htmlCode = '<li id="drag'
+            + i + '" class="list-group-item parkedActivity '
+            + colorClass + '"draggable="true"  ondragstart="drag(event)">'
+            + _this._model.parkedActivities[i].getLength()
+            + " min" + "  |   "
+            + _this._model.parkedActivities[i].getName() + '</li>';
 
-            htmlCode = '<li onmouseover="mouseon()" onmouseout="mouseoff()" id="drag'
+            /*printactivity = function(){
+                var $actrow = $("<li></li>");
+                $actrow.attr("length", Activity.getLength());
+                $actrow.attr("name", Activity.getName());
+                var $actname = "<div></div>";
+                var $actlength = "<div</div>";
+
+                $actname.append(Activity.getName());
+                $actlength.append(Activity.getLength());
+                $actrow.append($actlength);
+                $actrow.append($actname);
+            }*/
+
+        /*    htmlCode = '<li <a data-toggle="tooltip" title="_this._model.parkedActivities[i].getDescription()"> id="drag'
             + i + '" class="list-group-item parkedActivity '
             + colorClass + '" draggable="true"  ondragstart="drag(event)">'
             + _this._model.parkedActivities[i].getLength()
             + " min" + "  |   "
-            + _this._model.parkedActivities[i].getName() + '</a></li>';
-
-
-            tip = '_this._model.parkedActivities[i].getName()';
-
+            + _this._model.parkedActivities[i].getName() + '</a></li>';*/
 
             this.listbody.append(htmlCode);
-            this.acttip.append(tip);
-
-
+            
 
         }
         
+
+
+         
+
 
        
 
