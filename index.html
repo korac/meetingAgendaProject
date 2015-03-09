@@ -147,12 +147,12 @@ function drop(ev) {
 
             <div class="col-md-2 columns">
                 <div id="scheduleView">
-                    <div>
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-success">Mon, Mar 25. 2015</li>
-                            <li class="list-group-item list-group-item-info">Tue, Mar 26. 2015</li>
-                         </ul>
-                    </div>
+                        <div class="btn-group-vertical" role="group" aria-label="...">
+                          <button type="button" class="btn btn-default" id="dayButton">Monday</button>
+                          <button type="button" class="btn btn-default" id="dayButton">Tuesday</button>
+                          <button type="button" class="btn btn-default" id="dayButton">Wednesday</button>
+                          <!-- Here we are adding the buttons with a for loop by getting the info at a click on the "Add Day"-button. Every Button in this list triggers a certain view. -->
+                        </div>
                     <div>
                         <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" id="addDayBtn"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
                     </div>
@@ -173,6 +173,7 @@ function drop(ev) {
     <script src="js/view/dayView.js"></script>
     <script src="js/view/parkedActivityView.js"></script>
     <script src="js/view/progressBarView.js"></script>
+    <script src="js/view/ScheduleView.js"></script>
     
     <!-- Controller -->
     <script src="js/controller/addActivityController.js"></script>
@@ -180,13 +181,8 @@ function drop(ev) {
     <script src="js/controller/mainViewController.js"></script>
     <script src="js/controller/parkedActivityController.js"></script>
     <script src="js/controller/dayController.js"></script>
+    <script src="js/controller/ScheduleController.js"></script>
 
-    
-    <!-- Time Spinner -->
-    <!-- link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" -->
-    <!-- script src="/resources/demos/external/globalize/globalize.js"></script>
-    <script src="/resources/demos/external/globalize/globalize.culture.de-DE.js"></script>
-    <!--script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script-->
 
 </body>
 </html>
