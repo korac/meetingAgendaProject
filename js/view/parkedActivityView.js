@@ -31,7 +31,7 @@ var ParkedActivityView = function (container, model) {
             }
 
 
-            htmlCode = '<li onmouseover="mouseon()" onmouseout="mouseoff()" id="drag'
+            var htmlCode = '<li  id="drag'
             + i + '" class="list-group-item parkedActivity '
             + colorClass + '" draggable="true"  ondragstart="drag(event)">'
             + _this._model.parkedActivities[i].getLength()
@@ -69,6 +69,7 @@ var ParkedActivityView = function (container, model) {
         
     }    
 
+    this.update();
 
 
 }
