@@ -1,4 +1,4 @@
-    /**
+   /**
  * Created by Kristijan on 3.3.2015..
  */
 var AddActivityController = function (view, model) {
@@ -34,8 +34,6 @@ var AddActivityController = function (view, model) {
         _this._model.addActivity(activity);
 
         console.log(_this._model.parkedActivities[0].getName());
-
-
 
     });
 
