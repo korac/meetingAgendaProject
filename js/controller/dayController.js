@@ -11,6 +11,9 @@ var DayController = function (view, model) {
     var _this = this;
     var _startTime = model._start;
 
+    
+
+
 };
 
 

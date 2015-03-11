@@ -30,19 +30,38 @@ var ParkedActivityView = function (container, model) {
 
             }
 
+            // new version in js
+            var li = document.createElement("li");
+            li.id = "drag" + i;
+            li.className = "list-group-item parkedActivity " + colorClass;
+            li.draggable = true;
+            li.innerHTML = _this._model.parkedActivities[i].getLength()
+            + " min" + "  |   "
+            + _this._model.parkedActivities[i].getName();
+
+            $(li).on("dragstart", function(e) {
+                e.originalEvent.dataTransfer.setData("draggable", "#" + this.id);
+            });
+
+            this.listbody.append(li);
+
+            /*
 
             var htmlCode = '<li  id="drag'
             + i + '" class="list-group-item parkedActivity '
             + colorClass + '" draggable="true"  ondragstart="drag(event)">'
             + _this._model.parkedActivities[i].getLength()
             + " min" + "  |   "
-            + _this._model.parkedActivities[i].getName() + '</a></li>';
+            + _this._model.parkedActivities[i].getName() + '</li>';
 
 
-            tip = '_this._model.parkedActivities[i].getName()';
-
+            
 
             this.listbody.append(htmlCode);
+            */
+            
+            tip = '_this._model.parkedActivities[i].getName()';
+            
             this.acttip.append(tip);
 
 
