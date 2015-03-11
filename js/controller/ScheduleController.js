@@ -9,6 +9,16 @@ var ScheduleController = function (view, model) {
 
 
     var _this = this;
+	
 
+    /*$('#addNewDay').on('click', function() {
+		console.log("Clicked saveButton to change view to MainView");
+		$("#newDayDate").show();
+	});*/
+
+	$('#addDayBtn').on('click', function() {
+		console.log("Clicked button to add a day");
+		$("#newDayDate").modal("show");
+	});
 
 }

@@ -215,7 +215,7 @@ function Model(){
 	
 	this.notifyObservers = function (args) {
 	    for (var i = 0; i < this.listeners.length; i++){
-	       this.listeners[i].update(args);
+			this.listeners[i].update(args);
 	    }
 	};
 	
