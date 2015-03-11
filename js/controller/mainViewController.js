@@ -15,8 +15,8 @@ var MainViewController = function (view, model) {
         _this._model.addDay(day);
             //alert("Here is a Datepicker!");
             //console.log(_this._model.days);
-            //$('<button type="button" class="btn btn-lg btn-default" id="dayButton">'+ _newDayDate +'<br>'+ _newDayName +'</button>').appendTo('#scheduleView');
-            //event.preventDefault();
+            $('<button type="button" class="btn btn-lg btn-default" id="dayButton">'+ _newDayDate +'<br>'+ _newDayName +'</button>').appendTo('#scheduleView');
+            event.preventDefault();
 
     });
 
