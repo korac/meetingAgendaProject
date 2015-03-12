@@ -215,7 +215,7 @@ function Model(){
 	
 	this.notifyObservers = function (args) {
 	    for (var i = 0; i < this.listeners.length; i++){
-	       this.listeners[i].update(args);
+			this.listeners[i].update(args);
 	    }
 	};
 	
@@ -230,11 +230,12 @@ function Model(){
 // you can use this method to create some test data and test your implementation
 function createTestData(model){
 	model.addDay();
-	model.addActivity(new Activity("Introduction",10,0,""),0);
-	model.addActivity(new Activity("Idea 1",30,0,""),0);
-	model.addActivity(new Activity("Working in groups",35,1,""),0);
-	model.addActivity(new Activity("Idea 1 discussion",15,2,""),0);
-	model.addActivity(new Activity("Coffee break",20,3,""),0);
+	model.addActivity(new Activity(model,"Introduction",10,0,""),0);
+    model.addActivity(new Activity(model,"Idea 1",30,0,""),0);
+	model.addActivity(new Activity(model,"Working in groups",35,1,""),0);
+	model.addActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
+	model.addActivity(new Activity(model,"Coffee break",20,3,""),0);
+    console.log(model.parkedActivities);
 	
 	console.log("Day Start: " + model.days[0].getStart());
 	console.log("Day End: " + model.days[0].getEnd());

@@ -31,20 +31,4 @@ var MainController = function (container, model) {
 		$(".page").hide();
 		$("#addActivityView").show();
 	});
-
- 	//$('#view').ready(function(){
-    	//$('#progress-bar').tooltip();
-	//});
-/*
-  	$('#').on('click', function() {
-		//console.log("Clicked saveButton to change view to MainView");
-		$(".container").hide();
-		$("#M").show();
-	});
-
-    $('#').on('click', function() {
-		//console.log("Clicked saveButton to change view to MainView");
-		$(".container").hide();
-		$("#M").show();
-	});*/
 }

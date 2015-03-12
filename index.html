@@ -10,29 +10,15 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css"/>
 <script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-
-    console.log(data);
-}
 
 
 </script>
 </head>
-<!--<style type="text/css"> 
+<style type="text/css"> 
 #div{ background:#CCC; width:500px; height:400px; display:none; } 
-</style>-->
+</style>
 <body>
+
 
     <!-- Top Bar -->
     <div id="topBar">
@@ -41,7 +27,11 @@ function drop(ev) {
             <hr/>   
         </div>
     </div>
+
+
 <div id="View">
+
+
     <!-- Add Activity -->
     <div id="addActivityView" class="page">
         <div class="container">
@@ -108,10 +98,9 @@ function drop(ev) {
 
                   <div class="col-md-8 col-md-offset-2" id="activityCont">
                      <div id="parkedActivityView">
-                        <ul id="activityList" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div id="activityList" class="connectedSortable"  ondragover="return false">
 
-                        <!--<div id="div" style="display: block"></div>-->
-                        </ul>
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -121,7 +110,7 @@ function drop(ev) {
                         <div class="col-md-6 col-md-offset-2">
                             Start Time:
                             <p>
-                            <input type="time" class="form-control" id="startTimeHour" value="08:00">
+                            <input type="time" class="form-control" id="startTime" value="08:00">
                             </p>
                             <p>End Time: VarEndTime</p>
                             <p>Total Length: VarCalcLength min</p>
@@ -131,23 +120,23 @@ function drop(ev) {
                            <div class="progress" id="percentage">
                                 <!-- we need to put in some variables for the percentage instead of the hard coded things --> <!--We will ;) -->
                                <div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: 10%">
-                                  <span class="sr-only">25% Complete (discussion)</span>
+                                  <span class="sr-only">(discussion)</span>
                                 </div>
                                <div class="progress-bar progress-bar-danger" id="groupworkPercentage" style="width: 20%">
-                                  <span class="sr-only">25% Complete (groupwork)</span>
+                                  <span class="sr-only">(groupwork)</span>
                                </div>
                                <div class="progress-bar progress-bar-info" id="presentationPercentage" style="width: 40%">
-                                  <span class="sr-only">20% Complete (presentation)</span>
+                                  <span class="sr-only">(presentation)</span>
                                </div>
                                <div class="progress-bar progress-bar-warning" id="breakPercentage" style="width: 30%">
-                                  <span class="sr-only">30% Complete (break)</span>
+                                  <span class="sr-only">(break)</span>
                                </div>
                            </div>
                         </div>
                         <div class="row">
 
                             <div class="col-md-8 col-md-offset-2" id= "dayBox">
-                                <ul id="Schedule" class="connectedSortable" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <ul id="schedule" class="connectedSortable" ondragover="return false">
 
                                 </ul>
                             </div>
@@ -155,16 +144,19 @@ function drop(ev) {
                 </div>
             </div>
 
-            <div class="col-md-2 columns">
-                <div id="scheduleView">
+            <div class="col-md-4 columns">
+                <div class="col-md-8 col-md" id="scheduleView">
                     <div>
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-success">Mon, Mar 25. 2015</li>
-                            <li class="list-group-item list-group-item-info">Tue, Mar 26. 2015</li>
-                         </ul>
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDayBtn">
+                            <span class="glyphicon glyphicon-plus"></span> Add Day
+                        </button>
+                        <hr>
                     </div>
-                    <div>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" id="addDayBtn"><span class="glyphicon glyphicon-plus"></span> Add a Day</button>
+                    <div class="btn-group-vertical btn-block" id="scheduleView" role="group">
+                        <!--button type="button" class="btn btn-lg btn-default" id="dayButton1">Mon | March 25, '15</button>
+                        <button type="button" class="btn btn-lg btn-default" id="dayButton2">Tuesday</button>
+                        <button type="button" class="btn btn-lg btn-default" id="dayButton3">Wednesday</button>
+                        <!-- Here we are adding the buttons with a for loop by getting the info at a click on the "Add Day"-button. Every Button in this list triggers a certain view. -->
                     </div>
                 </div>
             </div>
@@ -173,6 +165,8 @@ function drop(ev) {
 </div>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 
     <!-- Scripts -->
     <script src="js/app.js"></script>
@@ -183,6 +177,7 @@ function drop(ev) {
     <script src="js/view/dayView.js"></script>
     <script src="js/view/parkedActivityView.js"></script>
     <script src="js/view/progressBarView.js"></script>
+    <script src="js/view/ScheduleView.js"></script>
     
     <!-- Controller -->
     <script src="js/controller/addActivityController.js"></script>
@@ -190,15 +185,34 @@ function drop(ev) {
     <script src="js/controller/mainViewController.js"></script>
     <script src="js/controller/parkedActivityController.js"></script>
     <script src="js/controller/dayController.js"></script>
+    <script src="js/controller/ScheduleController.js"></script>
 
-    
-    <!-- Time Spinner -->
-    <!-- link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" -->
-    <!-- script src="/resources/demos/external/globalize/globalize.js"></script>
-    <script src="/resources/demos/external/globalize/globalize.culture.de-DE.js"></script>
 
-    <!-script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script-->
 
+    <!-- Modal -->
+    <div class="modal fade" id="newDayModal" tabindex="-1" role="dialog" data-backdrop="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Put in a name for the new Day</h4>
+          </div>
+          <div class="modal-body">
+            <div>
+                Meeting Name: <input type="text" id="newDayName" maxlength="15" size="15" />
+            </div>
+            <div>
+                Meeting Date: <input type="date" id="newDayDate"/>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="saveNewDate">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </body>
+
 </html>
