@@ -6,7 +6,9 @@ $(function(){
     // this is the instance of our main model
     // this is what you should use in your application
     var model = new Model();
-    createTestData(model);
+
+    //createTestData(model);
+
 
     // Views
     var addActivityView = new AddActivityView($("#addActivityView"), model);
