@@ -11,6 +11,8 @@ var scheduleView = function(container, model){
 
     var _this = this;
 
-   
+    this.update = function() {
+
+	};
 
 }

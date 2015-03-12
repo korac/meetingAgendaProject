@@ -12,19 +12,13 @@
 <script>
 
 
-
-/*function mouseon() {
-        document.getElementById('div').style.display='block';
-        }
-function mouseoff() {
-        document.getElementById('div').style.display='none';
-        }*/
 </script>
 </head>
 <style type="text/css"> 
 #div{ background:#CCC; width:500px; height:400px; display:none; } 
 </style>
 <body>
+
 
     <!-- Top Bar -->
     <div id="topBar">
@@ -33,44 +27,9 @@ function mouseoff() {
             <hr/>   
         </div>
     </div>
+
+
 <div id="View">
-
-
-    <!-- Modal popup for new day >
-    <div class="modal-hide" id="newDayDate">
-        <div class="modal-header">
-            <h3>New Day</h3>
-        </div>
-
-        <div class="modal-body">
-            <p>This is amodal dialogue</p>
-        </div>
-
-        <div class="modal-footer">
-            <a href="#" class="btn">close</a>
-            <a href="#" class="btn btn-primary">Save</a>
-        </div>
-    </div -->
-
-    <!-- Modal -->
-    <div class="modal fade" id="newDayDate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">New Day</h4>
-          </div>
-          <div class="modal-body">
-            Datepicker
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
 
     <!-- Add Activity -->
@@ -162,16 +121,16 @@ function mouseoff() {
                            <div class="progress" id="percentage">
                                 <!-- we need to put in some variables for the percentage instead of the hard coded things --> <!--We will ;) -->
                                <div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: 10%">
-                                  <span class="sr-only">10% Complete (discussion)</span>
+                                  <span class="sr-only">(discussion)</span>
                                 </div>
                                <div class="progress-bar progress-bar-danger" id="groupworkPercentage" style="width: 20%">
-                                  <span class="sr-only">20% Complete (groupwork)</span>
+                                  <span class="sr-only">(groupwork)</span>
                                </div>
                                <div class="progress-bar progress-bar-info" id="presentationPercentage" style="width: 40%">
-                                  <span class="sr-only">40% Complete (presentation)</span>
+                                  <span class="sr-only">(presentation)</span>
                                </div>
                                <div class="progress-bar progress-bar-warning" id="breakPercentage" style="width: 30%">
-                                  <span class="sr-only">30% Complete (break)</span>
+                                  <span class="sr-only">(break)</span>
                                </div>
                            </div>
                         </div>
@@ -187,17 +146,17 @@ function mouseoff() {
             </div>
 
             <div class="col-md-4 columns">
-                <div class="col-md-8 col-md">
+                <div class="col-md-8 col-md" id="scheduleView">
                     <div>
                         <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDayBtn">
                             <span class="glyphicon glyphicon-plus"></span> Add Day
                         </button>
                         <hr>
                     </div>
-                    <div class="btn-group-vertical" id="scheduleView" role="group" aria-label="...">
-                        <button type="button" class="btn btn-lg btn-default" id="dayButton">Mon | March 25, '15</button>
-                        <button type="button" class="btn btn-lg btn-default" id="dayButton">Tuesday</button>
-                        <button type="button" class="btn btn-lg btn-default" id="dayButton">Wednesday</button>
+                    <div class="btn-group-vertical btn-block" id="scheduleView" role="group">
+                        <!--button type="button" class="btn btn-lg btn-default" id="dayButton1">Mon | March 25, '15</button>
+                        <button type="button" class="btn btn-lg btn-default" id="dayButton2">Tuesday</button>
+                        <button type="button" class="btn btn-lg btn-default" id="dayButton3">Wednesday</button>
                         <!-- Here we are adding the buttons with a for loop by getting the info at a click on the "Add Day"-button. Every Button in this list triggers a certain view. -->
                     </div>
                 </div>
@@ -221,6 +180,8 @@ function mouseoff() {
 });
   </script> -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 
     <!-- Scripts -->
     <script src="js/app.js"></script>
@@ -241,5 +202,32 @@ function mouseoff() {
     <script src="js/controller/dayController.js"></script>
     <script src="js/controller/ScheduleController.js"></script>
 
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="newDayModal" tabindex="-1" role="dialog" data-backdrop="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Put in a name for the new Day</h4>
+          </div>
+          <div class="modal-body">
+            <div>
+                Meeting Name: <input type="text" id="newDayName" maxlength="15" size="15" />
+            </div>
+            <div>
+                Meeting Date: <input type="date" id="newDayDate"/>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="saveNewDate">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </body>
+
 </html>
