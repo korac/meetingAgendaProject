@@ -32,7 +32,9 @@ function mouseoff() {
     </div>
 <div id="View">
 
-    <!--div class="modal-hide" id="newDayDate">
+
+    <!-- Modal popup for new day >
+    <div class="modal-hide" id="newDayDate">
         <div class="modal-header">
             <h3>New Day</h3>
         </div>
@@ -43,9 +45,13 @@ function mouseoff() {
             <a href="#" class="btn">close</a>
             <a href="#" class="btn btn-primary">Save</a>
         </div>
+<<<<<<< HEAD
     </div>
+=======
+    </div -->
+
     <!-- Modal -->
-    <!--<div class="modal fade" id="newDayDate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="newDayDate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -61,7 +67,7 @@ function mouseoff() {
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
 
 
@@ -131,7 +137,7 @@ function mouseoff() {
 
                   <div class="col-md-8 col-md-offset-2" id="activityCont">
                      <div id="parkedActivityView">
-                        <ul id="activityList" class="connectedSortant"  ondragover="return false">
+                        <ul id="activityList" class="connectedSortable"  ondragover="return false">
 
                         <div id="div" style="display: none"></div>
                         </ul>
@@ -154,13 +160,13 @@ function mouseoff() {
                            <div class="progress" id="percentage">
                                 <!-- we need to put in some variables for the percentage instead of the hard coded things --> <!--We will ;) -->
                                <div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: 10%">
-                                  <span class="sr-only">25% Complete (discussion)</span>
+                                  <span class="sr-only">10% Complete (discussion)</span>
                                 </div>
                                <div class="progress-bar progress-bar-danger" id="groupworkPercentage" style="width: 20%">
-                                  <span class="sr-only">25% Complete (groupwork)</span>
+                                  <span class="sr-only">20% Complete (groupwork)</span>
                                </div>
                                <div class="progress-bar progress-bar-info" id="presentationPercentage" style="width: 40%">
-                                  <span class="sr-only">20% Complete (presentation)</span>
+                                  <span class="sr-only">40% Complete (presentation)</span>
                                </div>
                                <div class="progress-bar progress-bar-warning" id="breakPercentage" style="width: 30%">
                                   <span class="sr-only">30% Complete (break)</span>
@@ -170,7 +176,7 @@ function mouseoff() {
                         <div class="row">
 
                             <div class="col-md-8 col-md-offset-2" id= "dayBox">
-                                <ul id="schedule" class="connectedSortable" ondragover="return false">
+                                <ul id="schedule" class="connectedSortableDay" ondragover="return false">
 
                                 </ul>
                             </div>
@@ -199,7 +205,19 @@ function mouseoff() {
 </div>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
-
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- Latest Sortable -->
+  <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+ <!-- <script>
+  Sortable.create(activityList,{
+  group: "sorting",
+  sort: true
+});
+  Sortable.create(schedule,{
+  group: "sorting",
+  sort: true
+});
+  </script> -->
     <!-- Scripts -->
     <script src="js/app.js"></script>
     <script src="js/model/agendaModel.js"></script>

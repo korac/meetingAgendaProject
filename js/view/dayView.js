@@ -1,5 +1,5 @@
 
-var DayView = function (container, model) {
+var DayView = function (container, model, day) {
 
     model.addObserver(this);
 
@@ -8,6 +8,21 @@ var DayView = function (container, model) {
 
     var _this = this;
     this.dayActivities = this._container.find("#schedule");
+     this.dayActivities = this._container.find("#schedule");
+ this.parkedActivityView = this._container.find("ParkedActivityView");
+this.connectedSortableDay = this._container.find(".connectedSortableDay");
+this.dayBox = this._container.find("#dayBox");
+
+
+    //prevents the dayview container from blocking when smth is draggedover it
+    container.on("dragover", function(e) {
+        e.preventDefault();
+    });
+
+    container.on("drop", function(e) {
+        var draggable = e.originalEvent.dataTransfer.getData("draggable");
+        $("#schedule").append($(draggable));
+    });
 
     this.update = function () {
 

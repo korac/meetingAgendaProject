@@ -2,7 +2,7 @@
  * Created by Jonathan on 8.3.2015.
  */
 
-var scheduleView = function(container, model){
+var scheduleView = function(container, model,day){
 
     model.addObserver(this);
 

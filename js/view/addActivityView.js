@@ -1,7 +1,7 @@
 /**
  * Created by Kristijan on 3.3.2015..
  */
-var AddActivityView = function (container, model) {
+var AddActivityView = function (container, model, activity, day) {
 
     model.addObserver(this);
 
@@ -23,7 +23,7 @@ var AddActivityView = function (container, model) {
         this.inputDescription.val('');
     }
    
-
+this.update();
 
 
   /* function updateFields(act)
