@@ -1,7 +1,7 @@
    /**
  * Created by Kristijan on 3.3.2015..
  */
-var AddActivityController = function (view, model, activity, day) {
+var AddActivityController = function (view, model) {
 
     this._view = view;
     this._model = model;
@@ -31,7 +31,7 @@ var AddActivityController = function (view, model, activity, day) {
 
         var activity = new Activity(_this._model, _this._view.inputName.val(), _this._view.inputLength.val(), temporaryType, _this._view.inputDescription.val());
 
-        _this._model.addParkedActivity(activity);
+        _this._model.addActivity(activity);
 
         console.log(_this._model.parkedActivities[0].getName());
 

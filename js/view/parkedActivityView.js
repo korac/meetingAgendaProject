@@ -10,14 +10,7 @@ var ParkedActivityView = function (container, model) {
 
     this.listbody = this._container.find("#activityList");
     this.acttip = this._container.find("#div");
-     this.dayActivities = this._container.find("#schedule");
- this.parkedActivityView = this._container.find("ParkedActivityView");
-this.connectedSortable = this._container.find(".connectedSortable");
 
- container.on("drop", function(e) {
-        var draggable = e.originalEvent.dataTransfer.getData("draggable");
-        $("#activityList").append($(draggable));
-    });
     this.update = function () {
 
         console.log(this._model.parkedActivities);

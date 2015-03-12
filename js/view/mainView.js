@@ -1,5 +1,5 @@
 
-var MainView = function (container, model, day) {
+var MainView = function (container, model) {
 
     model.addObserver(this);
 
@@ -12,8 +12,8 @@ var MainView = function (container, model, day) {
     this.dragTarget = this._container.find("#schedule");
 
     this.update = function () {
-        console.log(this._model.parkedActivities);
+       
         
     }
-this.update();
+
 }
