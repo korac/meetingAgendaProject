@@ -214,13 +214,13 @@ function Model(){
 	this.listeners = [];
 	
 	this.notifyObservers = function (args) {
-	    for (var i = 0; i < this.listeners.length; i++){
-	       this.listeners[i].update(args);
-	    }
+	    for (var i = 0; i < this.listeners.length; i++){
+	       this.listeners[i].update(args);
+	    }
 	};
 	
 	this.addObserver = function (listener) {
-	    this.listeners.push(listener);
+	    this.listeners.push(listener);
 	};
 	//*** END OBSERVABLE PATTERN ***
 }
