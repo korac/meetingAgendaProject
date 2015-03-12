@@ -62,7 +62,7 @@ var ParkedActivityView = function (container, model) {
                     activityDiv.addClass('redBack'); break;  
             }
 
-
+   
             activityBoxDiv.append(activityDiv);
 
             $(activityBoxDiv).mouseover(function(){
@@ -73,7 +73,7 @@ var ParkedActivityView = function (container, model) {
 
             this.listbody.append(activityBoxDiv);
         }
-            
+
 
            
 
