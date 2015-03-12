@@ -12,19 +12,13 @@
 <script>
 
 
-
-/*function mouseon() {
-        document.getElementById('div').style.display='block';
-        }
-function mouseoff() {
-        document.getElementById('div').style.display='none';
-        }*/
 </script>
 </head>
 <style type="text/css"> 
 #div{ background:#CCC; width:500px; height:400px; display:none; } 
 </style>
 <body>
+
 
     <!-- Top Bar -->
     <div id="topBar">
@@ -33,28 +27,9 @@ function mouseoff() {
             <hr/>   
         </div>
     </div>
+
+
 <div id="View">
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="newDayDate" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">New Day</h4>
-          </div>
-          <div class="modal-body">
-            Datepicker
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
 
     <!-- Add Activity -->
@@ -178,8 +153,8 @@ function mouseoff() {
                         </button>
                         <hr>
                     </div>
-                    <div class="btn-group-vertical" id="scheduleView" role="group">
-                        <button type="button" class="btn btn-lg btn-default" id="dayButton1">Mon | March 25, '15</button>
+                    <div class="btn-group-vertical btn-block" id="scheduleView" role="group">
+                        <!--button type="button" class="btn btn-lg btn-default" id="dayButton1">Mon | March 25, '15</button>
                         <button type="button" class="btn btn-lg btn-default" id="dayButton2">Tuesday</button>
                         <button type="button" class="btn btn-lg btn-default" id="dayButton3">Wednesday</button>
                         <!-- Here we are adding the buttons with a for loop by getting the info at a click on the "Add Day"-button. Every Button in this list triggers a certain view. -->
@@ -192,6 +167,7 @@ function mouseoff() {
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 
     <!-- Scripts -->
     <script src="js/app.js"></script>
@@ -212,5 +188,32 @@ function mouseoff() {
     <script src="js/controller/dayController.js"></script>
     <script src="js/controller/ScheduleController.js"></script>
 
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="newDayModal" tabindex="-1" role="dialog" data-backdrop="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Put in a name for the new Day</h4>
+          </div>
+          <div class="modal-body">
+            <div>
+                Meeting Name: <input type="text" id="newDayName" maxlength="15" size="15" />
+            </div>
+            <div>
+                Meeting Date: <input type="date" id="newDayDate"/>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="saveNewDate">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </body>
+
 </html>
