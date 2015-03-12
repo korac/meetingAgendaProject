@@ -18,37 +18,29 @@ var ParkedActivityView = function (container, model) {
         this.listbody.empty();
         for(var i = 0; i < model.parkedActivities.length; i++){
 
-            // activity box div
             var activityBoxDiv = $('<div>');
             activityBoxDiv.addClass('parkedactivityBox');
 
-            //activity div
             var activityDiv = $('<div>');
             activityDiv.addClass('row');
             activityDiv.addClass('list-group-item parkedActivity');
             activityDiv.id = "drag" + i;
             activityDiv.attr('draggable', true);
 
-            // activity length
             var lengthSpan = $('<span>');
             lengthSpan.html(_this._model.parkedActivities[i].getLength() + 'min');
             lengthSpan.addClass('col-md-3');
 
-            // activity name
             var nameSpan = $('<span>');
             nameSpan.html(_this._model.parkedActivities[i].getName());
             nameSpan.addClass('col-md-7');
 
-            // append activity spans to activity div
             activityDiv.append(lengthSpan);
             activityDiv.append(nameSpan);
 
             $(activityBoxDiv).on("dragstart", function(e) {
                 e.originalEvent.dataTransfer.setData("draggable", "#" + this.id);
             });
-
-            //color
-            
 
             switch(_this._model.parkedActivities[i].getTypeId()){
 
@@ -61,14 +53,25 @@ var ParkedActivityView = function (container, model) {
                 case 3:
                     activityDiv.addClass('redBack'); break;  
             }
-
    
             activityBoxDiv.append(activityDiv);
 
-            $(activityBoxDiv).mouseover(function(){
-                    var showID = $(activityDiv.id);
+            //$(activityBoxDiv).mouseover(function(){
+              //      var showID = $(activityDiv.id);
                      //alert(showID);
-                     console.log(showID);
+                     //console.log(showID);
+            //});
+
+            activityBoxDiv.tooltip({
+                title: 'Description: ' + _this._model.parkedActivities[i].getDescription(),
+                track:true,
+                placement:  'bottom',
+                open: function(event, ui){
+                  ui.tooltip.hover(
+                  function () {
+                     $(this).fadeTo("slow", 20.0);
+                  });
+                }
             });
 
             this.listbody.append(activityBoxDiv);
