@@ -13,82 +13,78 @@ var ParkedActivityView = function (container, model) {
 
     this.update = function () {
 
-        console.log(this._model.parkedActivities);
+        console.log(model.parkedActivities);
 
         this.listbody.empty();
+        for(var i = 0; i < model.parkedActivities.length; i++){
 
-        for(var i = 0; i < this._model.parkedActivities.length; i++)
-        {
-            var colorClass;
+            var activityBoxDiv = $('<div>');
+            activityBoxDiv.addClass('parkedactivityBox');
 
-            switch(_this._model.parkedActivities[i].getType()){
+            var activityDiv = $('<div>');
+            activityDiv.addClass('row');
+            activityDiv.addClass('list-group-item parkedActivity');
+            activityDiv.id = "drag" + i;
+            activityDiv.attr('draggable', true);
 
-                case "Presentation": colorClass = "blueBack"; break;
-                case "Group Work": colorClass = "greenBack"; break;
-                case "Discussion": colorClass = "redBack"; break;
-                case "Break": colorClass = "yellowBack"; break;
+            var lengthSpan = $('<span>');
+            lengthSpan.html(_this._model.parkedActivities[i].getLength() + 'min');
+            lengthSpan.addClass('col-md-3');
 
-            }
+            var nameSpan = $('<span>');
+            nameSpan.html(_this._model.parkedActivities[i].getName());
+            nameSpan.addClass('col-md-7');
 
-            // new version in js
-            var li = document.createElement("li");
-            li.id = "drag" + i;
-            li.className = "list-group-item parkedActivity " + colorClass;
-            li.draggable = true;
-            li.innerHTML = _this._model.parkedActivities[i].getLength()
-            + " min" + "  |   "
-            + _this._model.parkedActivities[i].getName();
+            activityDiv.append(lengthSpan);
+            activityDiv.append(nameSpan);
 
-            $(li).on("dragstart", function(e) {
+            $(activityBoxDiv).on("dragstart", function(e) {
                 e.originalEvent.dataTransfer.setData("draggable", "#" + this.id);
             });
 
-            this.listbody.append(li);
+            switch(_this._model.parkedActivities[i].getTypeId()){
 
-            /*
+                case 0:
+                    activityDiv.addClass('blueBack'); break;
+                case 1:
+                    activityDiv.addClass('greenBack'); break;
+                case 2:
+                    activityDiv.addClass('yellowBack'); break;
+                case 3:
+                    activityDiv.addClass('redBack'); break;  
+            }
+   
+            activityBoxDiv.append(activityDiv);
 
-            var htmlCode = '<li  id="drag'
-            + i + '" class="list-group-item parkedActivity '
-            + colorClass + '" draggable="true"  ondragstart="drag(event)">'
-            + _this._model.parkedActivities[i].getLength()
-            + " min" + "  |   "
-            + _this._model.parkedActivities[i].getName() + '</li>';
+            //$(activityBoxDiv).mouseover(function(){
+              //      var showID = $(activityDiv.id);
+                     //alert(showID);
+                     //console.log(showID);
+            //});
 
+            activityBoxDiv.tooltip({
+                title: 'Description: ' + _this._model.parkedActivities[i].getDescription(),
+                track:true,
+                placement:  'bottom',
+                open: function(event, ui){
+                  ui.tooltip.hover(
+                  function () {
+                     $(this).fadeTo("slow", 20.0);
+                  });
+                }
+            });
 
-            
-
-            this.listbody.append(htmlCode);
-            */
-            
-            tip = '_this._model.parkedActivities[i].getName()';
-            
-            this.acttip.append(tip);
-
-
-
+            this.listbody.append(activityBoxDiv);
         }
-        
 
-       
 
-        // Loop in not functioning because there is nothing in our "parkedActivities" array
-        // Every activity we create should go to "parkedActivities" array
-        // I believe then we cannot instantiate our "var act = new Activity(model)" in our "app.js"
-        // Because we already create one activity by doing this "var act = new Activity(model);"
-        // We need to figure this out how to create others
-        /*activityName = activity.getName();
+           
 
-        for(var i=0; i< activityName.length; i++){
-            var li = document.createElement('li');
-            li.innerHTML = activityName;
-            li.id = "li";
-              ul.appendChild(li);
-            listbody.append(ul);
-        }*/
-        
+            // Loop in not functioning because there is nothing in our "parkedActivities" array
+            // Every activity we create should go to "parkedActivities" array
+            // I believe then we cannot instantiate our "var act = new Activity(model)" in our "app.js"
+            // Because we already create one activity by doing this "var act = new Activity(model);"
+            // We need to figure this out how to create others
     }    
-
     this.update();
-
-
 }

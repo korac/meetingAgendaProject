@@ -7,6 +7,7 @@
     <title>Meeting Agenda Buider</title>
 
     <!-- Bootstrap & Custom CSS -->
+   <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css"/>
 <script>
@@ -14,9 +15,7 @@
 
 </script>
 </head>
-<style type="text/css"> 
-#div{ background:#CCC; width:500px; height:400px; display:none; } 
-</style>
+
 <body>
 
 
@@ -98,10 +97,9 @@
 
                   <div class="col-md-8 col-md-offset-2" id="activityCont">
                      <div id="parkedActivityView">
-                        <ul id="activityList" class="connectedSortant"  ondragover="return false">
+                        <div id="activityList" class="connectedSortable"  ondragover="return false">
 
-                        <div id="div" style="display: none"></div>
-                        </ul>
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -114,7 +112,7 @@
                             <input type="time" class="form-control" id="startTime" value="08:00">
                             </p>
                             <p>End Time: VarEndTime</p>
-                            <p>Total Length: VarCalcLength min</p>
+                            <p>Total Length:<a id="totalLength"></a> min</p>
                         </div>
                         <div class="col-md-2">
                         <div class="stroke"></div>
@@ -137,9 +135,9 @@
                         <div class="row">
 
                             <div class="col-md-8 col-md-offset-2" id= "dayBox">
-                                <ul id="schedule" class="connectedSortable" ondragover="return false">
+                                <div id="schedule" class="connectedSortable" ondragover="return false">
 
-                                </ul>
+                                </div>
                             </div>
                         </div>
                 </div>

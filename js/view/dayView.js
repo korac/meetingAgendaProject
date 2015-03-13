@@ -8,6 +8,7 @@ var DayView = function (container, model) {
 
     var _this = this;
     this.dayActivities = this._container.find("#schedule");
+    this.totalLength = this._container.find("#totalLength");
 
     //prevents the dayview container from blocking when smth is draggedover it
     container.on("dragover", function(e) {
@@ -25,31 +26,65 @@ var DayView = function (container, model) {
 
         for(var i = 0; i < this._model.days.length; i++) {
             for (var j = 0; j < this._model.days[i]._activities.length; j++){
+                // activity box div
+                var activityBoxDiv = $('<div>');
+                activityBoxDiv.addClass('parkedactivityBox');
 
-                var colorClass;
+                //activity div
+                var activityDiv = $('<div>');
+                activityDiv.addClass('row');
+                activityDiv.addClass('list-group-item parkedActivity');
+                activityDiv.id = "drag" + i;
+                activityDiv.attr('draggable', true);
 
-                switch(_this._model.days[i]._activities[j].getType()){
+                // activity length
+                var lengthSpan = $('<span>');
+                lengthSpan.html(_this._model.days[i]._activities[j].getLength() + 'min');
+                lengthSpan.addClass('col-md-3');
 
-                    case "Presentation": colorClass = "blueBack"; break;
-                    case "Group Work": colorClass = "greenBack"; break;
-                    case "Discussion": colorClass = "redBack"; break;
-                    case "Break": colorClass = "yellowBack"; break;
+                // activity name
+                var nameSpan = $('<span>');
+                nameSpan.html(_this._model.days[i]._activities[j].getName());
+                nameSpan.addClass('col-md-7');
 
+                // append activity spans to activity div
+                activityDiv.append(lengthSpan);
+                activityDiv.append(nameSpan);
+
+                $(activityBoxDiv).on("dragstart", function(e) {
+                    e.originalEvent.dataTransfer.setData("draggable", "#" + this.id);
+                });
+
+                //color
+                
+
+                switch(_this._model.days[i]._activities[j].getTypeId()){
+
+                    case 0:
+                        activityDiv.addClass('blueBack'); break;
+                    case 1:
+                        activityDiv.addClass('greenBack'); break;
+                    case 2:
+                        activityDiv.addClass('yellowBack'); break;
+                    case 3:
+                        activityDiv.addClass('redBack'); break;  
                 }
 
-                var htmlCode = '<li  id="drag'
-                    + i + '" class="list-group-item '
-                    + colorClass + '" draggable="true"  ondragstart="drag(event)">'
-                    + _this._model.days[i]._activities[j].getLength()
-                    + " min" + "  |   "
-                    + _this._model.days[i]._activities[j].getName() + '</a></li>';
+       
+                activityBoxDiv.append(activityDiv);
 
-                this.dayActivities.append(htmlCode);
+                $(activityBoxDiv).mouseover(function(){
+                        var showID = $(activityDiv.id);
+                         //alert(showID);
+                         //console.log(showID);
+                });
 
+                this.dayActivities.append(activityBoxDiv);    
             }
         }
 
     };
+    this.totalLength.append(model.days[0].getTotalLength());
 
     this.update();
 }
