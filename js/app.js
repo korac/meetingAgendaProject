@@ -6,7 +6,9 @@ $(function(){
     // this is the instance of our main model
     // this is what you should use in your application
     var model = new Model();
+
     createTestData(model);
+
 
     // Views
     var addActivityView = new AddActivityView($("#addActivityView"), model);
@@ -14,6 +16,7 @@ $(function(){
     var parkedActivityView = new ParkedActivityView($("#parkedActivityView"), model);
     var dayView = new DayView($("#dayView"), model);
     var progressBarView = new ProgressBarView($("#percentage"), model);
+    var scheduleView = new ScheduleView($("#scheduleView"), model);
 
     // Controllers
     var addActivityController = new AddActivityController(addActivityView, model);
@@ -21,6 +24,7 @@ $(function(){
     var mainViewController = new MainViewController(mainView, model);
     var dayController = new DayController(dayView, model);
     var mainController = new MainController(mainView, model);
+    var scheduleController = new ScheduleController(mainView, model);
 
 
     

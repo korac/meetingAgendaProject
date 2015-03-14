@@ -2,7 +2,7 @@
  * Created by Jonathan on 8.3.2015.
  */
 
-var scheduleView = function(container, model){
+var ScheduleView = function(container, model){
 
     model.addObserver(this);
 
@@ -11,5 +11,7 @@ var scheduleView = function(container, model){
 
     var _this = this;
 
-   
+	this.update = function() {
+
+	};
 }
