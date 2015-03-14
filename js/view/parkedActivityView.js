@@ -77,14 +77,6 @@ var ParkedActivityView = function (container, model) {
             this.listbody.append(activityBoxDiv);
         }
 
-
-           
-
-            // Loop in not functioning because there is nothing in our "parkedActivities" array
-            // Every activity we create should go to "parkedActivities" array
-            // I believe then we cannot instantiate our "var act = new Activity(model)" in our "app.js"
-            // Because we already create one activity by doing this "var act = new Activity(model);"
-            // We need to figure this out how to create others
-    }    
+    };
     this.update();
-}
+};

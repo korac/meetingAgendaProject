@@ -66,7 +66,7 @@ ul{
     background-color: rgba(255, 255, 0, 0.44);
 }
 
-.parkedActivity{
+.list-group-item{
     cursor: move;
 }
 
@@ -80,5 +80,5 @@ ul{
 }
 
 #newDayDate{
-  position: ;
+  /*position: ;*/
 }
