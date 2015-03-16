@@ -151,32 +151,12 @@
                         </button>
                         <hr>
                     </div>
-                    <div class="btn-group-vertical btn-block" id="scheduleView" role="group">
-                        <!--button type="button" class="btn btn-lg btn-default" id="dayButton1">Mon | March 25, '15</button>
-                        <button type="button" class="btn btn-lg btn-default" id="dayButton2">Tuesday</button>
-                        <button type="button" class="btn btn-lg btn-default" id="dayButton3">Wednesday</button>
-                        <!-- Here we are adding the buttons with a for loop by getting the info at a click on the "Add Day"-button. Every Button in this list triggers a certain view. -->
-                    </div>
+                    <div class="btn-group-vertical btn-block" id="scheduleView" role="group"><!-- Here is the "New Meeting List" --></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <!-- jQuery -->
-      <!--    <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://code.jquery.com/jquery.js"></script>-->
-  <!-- Latest Sortable -->
- <!--   <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script> -->
- <!-- <script>
-  Sortable.create(activityList,{
-  group: "sorting",
-  sort: true
-});
-  Sortable.create(schedule,{
-  group: "sorting",
-  sort: true
-});
-  </script> -->
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -213,14 +193,25 @@
             <h4 class="modal-title">Create a new meeting</h4>
           </div>
           <div class="modal-body">
-            <div>
-                Meeting Name: <input type="text" id="newDayName" maxlength="16" size="15" />
-                <span id="newDayNameInfo" class="validationMessage">*</span><br/>
-            </div>
-            <div>
-                Meeting Date: <input type="date" id="newDayDate"/>
-                <span id="newDayDateInfo" class="validationMessage">*</span><br/>
-            </div>
+             <form class="form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Meeting Name:</label>
+                        <div>
+                            <input type="text" class="col-md-2 form-control modalInput" placeholder="Name" id="newDayName" maxlength="16" size="15" />
+                            <span id="newDayNameInfo" class="validationMessage">*</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Meeting Date:</label>
+                        <div>
+                            <input type="date" class="col-md-2 form-control modalInput" id="newDayDate" maxlength="16" size="15" />
+                            <span id="newDayDateInfo" class="validationMessage control-label">*</span>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" id="closeNewDate" data-dismiss="modal">Close</button>
