@@ -24,7 +24,10 @@ ul{
     border: 5px double black;
     overflow: auto;
 }
-
+#parkedactBox{
+    margin-top: 46px;
+    overflow: auto;
+}
 
 #dayBox{
     height: 100%;

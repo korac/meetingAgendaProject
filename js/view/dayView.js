@@ -9,6 +9,7 @@ var DayView = function (container, model) {
     var _this = this;
     this.dayActivities = this._container.find("#schedule");
     this.totalLength = this._container.find("#totalLength");
+    this.endTime = this._container.find("#endTime");
 
     //prevents the dayview container from blocking when smth is draggedover it
     container.on("dragover", function(e) {
@@ -85,6 +86,7 @@ var DayView = function (container, model) {
 
     };
     this.totalLength.append(model.days[0].getTotalLength());
+    this.endTime.append(model.days[0].getEnd());
 
     this.update();
 }

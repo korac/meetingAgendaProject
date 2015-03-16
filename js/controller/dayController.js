@@ -11,6 +11,11 @@ var DayController = function (view, model) {
     var _this = this;
     var _startTime = model._start;
 
+    $('#startTime').on('change', function() {
+        console.log(_startTime.val());
+        // _startTime($("#startTime").val());
+        //alert("#startTime".val());
+    });
     
 
 
