@@ -27,8 +27,8 @@ var ScheduleController = function (view, model) {
 // button, showing the text "Date" and "Name". The button is to be clicked
 // later on to toggle the view of this particular day. If closed, all is dismissed.
 	$('#saveNewDate').on("click", function(event){
-          console.log($('#newDayDate').val());
-          console.log("button clicked");
+          //console.log($('#newDayDate').val());
+          //console.log("button clicked");
           //removing any error messages/classes
             $('#newDayDate').removeClass("error");
             $('#newDayDateInfo').text("*");
@@ -40,7 +40,7 @@ var ScheduleController = function (view, model) {
       //If everything is alright, add the day button to the list
         if ($('#newDayName').val() != "" && $('#newDayDate').val() != "") {
             $("#newDayModal").modal("hide");
-            $('<button type="button" class="btn btn-lg btn-default" id="dayButton">'+ $("#newDayName").val()
+            $('<button type="button" class="btn btn-lg btn-default dayButton">'+ $("#newDayName").val()
               +'<br>'+ $("#newDayDate").val() +'</button>').attr("id", "day" + day++).appendTo('.btn-group-vertical');
             event.preventDefault();
             return true ;
@@ -72,7 +72,12 @@ var ScheduleController = function (view, model) {
             $('#newDayDateInfo').removeClass("error");
     });
 
-
+//Get ID of a daybutton on mouseover to trigger the right dayview
+    $('#scheduleDayButtons').on('mouseover',function () {
+      var currentId = $('.dayButton').attr('id');
+      console.log(currentId);
+      currentId = "";
+    });
 
 
 }
