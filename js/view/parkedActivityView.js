@@ -7,9 +7,9 @@ var ParkedActivityView = function (container, model) {
 
     var _this = this;
 
-
     this.listbody = this._container.find("#activityList");
     this.acttip = this._container.find("#div");
+    this.connectedSortable1 = this._container.find(".connectedSortable1");
 
     this.update = function () {
 
@@ -19,12 +19,13 @@ var ParkedActivityView = function (container, model) {
         for(var i = 0; i < model.parkedActivities.length; i++){
 
             var activityBoxDiv = $('<div>');
-            activityBoxDiv.addClass('parkedactivityBox');
+            activityBoxDiv.addClass('activityBox');
+            activityBoxDiv.attr('position',i);
 
             var activityDiv = $('<div>');
             activityDiv.addClass('row');
             activityDiv.addClass('list-group-item parkedActivity');
-            activityDiv.id = "drag" + i;
+            
             activityDiv.attr('draggable', true);
 
             var lengthSpan = $('<span>');
@@ -38,9 +39,7 @@ var ParkedActivityView = function (container, model) {
             activityDiv.append(lengthSpan);
             activityDiv.append(nameSpan);
 
-            $(activityBoxDiv).on("dragstart", function(e) {
-                e.originalEvent.dataTransfer.setData("draggable", "#" + this.id);
-            });
+           
 
             switch(_this._model.parkedActivities[i].getTypeId()){
 
