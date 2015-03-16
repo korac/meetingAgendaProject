@@ -193,20 +193,23 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <!--button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button-->
             <h4 class="modal-title">Put in a name for the new Day</h4>
           </div>
           <div class="modal-body">
             <div>
                 Meeting Name: <input type="text" id="newDayName" maxlength="15" size="15" />
+                <span id="newDayNameInfo" class="validationMesage">*</span><br/>
             </div>
             <div>
                 Meeting Date: <input type="date" id="newDayDate"/>
+                <span id="newDayDateInfo" class="validationMesage">*</span><br/>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="saveNewDate">Save changes</button>
+            <button type="button" class="btn btn-default" id="closeNewDate" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="saveNewDate" value="submit">Save changes</button>
+            <!-- input id="Submit1" type="submit" value="submit" /-->
           </div>
         </div>
       </div>
