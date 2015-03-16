@@ -40,7 +40,8 @@ var ScheduleController = function (view, model) {
       //If everything is alright, add the day button to the list
         if ($('#newDayName').val() != "" && $('#newDayDate').val() != "") {
             $("#newDayModal").modal("hide");
-            $('<button type="button" class="btn btn-lg btn-default" id="dayButton">'+ $("#newDayName").val() +'<br>'+ $("#newDayDate").val() +'</button>').attr("id", "day" + day++).appendTo('.btn-group-vertical');
+            $('<button type="button" class="btn btn-lg btn-default" id="dayButton">'+ $("#newDayName").val()
+              +'<br>'+ $("#newDayDate").val() +'</button>').attr("id", "day" + day++).appendTo('.btn-group-vertical');
             event.preventDefault();
             return true ;
       //if something's missing, set an error message
@@ -70,5 +71,8 @@ var ScheduleController = function (view, model) {
             $('#newDayDateInfo').text("*");
             $('#newDayDateInfo').removeClass("error");
     });
+
+
+
 
 }

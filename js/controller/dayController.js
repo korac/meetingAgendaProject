@@ -27,7 +27,7 @@ var DayController = function (view, model) {
             if(ui.item.attr('day')!= null)
             {
                 model.moveActivity(parseFloat(ui.item.attr('day')),parseFloat(ui.item.attr('position')),parseFloat(this.id),ui.item.index());
-                //console.log("ekane to move element sto day list");
+                //console.log("ekane to move elements to day list");
             }
             else
             {    
@@ -48,13 +48,13 @@ var DayController = function (view, model) {
 };
 
 
-   /**
-    $('#dayView').keyup(function() {
-        _startTime($("#startTime").val());
-        console.log("input smth");
+//If the start time is changed, smth is updated (debug: console prints the new time)
+    $('#dayView').on('change',function() {
+        _startTime = $("#startTime").val();
+        console.log(_startTime);
     });
 
-
+   /*
     $('#dayView').on('change', function() {
         console.log(val('#startTime'));
         //_startTime($("#startTime").val());
