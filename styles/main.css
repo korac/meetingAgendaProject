@@ -84,3 +84,7 @@ ul{
 #newDayDate{
   /*position: ;*/
 }
+
+.validationMessage{
+  color: red;
+}
