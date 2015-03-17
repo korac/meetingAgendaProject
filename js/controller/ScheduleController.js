@@ -4,6 +4,8 @@
 
 var ScheduleController = function (view, model) {
 
+
+
     this._view = view;
     this._model = model;
 
@@ -43,8 +45,12 @@ var ScheduleController = function (view, model) {
       //generating the button and its functionality
             $('<button type="button" class="btn btn-lg btn-default dayButton">'+ $("#newDayName").val()
               +'<br>'+ $("#newDayDate").val() +'</button>').attr("id", "day" + day++).appendTo('.btn-group-vertical');
-
-
+            
+      //connecting the button to the freshly added day in the day array
+            model.addDay();
+            //console.log(model.addDay(1));
+            var lastDay = model.day[array.length-1];
+            console.log(lastDay);
 
             event.preventDefault();
             return true ;
@@ -82,7 +88,7 @@ var ScheduleController = function (view, model) {
          var ID = $(this).attr('id');
          console.log(ID);
          
-         //get the id and triger the according view here
+         //get the id and trigger the according view here
 
 
          ID = "";
