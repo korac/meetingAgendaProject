@@ -14,8 +14,7 @@ var DayView = function (container, model) {
 
     this.connectedSortable = this._container.find(".connectedSortable");
 
-
-    //prevents the dayview container from blocking when smth is draggedover it
+    //prevents the dayview container from blocking when smth is dragged over it
  
     this.update = function () {
 

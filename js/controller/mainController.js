@@ -10,8 +10,7 @@ var MainController = function (container, model) {
     var _this = this;
 
 	$(".page").hide();
-	$("#addActivityView").show();
-
+	$("#MainView").show();
 
     $('#saveButton').on('click', function() {
 		//console.log("Clicked saveButton to change view to MainView");
@@ -38,17 +37,5 @@ var MainController = function (container, model) {
 		$(".page").hide();
 		$("#MainView").show();
 	});
-
-
-    //$(document).find('.activityBox').on('dblclick', this, function(event) {
-	$("#topBar").find('.container').on('dblclick', this, function(event) {
-		console.log("fuck you");	
-        //alert("clicked");
-        //var selectedActivity = model.parkedActivities[selectedActivityIndex];
-        //var activityEditView = new ActivityEditView($("ActivityEditView"), model, selectedActivity);
-        //var activityEditController = new ActivityEditController(activityEditView, model, selectedActivity);
-		$(".page").hide();       
-        $("#ActivityEditView").show();
-    });
 
 }

@@ -85,6 +85,10 @@ ul{
 
 }
 
-#newDayDate{
-  /*position: ;*/
+.validationMessage{
+  color: red;
+}
+
+.modalInput{
+  width: 200px;
 }

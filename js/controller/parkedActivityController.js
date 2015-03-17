@@ -32,8 +32,9 @@ var ParkedActivityController = function (view, model) {
 		},
 	}).disableSelection();
 
-	$('#activityList').find('.activityBox').on('dblclick', this, function(event) { 	
-		console.log("fuck you");	
+	
+	$(document).find('.container').on('dblclick', '.activityBox', function(event) {
+		console.log("change to editview");	
 
 		/*var target = event.target;
 		//this part is about recognizing the target.
@@ -53,12 +54,12 @@ var ParkedActivityController = function (view, model) {
             console.log("Error: selected activity not found");
             return;	
         }*/
-        alert("clicked");
+        //alert("clicked");
         //var selectedActivity = model.parkedActivities[selectedActivityIndex];
         //var activityEditView = new ActivityEditView($("ActivityEditView"), model, selectedActivity);
         //var activityEditController = new ActivityEditController(activityEditView, model, selectedActivity);
-		//$(".page").hide();       
-        //$("#ActivityEditView").show();
+		$(".page").hide();       
+        $("#ActivityEditView").show();
     });
 
 }
