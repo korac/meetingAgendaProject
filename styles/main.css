@@ -33,7 +33,9 @@ ul{
     border: 5px double black;
     overflow: auto;
 }
-
+.connectedSortable {
+  height: 200px;
+}
 /*printing the red 30% line*/
 .stroke {
   position:absolute;
@@ -79,6 +81,10 @@ ul{
 
 }
 
-#newDayDate{
-  /*position: ;*/
+.validationMessage{
+  color: red;
+}
+
+.modalInput{
+  width: 200px;
 }

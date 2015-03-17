@@ -10,8 +10,7 @@ var MainController = function (container, model) {
     var _this = this;
 
 	$(".page").hide();
-	$("#addActivityView").show();
-
+	$("#MainView").show();
 
     $('#saveButton').on('click', function() {
 		//console.log("Clicked saveButton to change view to MainView");

@@ -7,34 +7,32 @@ var DayView = function (container, model) {
     this._model = model;
 
     var _this = this;
-    this.dayActivities = this._container.find("#schedule");
+    
     this.totalLength = this._container.find("#totalLength");
+    this.connectedSortable = this._container.find(".connectedSortable");
 
-    //prevents the dayview container from blocking when smth is draggedover it
-    container.on("dragover", function(e) {
-        e.preventDefault();
-    });
-
-    container.on("drop", function(e) {
-        var draggable = e.originalEvent.dataTransfer.getData("draggable");
-        $("#schedule").append($(draggable));
-    });
-
+    //prevents the dayview container from blocking when smth is dragged over it
+ 
     this.update = function () {
 
-        this.dayActivities.empty();
+        this.connectedSortable.empty();
 
         for(var i = 0; i < this._model.days.length; i++) {
+             this.connectedSortable.attr('day',i);
+             this.connectedSortable.attr('position',i);
+             this.connectedSortable.attr('id',i);
+
             for (var j = 0; j < this._model.days[i]._activities.length; j++){
                 // activity box div
                 var activityBoxDiv = $('<div>');
-                activityBoxDiv.addClass('parkedactivityBox');
+                activityBoxDiv.addClass('activityBox');
+                activityBoxDiv.attr('day',i);
+                activityBoxDiv.attr('position',j);
 
                 //activity div
                 var activityDiv = $('<div>');
                 activityDiv.addClass('row');
-                activityDiv.addClass('list-group-item parkedActivity');
-                activityDiv.id = "drag" + i;
+                activityDiv.addClass('list-group-item dayActivity');
                 activityDiv.attr('draggable', true);
 
                 // activity length
@@ -79,7 +77,7 @@ var DayView = function (container, model) {
                          //console.log(showID);
                 });
 
-                this.dayActivities.append(activityBoxDiv);    
+                this.connectedSortable.append(activityBoxDiv);    
             }
         }
 
