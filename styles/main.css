@@ -23,6 +23,7 @@ ul{
     padding: 0;
     border: 5px double black;
     overflow: auto;
+    width: 70%;
 }
 #parkedactBox{
     margin-top: 46px;
@@ -36,7 +37,9 @@ ul{
     border: 5px double black;
     overflow: auto;
 }
-
+.connectedSortable {
+  height: 200px;
+}
 /*printing the red 30% line*/
 .stroke {
   position:absolute;
@@ -49,7 +52,7 @@ ul{
 }
 
 #percentage{
-	transform: translate(0px, 45px) rotate(90deg) scale(3.5, 2);
+  transform: translate(0px, 45px) rotate(90deg) scale(3.5, 2);
 
 }
 

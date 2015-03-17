@@ -214,13 +214,15 @@ function Model(){
 	this.listeners = [];
 	
 	this.notifyObservers = function (args) {
+
 	    for (var i = 0; i < this.listeners.length; i++){
 			this.listeners[i].update(args);
 	    }
+
 	};
 	
 	this.addObserver = function (listener) {
-	    this.listeners.push(listener);
+	    this.listeners.push(listener);
 	};
 	//*** END OBSERVABLE PATTERN ***
 }
@@ -235,6 +237,8 @@ function createTestData(model){
 	model.addActivity(new Activity(model,"Working in groups",35,1,""),0);
 	model.addActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
 	model.addActivity(new Activity(model,"Coffee break",20,3,""),0);
+	
+	model.addParkedActivity(new Activity(model,"alright", 20, 0, "Each group will present what they have found out."),0);
     console.log(model.parkedActivities);
 	
 	console.log("Day Start: " + model.days[0].getStart());

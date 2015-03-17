@@ -97,7 +97,7 @@
 
                   <div class="col-md-8 col-md-offset-2" id="activityCont">
                      <div id="parkedActivityView">
-                        <div id="activityList" class="connectedSortable"  ondragover="return false">
+                        <div id="activityList" class="connectedSortable1"  ondragover="return false">
 
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                         <div class="row">
 
                             <div class="col-md-8 col-md-offset-2" id= "dayBox">
-                                <div id="schedule" class="connectedSortable" ondragover="return false">
+                                <div  class="connectedSortable" ondragover="return false">
 
                                 </div>
                             </div>
@@ -161,11 +161,80 @@
             </div>
         </div>
     </div>
+
+
+
+<!-- activityEditView-->
+    <div id="ActivityEditView" class="page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>Edit activity</legend>
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">Activity name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="changeName" class="form-control" placeholder="Name"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputLength" class="col-sm-2 control-label">Length</label>
+                                <div class="col-sm-10">
+                                    <input type="time" id="changeLength" class="form-control" placeholder="Length" value="01:00"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputType" class="col-sm-4 control-label">Type of the activity</label>
+                                <div class="col-sm-8">
+                                    <input type="text" list="activityTypes" id="changeType" class="form-control" placeholder="Type"/>
+                                    <datalist id="activityTypes">
+                                        <option value="Presentation"></option>
+                                        <option value="Group work"></option>
+                                        <option value="Discussion"></option>
+                                        <option value="Break"></option>
+                                    </datalist>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputDescription" class="col-sm-4 control-label">Short description</label>
+                                <div class="col-sm-8">
+                                    <textarea name="activityDescription" id="changeDescription" cols="30" rows="4" class="form-control" placeholder="Describe your activity briefly" maxlength="80"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-5 col-sm-offset-8">
+                                <button class="btn btn-danger" type="button" id="editActivityCancelButton">Cancel</button>
+                                <button class="btn btn-success" type="button" id="editSaveButton">Save Edit</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
     <!-- jQuery -->
+      <!--    <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>-->
+  <!-- Latest Sortable -->
+ <!--   <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script> -->
+ <!-- <script>
+  Sortable.create(activityList,{
+  group: "sorting",
+  sort: true
+});
+  Sortable.create(schedule,{
+  group: "sorting",
+  sort: true
+});
+  </script> -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
     <!-- Scripts -->
     <script src="js/app.js"></script>
@@ -177,6 +246,7 @@
     <script src="js/view/parkedActivityView.js"></script>
     <script src="js/view/progressBarView.js"></script>
     <script src="js/view/ScheduleView.js"></script>
+    <script src="js/view/activityEditView.js"></script>
     
     <!-- Controller -->
     <script src="js/controller/addActivityController.js"></script>
@@ -185,6 +255,7 @@
     <script src="js/controller/parkedActivityController.js"></script>
     <script src="js/controller/dayController.js"></script>
     <script src="js/controller/ScheduleController.js"></script>
+    <script src="js/controller/activityEditController.js"></script>
 
 
 
