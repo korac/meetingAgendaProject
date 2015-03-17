@@ -40,8 +40,12 @@ var ScheduleController = function (view, model) {
       //If everything is alright, add the day button to the list
         if ($('#newDayName').val() != "" && $('#newDayDate').val() != "") {
             $("#newDayModal").modal("hide");
+      //generating the button and its functionality
             $('<button type="button" class="btn btn-lg btn-default dayButton">'+ $("#newDayName").val()
               +'<br>'+ $("#newDayDate").val() +'</button>').attr("id", "day" + day++).appendTo('.btn-group-vertical');
+
+
+
             event.preventDefault();
             return true ;
       //if something's missing, set an error message
@@ -73,11 +77,20 @@ var ScheduleController = function (view, model) {
     });
 
 //Get ID of a daybutton on mouseover to trigger the right dayview
-    $('#scheduleDayButtons').on('mouseover',function () {
-      var currentId = $('.dayButton').attr('id');
-      console.log(currentId);
-      currentId = "";
-    });
+// The problme is, that freshly generated Ids are not visible since the view is not reloaded
+       $('#scheduleDayButtons').on('click','.dayButton',function () {
+         var ID = $(this).attr('id');
+         console.log(ID);
+         
+         //get the id and triger the according view here
 
+
+         ID = "";
+       });
 
 }
+
+
+
+
+
