@@ -30,4 +30,12 @@ var MainController = function (container, model) {
 		$(".page").hide();
 		$("#addActivityView").show();
 	});
+
+	
+    $('#editActivityCancelButton').on('click', function() {
+		//console.log("Clicked saveButton to change view to MainView");
+		$(".page").hide();
+		$("#MainView").show();
+	});
+
 }
