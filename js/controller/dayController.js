@@ -52,7 +52,12 @@ var DayController = function (view, model) {
             _startTime = $("#startTime").val();
             //console.log(_startTime);
 
+
             /*Maybe we need code here to change the _endTime. However, there is math in the model already.
+
+
+            /*Maybe we need code here to change the _endTime. However, there is math in the model alredy.
+
             We should check that out.*/
         }
     });

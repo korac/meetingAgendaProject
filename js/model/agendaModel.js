@@ -250,6 +250,15 @@ function createTestData(model){
 		model.addActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
 		model.addActivity(new Activity(model,"Coffee break",20,3,""),0);
 	    console.log(model.parkedActivities);
+	model.addDay();
+	model.addActivity(new Activity(model,"Introduction",10,0,""),0);
+    model.addActivity(new Activity(model,"Idea 1",30,0,""),0);
+	model.addActivity(new Activity(model,"Working in groups",35,1,""),0);
+	model.addActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
+	model.addActivity(new Activity(model,"Coffee break",20,3,""),0);
+	
+	model.addParkedActivity(new Activity(model,"alright", 20, 0, "Each group will present what they have found out."),0);
+    console.log(model.parkedActivities);
 	
 	console.log("Day Start: " + model.days[0].getStart());
 	console.log("Day End: " + model.days[0].getEnd());

@@ -9,6 +9,9 @@ var DayView = function (container, model, day) {
     var _this = this;
     
     this.totalLength = this._container.find("#totalLength");
+
+    this.endTime = this._container.find("#endTime");
+
     this.connectedSortable = this._container.find(".connectedSortable");
 
     //prevents the dayview container from blocking when smth is dragged over it
@@ -23,7 +26,7 @@ var DayView = function (container, model, day) {
              this.connectedSortable.attr('id',i);
 
             for (var j = 0; j < this._model.days[i]._activities.length; j++){
-                // activity box div
+                // activitybox div
                 var activityBoxDiv = $('<div>');
                 activityBoxDiv.addClass('activityBox');
                 activityBoxDiv.attr('day',i);
@@ -71,16 +74,15 @@ var DayView = function (container, model, day) {
        
                 activityBoxDiv.append(activityDiv);
 
-                $(activityBoxDiv).mouseover(function(){
-                        var showID = $(activityDiv.id);
+                //$(activityBoxDiv).mouseover(function(){
+                  //      var showID = $(activityDiv.id);
                          //alert(showID);
                          //console.log(showID);
-                });
+                //});
 
                 this.connectedSortable.append(activityBoxDiv);    
             }
         }
-
 
 
 //Test start
@@ -123,6 +125,11 @@ var DayView = function (container, model, day) {
 
 };
     //this.totalLength.append(model.days[0].getTotalLength());
+
+    };
+    this.update();
+   // this.totalLength.append(_this._model.days[0].getTotalLength());
+    //this.endTime.append(model.days[0].getEnd());
 
     this.update();
 }
