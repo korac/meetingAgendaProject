@@ -101,17 +101,14 @@ function Day(startH,startM) {
 	
 	// returns the length (in minutes) of activities of certain type
 	this.getLengthByType = function (typeid) {
-		var hour = 0;
 		var min = 0;
 		$.each(this._activities,function(index,activity){
 			if(activity.getTypeId() == typeid){
 				var s = activity.getLength().split(":");
-				hour += parseInt(s[0]);
-				min += parseInt(s[1]);
-				
+				min += parseInt(s[0]);				
 			}
 		});
-		return hour+":"+min;
+		return min;
 	};
 	
 	// adds an activity to specific position
