@@ -44,11 +44,11 @@ var ParkedActivityView = function (container, model) {
                 case 0:
                     activityDiv.addClass('blueBack'); break;
                 case 1:
-                    activityDiv.addClass('greenBack'); break;
+                    activityDiv.addClass('redBack'); break;
                 case 2:
-                    activityDiv.addClass('yellowBack'); break;
+                    activityDiv.addClass('greenBack'); break;
                 case 3:
-                    activityDiv.addClass('redBack'); break;  
+                    activityDiv.addClass('yellowBack'); break;  
             }
    
             activityBoxDiv.append(activityDiv);
@@ -62,7 +62,7 @@ var ParkedActivityView = function (container, model) {
             activityBoxDiv.tooltip({
                 title: 'Description: ' + _this._model.parkedActivities[i].getDescription(),
                 //track:true,
-                placement:  'bottom',
+                placement:  'bottom'
                
             });
             this.listbody.append(activityBoxDiv);

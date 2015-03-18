@@ -26,7 +26,13 @@ var DayView = function (container, model) {
              this.connectedSortable.attr('id',i);
 
             for (var j = 0; j < this._model.days[i]._activities.length; j++){
-                // activitybox div
+
+                
+                $.each(ActivityType,function(index,type){
+                console.log("Day '" + ActivityType[index] + "' Length: " +  model.days[i].getLengthByType(index) + " min");
+                });
+
+                
                 var activityBoxDiv = $('<div>');
                 activityBoxDiv.addClass('activityBox');
                 activityBoxDiv.attr('day',i);
@@ -64,11 +70,11 @@ var DayView = function (container, model) {
                     case 0:
                         activityDiv.addClass('blueBack'); break;
                     case 1:
-                        activityDiv.addClass('greenBack'); break;
+                        activityDiv.addClass('redBack'); break;
                     case 2:
-                        activityDiv.addClass('yellowBack'); break;
+                        activityDiv.addClass('greenBack'); break;
                     case 3:
-                        activityDiv.addClass('redBack'); break;  
+                        activityDiv.addClass('yellowBack'); break;  
                 }
 
        
@@ -85,8 +91,8 @@ var DayView = function (container, model) {
         }
 
     };
-    this.update();
+   // this.update();
    // this.totalLength.append(_this._model.days[0].getTotalLength());
-    //this.endTime.append(model.days[0].getEnd());
-    this.update();
+   // this.endTime.append(model.days[0].getEnd());
+  
 }
