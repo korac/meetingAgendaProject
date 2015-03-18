@@ -1,5 +1,5 @@
 
-var DayView = function (container, model) {
+var DayView = function (container, model, day) {
 
     model.addObserver(this);
 
@@ -81,8 +81,48 @@ var DayView = function (container, model) {
             }
         }
 
-    };
-    this.totalLength.append(model.days[0].getTotalLength());
+
+
+//Test start
+        $('#dayView').empty();
+
+        var itemOutput  =   '<div class="col-md-6 col-md-offset-2">'
+            itemOutput +=   'Start Time:'
+            itemOutput +=   '<p>'
+            itemOutput +=   '<input type="time" class="form-control" id="startTime" value="08:00">'
+            itemOutput +=   '</p>'
+            itemOutput +=   '<p>End Time: VarEndTime</p>'
+            itemOutput +=   '<p>Total Length:<a id="totalLength"></a> min</p>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '<div class="col-md-2">'
+            itemOutput +=   '<div class="stroke"></div>'
+            itemOutput +=   '<div class="progress" id="percentage">'
+            itemOutput +=   '<div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: 0%">'
+            itemOutput +=   '<span class="sr-only">(discussion)</span>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '<div class="progress-bar progress-bar-danger" id="groupworkPercentage" style="width: 0%">'
+            itemOutput +=   '<span class="sr-only">(groupwork)</span>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '<div class="progress-bar progress-bar-info" id="presentationPercentage" style="width: 0%">'
+            itemOutput +=   '<span class="sr-only">(presentation)</span>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '<div class="progress-bar progress-bar-warning" id="breakPercentage" style="width: 0%">'
+            itemOutput +=   '<span class="sr-only">(break)</span>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '<div class="row">'
+            itemOutput +=   '<div class="col-md-8 col-md-offset-2" id= "dayBox">'
+            itemOutput +=   '<div class="connectedSortable" ondragover="return false">'
+            itemOutput +=   '</div>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '</div>'
+
+        $('#dayView').append(itemOutput);
+//Test end
+
+};
+    //this.totalLength.append(model.days[0].getTotalLength());
 
     this.update();
 }

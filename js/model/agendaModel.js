@@ -67,6 +67,9 @@ function Activity(model,name,length,typeid,description){
 // but there is also a specific function in the Model that adds
 // days to the model, so you don't need call this yourself.
 function Day(startH,startM) {
+
+
+
 	this._start = startH * 60 + startM;
 	this._activities = [];
 
@@ -152,6 +155,7 @@ function Model(){
 	// are not provided it will set the default start of the day to 08:00
 	this.addDay = function (startH,startM) {
 		var day;
+
 		if(startH){
 			day = new Day(startH,startM);
 		} else {
@@ -225,24 +229,32 @@ function Model(){
 	    this.listeners.push(listener);
 	};
 	//*** END OBSERVABLE PATTERN ***
+		//function that returns a day of specific ID
+	/*this.getDay = function (id) {
+	  for(key in days){
+			if(key.id == id) {
+				return days[key];
+			}
+		}
+	}*/
 }
 
 
 
 // you can use this method to create some test data and test your implementation
 function createTestData(model){
-	model.addDay();
-	model.addActivity(new Activity(model,"Introduction",10,0,""),0);
-    model.addActivity(new Activity(model,"Idea 1",30,0,""),0);
-	model.addActivity(new Activity(model,"Working in groups",35,1,""),0);
-	model.addActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
-	model.addActivity(new Activity(model,"Coffee break",20,3,""),0);
-    console.log(model.parkedActivities);
+/*	//model.addDay();
+	// model.addActivity(new Activity(model,"Introduction",10,0,""),0);
+ //    model.addActivity(new Activity(model,"Idea 1",30,0,""),0);
+	// model.addActivity(new Activity(model,"Working in groups",35,1,""),0);
+		model.addActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
+		model.addActivity(new Activity(model,"Coffee break",20,3,""),0);
+	    console.log(model.parkedActivities);
 	
 	console.log("Day Start: " + model.days[0].getStart());
 	console.log("Day End: " + model.days[0].getEnd());
 	console.log("Day Length: " + model.days[0].getTotalLength() + " min");
 	$.each(ActivityType,function(index,type){
 		console.log("Day '" + ActivityType[index] + "' Length: " +  model.days[0].getLengthByType(index) + " min");
-	});
+	});*/
 }
