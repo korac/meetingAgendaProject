@@ -5,7 +5,7 @@ var ActivityType = ["Presentation","Group Work","Discussion","Break"];
 
 //array for activity storage
 
-
+var activityStorage = [];
 // This is an activity constructor
 // When you want to create a new activity you just call
 // var act = new Activity("some activity",20,1,"Some description);
@@ -71,7 +71,9 @@ function Activity(model,name,length,typeid,description){
 // days to the model, so you don't need call this yourself.
 function Day(startH,startM) {
 
-	var activityStorage = [];
+
+	
+
 
 	this._start = startH * 60 + startM;
 	this._activities = [];
@@ -149,7 +151,7 @@ function Day(startH,startM) {
 }
 
 
-// this is our main module that contians days and praked activites
+// this is our main module that contains days and praked activites
 function Model(){
 
 	this.days = [];
@@ -176,7 +178,7 @@ function Model(){
 		console.log(dayId);
 		var day = this.days[dayId];
 		this.currentDay = day;
-		console.log(day._activities);
+		//console.log(day._activities);
 		this.notifyObservers();
 	}
 	
