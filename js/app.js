@@ -7,8 +7,8 @@ $(function(){
     // this is what you should use in your application
     var model = new Model();
 
-   //createTestData(model);
-    model.addDay();
+   createTestData(model);
+    //model.addDay();
 
 
     // Views

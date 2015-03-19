@@ -104,7 +104,7 @@ function Day(startH,startM) {
 		var min = 0;
 		$.each(this._activities,function(index,activity){
 			if(activity.getTypeId() == typeid){
-				var s = activity.getLength().split(":");
+				var s = activity.getLength();
 				min += parseInt(s[0]);				
 			}
 		});
@@ -233,19 +233,19 @@ function Model(){
 // you can use this method to create some test data and test your implementation
 function createTestData(model){
 	model.addDay();
-	model.addActivity(new Activity(model,"Introduction",10,0,""),0);
-    model.addActivity(new Activity(model,"Idea 1",30,0,""),0);
-	model.addActivity(new Activity(model,"Working in groups",35,1,""),0);
-	model.addActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
-	model.addActivity(new Activity(model,"Coffee break",20,3,""),0);
+	model.addParkedActivity(new Activity(model,"Introduction",10,0,""),0);
+    model.addParkedActivity(new Activity(model,"Idea 1",30,0,""),0);
+	model.addParkedActivity(new Activity(model,"Working in groups",35,1,""),0);
+	model.addParkedActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
+	model.addParkedActivity(new Activity(model,"Coffee break",20,3,""),0);
 	
 	model.addParkedActivity(new Activity(model,"alright", 20, 0, "Each group will present what they have found out."),0);
     console.log(model.parkedActivities);
 	
-	console.log("Day Start: " + model.days[0].getStart());
-	console.log("Day End: " + model.days[0].getEnd());
-	console.log("Day Length: " + model.days[0].getTotalLength() + " min");
-	$.each(ActivityType,function(index,type){
+	//console.log("Day Start: " + model.days[0].getStart());
+	//console.log("Day End: " + model.days[0].getEnd());
+	//console.log("Day Length: " + model.days[0].getTotalLength() + " min");
+	/*$.each(ActivityType,function(index,type){
 		console.log("Day '" + ActivityType[index] + "' Length: " +  model.days[0].getLengthByType(index) + " min");
-	});
+	});*/
 }

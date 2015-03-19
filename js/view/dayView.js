@@ -19,6 +19,8 @@ var DayView = function (container, model) {
     this.update = function () {
 
         this.connectedSortable.empty();
+        this.totalLength.empty();
+        this.endTime.empty();
 
         for(var i = 0; i < this._model.days.length; i++) {
              this.connectedSortable.attr('day',i);
@@ -31,7 +33,7 @@ var DayView = function (container, model) {
                 $.each(ActivityType,function(index,type){
                 console.log("Day '" + ActivityType[index] + "' Length: " +  model.days[i].getLengthByType(index) + " min");
                 });
-
+                console.log("Day Length: " + model.days[i].getTotalLength() + " min");
                 
                 var activityBoxDiv = $('<div>');
                 activityBoxDiv.addClass('activityBox');
@@ -44,9 +46,11 @@ var DayView = function (container, model) {
                 activityDiv.addClass('list-group-item dayActivity');
                 activityDiv.attr('draggable', true);
 
+                
+
                 // activity length
                 var lengthSpan = $('<span>');
-                lengthSpan.html(_this._model.days[i]._activities[j].getLength() + 'min');
+                lengthSpan.html(_this._model.days[i].getStart());
                 lengthSpan.addClass('col-md-3');
 
                 // activity name
@@ -80,19 +84,19 @@ var DayView = function (container, model) {
        
                 activityBoxDiv.append(activityDiv);
 
-                //$(activityBoxDiv).mouseover(function(){
-                  //      var showID = $(activityDiv.id);
-                         //alert(showID);
-                         //console.log(showID);
-                //});
 
                 this.connectedSortable.append(activityBoxDiv);    
             }
+        
+         this.totalLength.append(_this._model.days[i].getTotalLength());
+        this.endTime.append(model.days[i].getEnd());
+        console.log(model.days);
         }
 
+
     };
-   // this.update();
-   // this.totalLength.append(_this._model.days[0].getTotalLength());
-   // this.endTime.append(model.days[0].getEnd());
-  
+   //this.update();
+
+    
+  this.update();
 }
