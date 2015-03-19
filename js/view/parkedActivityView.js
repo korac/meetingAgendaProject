@@ -50,7 +50,7 @@ var ParkedActivityView = function (container, model) {
                 case 2:
                     activityDiv.addClass('yellowBack'); break;
                 case 3:
-                    activityDiv.addClass('redBack'); break;  
+                    activityDiv.addClass('redBack'); break;
             }
    
             activityBoxDiv.append(activityDiv);

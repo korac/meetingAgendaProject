@@ -17,16 +17,53 @@ var ProgressBarView = function(container, model){
 
     this.update = function(){
 
-        var time = 0;
-
         this._container.empty();
-        console.log(_this._model.days);
+        var day = _this._model.days[0];
 
-        //time = _this._model.days[0].getLengthByType(0)/_this._model.days[0].getLength() * 100;
+        var totalLength = day.getTotalLength();
 
-        var htmlCode = '<div class="progress-bar progress-bar-success" id="discussionPercentage" style="width:'
-            + time + '% "><span class="sr-only">25% Complete (discussion)</span></div>';
+        var presentationLength = day.getLengthByType(0);
+        presentationLength /= totalLength;
+        presentationLength *= 100;
 
-        this._container.append(htmlCode);
+        var groupworkLength = day.getLengthByType(1);
+        groupworkLength /= totalLength;
+        groupworkLength *= 100;
+
+        var discussionLength = day.getLengthByType(2);
+        discussionLength /= totalLength;
+        discussionLength *= 100;
+
+        var breakLength = day.getLengthByType(3);
+        breakLength /= totalLength;
+        breakLength *= 100;
+
+        var discussionHtml = '<div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: '
+            + discussionLength + '%"><span class="sr-only">(discussion)</span></div>';
+
+        var groupworkHtml = '<div class="progress-bar progress-bar-danger" id="groupworkPercentage" style="width: '
+            + groupworkLength + '%"><span class="sr-only">(groupwork)</span></div>';
+
+        var presentationHtml = '<div class="progress-bar progress-bar-info" id="presentationPercentage" style="width: '
+            + presentationLength + '%"><span class="sr-only">(presentation)</span></div>';
+
+        var breakHtml = '<div class="progress-bar progress-bar-warning" id="breakPercentage" style="width: '
+            + breakLength + '%"><span class="sr-only">(break)</span></div>';
+
+        this._container.append(discussionHtml);
+        this._container.append(groupworkHtml);
+        this._container.append(presentationHtml);
+        this._container.append(breakHtml);
+        //var time = 0;
+        //
+        //this._container.empty();
+        //console.log(_this._model.days);
+        //
+        ////time = _this._model.days[0].getLengthByType(0)/_this._model.days[0].getLength() * 100;
+        //
+        //var htmlCode = '<div class="progress-bar progress-bar-success" id="discussionPercentage" style="width:'
+        //    + time + '% "><span class="sr-only">25% Complete (discussion)</span></div>';
+        //
+        //this._container.append(htmlCode);
     }
 }
