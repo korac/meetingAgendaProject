@@ -96,7 +96,7 @@
                         <div class="stroke"></div>
                            <div class="progress" id="percentage">
                                 <!-- we need to put in some variables for the percentage instead of the hard coded things-->
-                               <div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: 0%">
+                               <div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: 33.33333333333%">
                                   <span class="sr-only">(discussion)</span>
                                 </div>
                                <div class="progress-bar progress-bar-danger" id="groupworkPercentage" style="width: 0%">
@@ -125,9 +125,13 @@
                         <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="addDayBtn">
                             <span class="glyphicon glyphicon-plus"></span> Add Meeting
                         </button>
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" id="deleteDayBtn">
+                            <span class="glyphicon glyphicon-minus"></span> Delete Meeting
+                        </button>
                         <hr>
                     </div>
-                    <div class="btn-group-vertical btn-block" id="scheduleDayButtons" role="group"><!-- Here is the "New Meeting List" -->
+                    <div class="btn-group-vertical btn-block" id="scheduleDayButtons" role="group">
+                        <!-- Here is the "New Meeting List" -->
                     </div>
                 </div>
             </div>

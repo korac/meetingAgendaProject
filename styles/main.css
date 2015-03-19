@@ -123,3 +123,7 @@ ul{
 #emptyDayView{
 
 }
+
+.glyphicon-trash {
+  color: invert;
+}

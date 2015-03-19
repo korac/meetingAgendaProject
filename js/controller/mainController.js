@@ -43,8 +43,8 @@ var MainController = function (container, model) {
         model.loadDay(dayId);
         $('.active').not($(this)).removeClass('active');
         $('.btn-warning').not($(this)).removeClass('btn-warning');
-    	$(this).toggleClass('active');
-    	$(this).toggleClass('btn-warning');
+    	$(this).addClass('active');
+    	$(this).addClass('btn-warning');
        });
 	
     $('#editActivityCancelButton').on('click', function() {
