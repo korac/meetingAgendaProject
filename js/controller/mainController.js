@@ -12,6 +12,8 @@ var MainController = function (container, model) {
 	$(".page").hide();
 	$("#MainView").show();
 	$("#dayView").hide();
+    $("#emptyDayView").show();
+
 
 
     $('#saveButton').on('click', function() {

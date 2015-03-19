@@ -60,8 +60,10 @@ var ScheduleController = function (view, model, day) {
             var time = $('#newDayTime').val().split(":");
 
             model.addDay(parseInt(time[0]),parseInt(time[1]));
+            $("#emptyDayView").hide();
             $("#dayView").show();
-      
+            
+            
       //assign id of days to the button
             //idOfdays = mode.days.lenght+1
 
