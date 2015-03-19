@@ -7,44 +7,63 @@ var ProgressBarView = function(container, model){
 
     this._container = container;
     this._model = model;
+
     var _this = this;
 
-    var presentationLength = 0;
-    var groupworkLength = 0;
-    var discussionLength = 0;
-    var breakLength = 0;
-
+    this.presentationBar = this._container.find("#presentationPercentage");
+    this.groupworkBar = this._container.find("#groupworkPercentage");
+    this.discussionBar = this._container.find("#discussionPercentage");
+    this.breakBar = this._container.find("#breakPercentage");
 
     this.update = function(){
 
-   /* var activities =
-     //   this._container.empty();
-    
-            for (var j = 0; j < model.currentDay._activities.length; j++) {
-                switch (_activities[j].getTypeId()) {
-                    case 0:
-                        presentationLength += activities[j].getLength();
-                        break;
-                    case 1:
-                        groupworkLength += activities[j].getLength();
-                        break;
-                    case 2:
-                        discussionLength += activities[j].getLength();
-                        break;
-                    case 3:
-                        breakLength += activities[j].getLength();
-                        break;
-                }
+        this._container.empty();
+
+        var dayId = $("#scheduleDayButtons .active").attr("id");
+        console.log(dayId);
+        for(var i = 0; i < _this._model.days.length; i++){
+            var iday = "day" + i;
+            if(iday === dayId){
+                var day = _this._model.days[i];
             }
+        }
 
-        
-        console.log(presentationLength);*/
 
-        //time = _this._model.days[0].getLengthByType(0)/_this._model.days[0].getLength() * 100;
+        var totalLength = day.getTotalLength();
+        console.log(totalLength);
 
-     //   var htmlCode = '<div class="progress-bar progress-bar-success" id="discussionPercentage" style="width:'
-       //     + time + '% "><span class="sr-only">25% Complete (discussion)</span></div>';
+        var presentationLength = day.getLengthByType(0);
+        presentationLength /= totalLength;
+        presentationLength *= 100;
 
-        //this._container.append(htmlCode);
+        var groupworkLength = day.getLengthByType(1);
+        groupworkLength /= totalLength;
+        groupworkLength *= 100;
+
+        var discussionLength = day.getLengthByType(2);
+        discussionLength /= totalLength;
+        discussionLength *= 100;
+
+        var breakLength = day.getLengthByType(3);
+        breakLength /= totalLength;
+        breakLength *= 100;
+
+        var discussionHtml = '<div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: '
+            + discussionLength + '%"><span class="sr-only">(discussion)</span></div>';
+
+        var groupworkHtml = '<div class="progress-bar progress-bar-danger" id="groupworkPercentage" style="width: '
+            + groupworkLength + '%"><span class="sr-only">(groupwork)</span></div>';
+
+        var presentationHtml = '<div class="progress-bar progress-bar-info" id="presentationPercentage" style="width: '
+            + presentationLength + '%"><span class="sr-only">(presentation)</span></div>';
+
+        var breakHtml = '<div class="progress-bar progress-bar-warning" id="breakPercentage" style="width: '
+            + breakLength + '%"><span class="sr-only">(break)</span></div>';
+
+        this._container.append(discussionHtml);
+        this._container.append(groupworkHtml);
+        this._container.append(presentationHtml);
+        this._container.append(breakHtml);
+
     }
 }
