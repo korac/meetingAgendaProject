@@ -3,6 +3,9 @@
 // The possible activity types
 var ActivityType = ["Presentation","Group Work","Discussion","Break"];
 
+//array for activity storage
+var activityStorage = [];
+
 // This is an activity constructor
 // When you want to create a new activity you just call
 // var act = new Activity("some activity",20,1,"Some description);
@@ -67,6 +70,9 @@ function Activity(model,name,length,typeid,description){
 // but there is also a specific function in the Model that adds
 // days to the model, so you don't need call this yourself.
 function Day(startH,startM) {
+
+
+
 	this._start = startH * 60 + startM;
 	this._activities = [];
 
@@ -147,11 +153,13 @@ function Day(startH,startM) {
 function Model(){
 	this.days = [];
 	this.parkedActivities = [];
+	this.currentDay = 0;
 	
 	// adds a new day. if startH and startM (start hours and minutes)
 	// are not provided it will set the default start of the day to 08:00
 	this.addDay = function (startH,startM) {
 		var day;
+
 		if(startH){
 			day = new Day(startH,startM);
 		} else {
@@ -161,9 +169,19 @@ function Model(){
 		this.notifyObservers();
 		return day;
 	};
+
+	//load a day
+	this.loadDay = function(dayId) {
+		console.log(dayId);
+		var day = this.days[dayId];
+		this.currentDay = day;
+		console.log(day._activities);
+		this.notifyObservers();
+	}
 	
 	// add an activity to model
 	this.addActivity = function (activity,day,position) {
+		console.log(day);
 		if(day != null) {
 			this.days[day]._addActivity(activity,position);
 		} else {
@@ -192,6 +210,7 @@ function Model(){
 	// to move a parked activity to let's say day 0 you set oldday to null
 	// and new day to 0
 	this.moveActivity = function(oldday, oldposition, newday, newposition) {
+		console.log(oldday);
 		if(oldday !== null && oldday == newday) {
 			this.days[oldday]._moveActivity(oldposition,newposition);
 		}else if(oldday == null && newday == null) {
@@ -199,9 +218,9 @@ function Model(){
 			this.addParkedActivity(activity,newposition);
 		}else if(oldday == null) {
 			var activity = this.removeParkedActivity(oldposition);
-			this.days[newday]._addActivity(activity,newposition);
+			this.currentDay._addActivity(activity,newposition);
 		}else if(newday == null) {
-			var activity = this.days[oldday]._removeActivity(oldposition);
+			var activity = this.currentDay._removeActivity(oldposition);
 			this.addParkedActivity(activity,newposition);
 		} else {
 			var activity = this.days[oldday]._removeActivity(oldposition);
@@ -225,12 +244,29 @@ function Model(){
 	    this.listeners.push(listener);
 	};
 	//*** END OBSERVABLE PATTERN ***
-}
+		//function that returns a day of specific ID
+	/*this.getDay = function (id) {
+	  for(key in days){
+			if(key.id == id) {
+				return days[key];
+			}
+		}
+	}*/
+//}
 
 
 
 // you can use this method to create some test data and test your implementation
-function createTestData(model){
+//function createTestData(model){
+
+/*	//model.addDay();
+	// model.addActivity(new Activity(model,"Introduction",10,0,""),0);
+ //    model.addActivity(new Activity(model,"Idea 1",30,0,""),0);
+	// model.addActivity(new Activity(model,"Working in groups",35,1,""),0);
+		model.addActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
+		model.addActivity(new Activity(model,"Coffee break",20,3,""),0);
+	    console.log(model.parkedActivities);
+
 	model.addDay();
 	model.addActivity(new Activity(model,"Introduction",10,0,""),0);
     model.addActivity(new Activity(model,"Idea 1",30,0,""),0);
@@ -246,5 +282,5 @@ function createTestData(model){
 	console.log("Day Length: " + model.days[0].getTotalLength() + " min");
 	$.each(ActivityType,function(index,type){
 		console.log("Day '" + ActivityType[index] + "' Length: " +  model.days[0].getLengthByType(index) + " min");
-	});
+	});*/
 }

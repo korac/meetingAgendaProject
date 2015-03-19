@@ -13,6 +13,8 @@ var ParkedActivityView = function (container, model) {
     this.update = function () {
 
         this.listbody.empty();
+        console.log(model.parkedActivities);
+        if(model.parkedActivities.length > 0){
         for(var i = 0; i < model.parkedActivities.length; i++){
 
             var activityBoxDiv = $('<div>');
@@ -67,6 +69,7 @@ var ParkedActivityView = function (container, model) {
             });
             this.listbody.append(activityBoxDiv);
         }
+}
 
     };
     this.update();
