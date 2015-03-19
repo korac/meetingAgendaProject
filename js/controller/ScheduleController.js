@@ -44,22 +44,32 @@ var ScheduleController = function (view, model, day) {
             $('#newDayTime').removeClass("error");
             $('#newDayTimeInfo').text("*");
             $('#newDayTimeInfo').removeClass("error");
+
       //If everything is alright, add the day button to the list
         if ($('#newDayName').val() != "" && $('#newDayDate').val() != "" && $('#newDayTime').val() != "") {
             $("#newDayModal").modal("hide");
+
       //generating the button and its functionality
             $('<button type="button" class="btn btn-lg btn-default dayButton">'+ $("#newDayName").val()
               +'<br>'+ $("#newDayDate").val() +'</button>').attr("id", "day" + dayIDGenerator++).appendTo('.btn-group-vertical');
-            
+      
+      //making the adddaybutton look inactive again
             $('#addDayBtn').removeClass('active');
+      
       //connecting the button to the freshly added day in the day array
-            model.addDay();
+            var time = $('#newDayTime').val().split(":");
 
+            model.addDay(parseInt(time[0]),parseInt(time[1]));
+            $("#dayView").show();
+      
       //assign id of days to the button
             //idOfdays = mode.days.lenght+1
-            
+
+            model.loadDay(dayIDGenerator-1);
+
             event.preventDefault();
             return true ;
+      
       //if something's missing, set an error message
           }else{
 

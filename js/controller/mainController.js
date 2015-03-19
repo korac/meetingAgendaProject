@@ -11,6 +11,8 @@ var MainController = function (container, model) {
 
 	$(".page").hide();
 	$("#MainView").show();
+	$("#dayView").hide();
+
 
     $('#saveButton').on('click', function() {
 		//console.log("Clicked saveButton to change view to MainView");
@@ -35,9 +37,8 @@ var MainController = function (container, model) {
 	//Get ID of a daybutton on click to trigger the right dayview
        $('#scheduleDayButtons').on('click','.dayButton',function () {
          var dayButtonID = $(this).attr('id');
-         //console.log(model.days);
-
-        //daybuttonID = "";
+         var dayId = parseInt(dayButtonID.substring('day'.length));
+         model.loadDay(dayId);
        });
 	
     $('#editActivityCancelButton').on('click', function() {
