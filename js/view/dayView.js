@@ -1,5 +1,5 @@
 
-var DayView = function (container, model) {
+var DayView = function (container, model, day) {
 
     model.addObserver(this);
 
@@ -18,18 +18,22 @@ var DayView = function (container, model) {
  
     this.update = function () {
 
+        if(this._model.currentDay != 0)
+        {
+
         this.connectedSortable.empty();
 
-        for(var i = 0; i < this._model.days.length; i++) {
-             this.connectedSortable.attr('day',i);
-             this.connectedSortable.attr('position',i);
-             this.connectedSortable.attr('id',i);
+            var dayId = 0;
+            for(var i=0; i<this._model.days.length; i++) {
+                if (model.days[i] == this._model.currentDay) dayId = i;
+            }
 
-            for (var j = 0; j < this._model.days[i]._activities.length; j++){
+            for (var j = 0; j < this._model.currentDay._activities.length; j++){
                 // activitybox div
+                console.log(_this._model.currentDay._activities[j].getName());
                 var activityBoxDiv = $('<div>');
                 activityBoxDiv.addClass('activityBox');
-                activityBoxDiv.attr('day',i);
+                activityBoxDiv.attr('day', dayId);
                 activityBoxDiv.attr('position',j);
 
                 //activity div
@@ -40,12 +44,12 @@ var DayView = function (container, model) {
 
                 // activity length
                 var lengthSpan = $('<span>');
-                lengthSpan.html(_this._model.days[i]._activities[j].getLength() + 'min');
+                lengthSpan.html(_this._model.currentDay._activities[j].getLength() + 'min');
                 lengthSpan.addClass('col-md-3');
 
                 // activity name
                 var nameSpan = $('<span>');
-                nameSpan.html(_this._model.days[i]._activities[j].getName());
+                nameSpan.html(_this._model.currentDay._activities[j].getName());
                 nameSpan.addClass('col-md-7');
 
                 // append activity spans to activity div
@@ -59,7 +63,7 @@ var DayView = function (container, model) {
                 //color
                 
 
-                switch(_this._model.days[i]._activities[j].getTypeId()){
+                switch(_this._model.currentDay._activities[j].getTypeId()){
 
                     case 0:
                         activityDiv.addClass('blueBack'); break;
@@ -81,12 +85,56 @@ var DayView = function (container, model) {
                 //});
 
                 this.connectedSortable.append(activityBoxDiv);    
-            }
         }
 
-    };
+    }
+
+
+/*/Test start
+        $('#dayView').empty();
+
+        var itemOutput  =   '<div class="col-md-6 col-md-offset-2">'
+            itemOutput +=   'Start Time:'
+            itemOutput +=   '<p>'
+            itemOutput +=   '<input type="time" class="form-control" id="startTime" value="08:00">'
+            itemOutput +=   '</p>'
+            itemOutput +=   '<p>End Time: EndTime</p>'
+            itemOutput +=   '<p>Total Length:<a id="totalLength">'+model.getTotalLength+'</a> min</p>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '<div class="col-md-2">'
+            itemOutput +=   '<div class="stroke"></div>'
+            itemOutput +=   '<div class="progress" id="percentage">'
+            itemOutput +=   '<div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: 0%">'
+            itemOutput +=   '<span class="sr-only">(discussion)</span>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '<div class="progress-bar progress-bar-danger" id="groupworkPercentage" style="width: 0%">'
+            itemOutput +=   '<span class="sr-only">(groupwork)</span>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '<div class="progress-bar progress-bar-info" id="presentationPercentage" style="width: 0%">'
+            itemOutput +=   '<span class="sr-only">(presentation)</span>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '<div class="progress-bar progress-bar-warning" id="breakPercentage" style="width: 0%">'
+            itemOutput +=   '<span class="sr-only">(break)</span>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '<div class="row">'
+            itemOutput +=   '<div class="col-md-8 col-md-offset-2" id= "dayBox">'
+            itemOutput +=   '<div class="connectedSortable" ondragover="return false">'
+            itemOutput +=   '</div>'
+            itemOutput +=   '</div>'
+            itemOutput +=   '</div>'
+
+        $('#dayview').append(itemOutput);*/
+//Test end
+
+}
+    //this.totalLength.append(model.days[0].getTotalLength());
+
+  
     this.update();
    // this.totalLength.append(_this._model.days[0].getTotalLength());
     //this.endTime.append(model.days[0].getEnd());
-    this.update();
+
+  //  this.update();
 }

@@ -11,6 +11,8 @@ var MainController = function (container, model) {
 
 	$(".page").hide();
 	$("#MainView").show();
+	$("#dayView").hide();
+
 
     $('#saveButton').on('click', function() {
 		//console.log("Clicked saveButton to change view to MainView");
@@ -22,8 +24,8 @@ var MainController = function (container, model) {
 		//console.log("Clicked saveButton to change view to MainView");
 		$(".page").hide();
 		$("#MainView").show();
+		$('#addActBtn').removeClass('active');
 	});
-
 
  	$('#addActBtn').on('click', function() {
 		//console.log("Clicked saveButton to change view to MainView");
@@ -31,6 +33,13 @@ var MainController = function (container, model) {
 		$("#addActivityView").show();
 	});
 
+
+	//Get ID of a daybutton on click to trigger the right dayview
+       $('#scheduleDayButtons').on('click','.dayButton',function () {
+         var dayButtonID = $(this).attr('id');
+         var dayId = parseInt(dayButtonID.substring('day'.length));
+         model.loadDay(dayId);
+       });
 	
     $('#editActivityCancelButton').on('click', function() {
 		//console.log("Clicked saveButton to change view to MainView");
