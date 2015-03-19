@@ -109,13 +109,14 @@ function Day(startH,startM) {
 	
 	// returns the length (in minutes) of activities of certain type
 	this.getLengthByType = function (typeid) {
-		var length = 0;
+		var min = 0;
 		$.each(this._activities,function(index,activity){
 			if(activity.getTypeId() == typeid){
-				length += activity.getLength();
+				var s = activity.getLength();
+				min += s;				
 			}
 		});
-		return length;
+		return min;
 	};
 	
 	// adds an activity to specific position
@@ -151,6 +152,7 @@ function Day(startH,startM) {
 }
 
 
+
 // this is our main module that contains days and praked activites
 function Model(){
 
@@ -165,9 +167,7 @@ function Model(){
 
 		if(startH){
 			day = new Day(startH,startM);
-		} else {
-			day = new Day(8,0);
-		}
+		} 
 		this.days.push(day);
 		this.notifyObservers();
 		return day;
@@ -255,36 +255,33 @@ function Model(){
 			}
 		}
 	}*/
-//}
-
 }
+
+
 
 // you can use this method to create some test data and test your implementation
 function createTestData(model){
 
-	//model.addDay();
-	// model.addActivity(new Activity(model,"Introduction",10,0,""),0);
- //    model.addActivity(new Activity(model,"Idea 1",30,0,""),0);
-	// model.addActivity(new Activity(model,"Working in groups",35,1,""),0);
-		model.addParkedActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
-		model.addParkedActivity(new Activity(model,"Coffee break",20,3,""),0);
-	    console.log(model.parkedActivities);
 
-	/*model.addDay();
-	model.addActivity(new Activity(model,"Introduction",10,0,""),0);
-    model.addActivity(new Activity(model,"Idea 1",30,0,""),0);
-	model.addActivity(new Activity(model,"Working in groups",35,1,""),0);
-	model.addActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
-	model.addActivity(new Activity(model,"Coffee break",20,3,""),0);
+	model.addParkedActivity(new Activity(model,"Introduction",10,0,""),0);
+    model.addParkedActivity(new Activity(model,"Idea 1",30,0,""),0);
+	model.addParkedActivity(new Activity(model,"Working in groups",35,1,""),0);
+	model.addParkedActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
+	model.addParkedActivity(new Activity(model,"Coffee break",20,3,""),0);
+	   // console.log(model.parkedActivities);
+
 	
-	/*model.addParkedActivity(new Activity(model,"alright", 20, 0, "Each group will present what they have found out."),0);
-    console.log(model.parkedActivities);
 	
-	console.log("Day Start: " + model.days[0].getStart());
-	console.log("Day End: " + model.days[0].getEnd());
-	console.log("Day Length: " + model.days[0].getTotalLength() + " min");
-	$.each(ActivityType,function(index,type){
-		console.log("Day '" + ActivityType[index] + "' Length: " +  model.days[0].getLengthByType(index) + " min");
-	});*/
+	//model.addParkedActivity(new Activity(model,"alright", 20, 0, "Each group will present what they have found out."),0);
+    //console.log(model.parkedActivities);
+	
+	//console.log("Day Start: " + model.days[0].getStart());
+	//console.log("Day End: " + model.days[0].getEnd());
+	//console.log("Day Length: " + model.days[0].getTotalLength() + " min");
+	//$.each(ActivityType,function(index,type){
+	//	console.log("Day '" + ActivityType[index] + "' Length: " +  model.days[0].getLengthByType(index) + " min");
+
+
 
 }
+

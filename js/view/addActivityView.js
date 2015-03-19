@@ -16,7 +16,7 @@ var AddActivityView = function (container, model) {
     this.saveButton = this._container.find("#saveButton");
     
     this.update = function () {
-
+        
         this.inputName.val('');
         this.inputLength.val('');
         this.inputType.val('');

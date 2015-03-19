@@ -7,7 +7,14 @@ $(function(){
     // this is what you should use in your application
     var model = new Model();
 
-    createTestData(model);
+
+
+   createTestData(model);
+    //model.addDay();
+
+
+
+
     // Views
     var addActivityView = new AddActivityView($("#addActivityView"), model);
     var mainView = new MainView($("#MainView"), model);
