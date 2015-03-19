@@ -71,8 +71,6 @@ function Activity(model,name,length,typeid,description){
 // days to the model, so you don't need call this yourself.
 function Day(startH,startM) {
 
-
-
 	this._start = startH * 60 + startM;
 	this._activities = [];
 
@@ -149,7 +147,7 @@ function Day(startH,startM) {
 }
 
 
-// this is our main module that contians days and praked activites
+// this is our main module that contains days and praked activites
 function Model(){
 	this.days = [];
 	this.parkedActivities = [];
@@ -175,7 +173,7 @@ function Model(){
 		console.log(dayId);
 		var day = this.days[dayId];
 		this.currentDay = day;
-		console.log(day._activities);
+		//console.log(day._activities);
 		this.notifyObservers();
 	}
 	

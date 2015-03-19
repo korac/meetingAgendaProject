@@ -49,12 +49,17 @@ var ScheduleController = function (view, model, day) {
         if ($('#newDayName').val() != "" && $('#newDayDate').val() != "" && $('#newDayTime').val() != "") {
             $("#newDayModal").modal("hide");
 
+
+
+            $('.active').removeClass('active');
+            $('.btn-warning').removeClass('btn-warning');
       //generating the button and its functionality
-            $('<button type="button" class="btn btn-lg btn-default dayButton">'+ $("#newDayName").val()
+            $('<button type="button" class="btn btn-lg btn-default dayButton active btn-warning">'+ $("#newDayName").val()
               +'<br>'+ $("#newDayDate").val() +'</button>').attr("id", "day" + dayIDGenerator++).appendTo('.btn-group-vertical');
       
       //making the adddaybutton look inactive again
             $('#addDayBtn').removeClass('active');
+            $('#addDayBtn').removeClass('btn-warning');
       
       //connecting the button to the freshly added day in the day array
             var time = $('#newDayTime').val().split(":");
@@ -62,7 +67,8 @@ var ScheduleController = function (view, model, day) {
             model.addDay(parseInt(time[0]),parseInt(time[1]));
             $("#emptyDayView").hide();
             $("#dayView").show();
-            
+
+  
             
       //assign id of days to the button
             //idOfdays = mode.days.lenght+1

@@ -52,8 +52,35 @@
 
             <div class="col-md-4 columns">
                 <div class="row" id="emptyDayView">
-                        <div class="col-md-8 col-md-offset-2">
-                            <p class="blocktext">Please click the<br>"+ Add Meeting Button"</p>
+                    <div class="col-md-6 col-md-offset-2">
+                            Start Time:
+                            <p>
+                            <input class="form-control readonly" value="--:--">
+                            </p>
+                            <p>End Time: --:--</p>
+                            <p>Total Length: --- min</p>
+                        </div>
+                        <div class="col-md-2">
+                        <div class="stroke" id="grey"></div>
+                           <div class="progress" id="percentage">
+                               <div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: 0%">
+                                  <span class="sr-only">(discussion)</span>
+                                </div>
+                               <div class="progress-bar progress-bar-danger" id="groupworkPercentage" style="width: 0%">
+                                  <span class="sr-only">(groupwork)</span>
+                               </div>
+                               <div class="progress-bar progress-bar-info" id="presentationPercentage" style="width: 0%">
+                                  <span class="sr-only">(presentation)</span>
+                               </div>
+                               <div class="progress-bar progress-bar-warning" id="breakPercentage" style="width: 0%">
+                                  <span class="sr-only">(break)</span>
+                               </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2" id= "dayBoxDummy">
+                                <p id="dummyText">Please click "add meeting" to create a new meeting</p>
+                            </div>
                         </div>
                 </div>
                 <div class="row" id="dayView">

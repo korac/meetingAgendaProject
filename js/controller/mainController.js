@@ -38,9 +38,13 @@ var MainController = function (container, model) {
 
 	//Get ID of a daybutton on click to trigger the right dayview
        $('#scheduleDayButtons').on('click','.dayButton',function () {
-         var dayButtonID = $(this).attr('id');
-         var dayId = parseInt(dayButtonID.substring('day'.length));
-         model.loadDay(dayId);
+        var dayButtonID = $(this).attr('id');
+        var dayId = parseInt(dayButtonID.substring('day'.length));
+        model.loadDay(dayId);
+        $('.active').not($(this)).removeClass('active');
+        $('.btn-warning').not($(this)).removeClass('btn-warning');
+    	$(this).toggleClass('active');
+    	$(this).toggleClass('btn-warning');
        });
 	
     $('#editActivityCancelButton').on('click', function() {
