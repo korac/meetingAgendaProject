@@ -1,5 +1,5 @@
 
-var DayView = function (container, model, day) {
+var DayView = function (container, model, day, view) {
 
     model.addObserver(this);
 
@@ -14,23 +14,47 @@ var DayView = function (container, model, day) {
 
     this.connectedSortable = this._container.find(".connectedSortable");
 
+    /*this.presentationBar = view._container.find("#presentationPercentage");
+    this.groupworkBar = view._container.find("#groupworkPercentage");
+    this.discussionBar = view._container.find("#discussionPercentage");
+    this.breakBar = view._container.find("#breakPercentage");*/
+
+
     //prevents the dayview container from blocking when smth is dragged over it
  
-    this.update = function () {
+    this.update = function() {
 
-        if(this._model.currentDay != 0)
-        {
-
+        if(this._model.currentDay != 0){
         this.connectedSortable.empty();
+        this.totalLength.empty();
+        this.endTime.empty();
 
             var dayId = 0;
             for(var i=0; i<this._model.days.length; i++) {
-                if (model.days[i] == this._model.currentDay) dayId = i;
-            }
+                this.totalLength.empty();
+                this.endTime.empty();
+                if (model.days[i] == this._model.currentDay){
+                     dayId = i;
+                }
+            }   
 
-            for (var j = 0; j < this._model.currentDay._activities.length; j++){
+          /*  for (var j = 0; j < this._model.days[i]._activities.length; j++){*/
+
+                
+                
+            for (var j = 0; j < model.currentDay._activities.length; j++){
+
+             $.each(ActivityType,function(index,type){
+                console.log("Day '" + ActivityType[index] + "' Length: " +  model.currentDay.getLengthByType(index) + " min");
+                });
+                console.log("Day Length: " + model.currentDay.getTotalLength() + " min");
+                
+
+//                presentationBarWidth = parseInt(model.currentDay.getLengthByType(index)/model.currentDay.getTotalLength() * 100);
+  //              console.log(presentationBar.val());
+
                 // activitybox div
-                console.log(_this._model.currentDay._activities[j].getName());
+              //  console.log(_this._model.currentDay._activities[j].getName());
                 var activityBoxDiv = $('<div>');
                 activityBoxDiv.addClass('activityBox');
                 activityBoxDiv.attr('day', dayId);
@@ -41,6 +65,7 @@ var DayView = function (container, model, day) {
                 activityDiv.addClass('row');
                 activityDiv.addClass('list-group-item dayActivity');
                 activityDiv.attr('draggable', true);
+
 
                 // activity length
                 var lengthSpan = $('<span>');
@@ -68,26 +93,34 @@ var DayView = function (container, model, day) {
                     case 0:
                         activityDiv.addClass('blueBack'); break;
                     case 1:
-                        activityDiv.addClass('greenBack'); break;
+                        activityDiv.addClass('redBack'); break;
                     case 2:
-                        activityDiv.addClass('yellowBack'); break;
+                        activityDiv.addClass('greenBack'); break;
                     case 3:
-                        activityDiv.addClass('redBack'); break;  
+                        activityDiv.addClass('yellowBack'); break;  
                 }
 
        
                 activityBoxDiv.append(activityDiv);
 
-                //$(activityBoxDiv).mouseover(function(){
-                  //      var showID = $(activityDiv.id);
-                         //alert(showID);
-                         //console.log(showID);
-                //});
-
                 this.connectedSortable.append(activityBoxDiv);    
+            }
+        
+        
+        this.totalLength.append(this._model.currentDay.getTotalLength());
+        this.endTime.append(this._model.currentDay.getEnd());
+
+        //console.log(model.days);
         }
 
-    }
+
+    };
+   //this.update();
+
+    
+  this.update();
+}
+
 
 
 /*/Test start
@@ -128,13 +161,12 @@ var DayView = function (container, model, day) {
         $('#dayview').append(itemOutput);*/
 //Test end
 
-}
     //this.totalLength.append(model.days[0].getTotalLength());
 
   
-    this.update();
+
    // this.totalLength.append(_this._model.days[0].getTotalLength());
     //this.endTime.append(model.days[0].getEnd());
 
-  //  this.update();
-}
+
+
