@@ -15,20 +15,6 @@ var MainController = function (container, model) {
     $("#emptyDayView").show();
 
 
-
-    $('#saveButton').on('click', function() {
-		//console.log("Clicked saveButton to change view to MainView");
-		$(".page").hide();
-		$("#MainView").show();
-	});
-
-	$('#addActivityCancelButton').on('click', function() {
-		//console.log("Clicked saveButton to change view to MainView");
-		$(".page").hide();
-		$("#MainView").show();
-		$('#addActBtn').removeClass('active');
-	});
-
  	$('#addActBtn').on('click', function() {
 		//console.log("Clicked saveButton to change view to MainView");
 		$(".page").hide();
