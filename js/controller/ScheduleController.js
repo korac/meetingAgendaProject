@@ -44,7 +44,7 @@ var ScheduleController = function (view, model, day) {
             $('#newDayTimeInfo').removeClass("error");
 
       //If everything is alright, add the day button to the list
-        if ($('#newDayName').val() != "" && $('#newDayDate').val() != "" ) {
+        if ($('#newDayName').val() != "" && $('#newDayDate').val() != "" && $('#newDayTime').val() != "") {
             $("#newDayModal").modal("hide");
 
 

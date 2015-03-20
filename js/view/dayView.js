@@ -16,7 +16,7 @@ var DayView = function (container, model, day, view) {
 
 
     //prevents the dayview container from blocking when smth is dragged over it
- 
+
     this.update = function() {
 
         if(this._model.currentDay != 0){
@@ -31,8 +31,19 @@ var DayView = function (container, model, day, view) {
                 if (model.days[i] == this._model.currentDay){
                      dayId = i;
                 }
-            }   
-                
+            }
+
+            var actTime = $("#newDayTime").val();
+
+            var hours = actTime.charAt(0);
+            hours += actTime.charAt(1);
+
+            var minutes = actTime.charAt(3);
+            minutes += actTime.charAt(4);
+
+            var actLength = parseInt(hours)*60 + parseInt(minutes);
+
+
             for (var j = 0; j < model.currentDay._activities.length; j++){
 
              $.each(ActivityType,function(index,type){
@@ -50,6 +61,8 @@ var DayView = function (container, model, day, view) {
                 console.log(presentationPercentage);*/
 
 
+                var displayedTime = Math.floor(actLength/60) + ':' + actLength % 60;
+                console.log(displayedTime);
                 // activitybox div
               //  console.log(_this._model.currentDay._activities[j].getName());
                 var activityBoxDiv = $('<div>');
@@ -66,7 +79,7 @@ var DayView = function (container, model, day, view) {
 
                 // activity length
                 var lengthSpan = $('<span>');
-                lengthSpan.html(_this._model.currentDay._activities[j].getLength() + 'min');
+                lengthSpan.html(displayedTime);
                 lengthSpan.addClass('col-md-3');
 
                 // activity name
@@ -101,7 +114,9 @@ var DayView = function (container, model, day, view) {
        
                 activityBoxDiv.append(activityDiv);
 
-                this.connectedSortable.append(activityBoxDiv);    
+                this.connectedSortable.append(activityBoxDiv);
+
+                actLength += _this._model.currentDay._activities[j].getLength();
             }
         
         
