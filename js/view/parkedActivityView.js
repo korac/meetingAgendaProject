@@ -9,6 +9,7 @@ var ParkedActivityView = function (container, model) {
 
     this.listbody = this._container.find("#activityList");
     this.connectedSortable1 = this._container.find(".connectedSortable1");
+    this.deleteThis = this._container.find(".deleteThis");
 
     this.update = function () {
 
@@ -36,8 +37,15 @@ var ParkedActivityView = function (container, model) {
             nameSpan.html(_this._model.parkedActivities[i].getName());
             nameSpan.addClass('col-md-7');
 
+            var deleteSpan = $('<span>');
+            deleteSpan.addClass('col-md-1');
+            deleteSpan.addClass('glyphicon');
+            deleteSpan.addClass('glyphicon-remove');
+            deleteSpan.addClass('deleteThis');
+
             activityDiv.append(lengthSpan);
             activityDiv.append(nameSpan);
+            activityDiv.append(deleteSpan);
 
            
 
@@ -72,6 +80,6 @@ var ParkedActivityView = function (container, model) {
         }
 }
 
-    };
+    }
     this.update();
 };

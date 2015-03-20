@@ -29,7 +29,14 @@ ul{
     margin-top: 46px;
     overflow: auto;
 }
-
+.activityBox > div > .glyphicon-remove {
+    visibility: hidden;
+    z-index: 1000;
+}
+.activityBox:hover > div > .glyphicon-remove {
+    visibility: visible;
+    z-index: 1000;
+}
 #dayBox{
     height: 100%;
     border-radius: 10px;
@@ -37,6 +44,7 @@ ul{
     border: 5px double black;
     overflow: auto;
 }
+
 
 #dayBoxDummy{
     height: 100%;
