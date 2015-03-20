@@ -44,7 +44,7 @@ var MainController = function (container, model) {
         $("#dayView").show();
         model.loadDay(dayId);
         //Looks of the button
-        model.setProperId();
+        model.setProperId(dayButtonID);
         $('.active').not($(this)).removeClass('active');
         $('.btn-warning').not($(this)).removeClass('btn-warning');
     	$(this).addClass('active');
@@ -63,5 +63,7 @@ var MainController = function (container, model) {
 		$(".page").hide();
 		$("#MainView").show();
 	});
+
+	$('.connectedSortable').sortable();
 
 }

@@ -60,6 +60,7 @@ var ParkedActivityView = function (container, model) {
             //var showID = _this._model.parkedActivities[i].getDescription();
             //console.log(showID);
             //});
+            
             activityBoxDiv.tooltip({
                     title: 'Description: ' + _this._model.parkedActivities[i].getDescription(),
                     placement:  'bottom'
@@ -74,4 +75,4 @@ var ParkedActivityView = function (container, model) {
 
     }
     this.update();
-};
+}
