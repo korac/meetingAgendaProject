@@ -66,7 +66,7 @@ var ScheduleController = function (view, model, day) {
             $("#dayView").show();
 
   
-            
+            console.log("schnabbeldibu");
       //assign id of days to the button
             //idOfdays = mode.days.lenght+1
 
@@ -115,13 +115,13 @@ var ScheduleController = function (view, model, day) {
             $('#addDayBtn').removeClass('active');
     });
 
-//Delete a day
+//Delete a day (so far only the view which is not accessible anymore)
   $('#scheduleView').on('click','.dayEraser', function() {
-        $('.btn-warning').remove();
           $("#dayView").hide();
           $("#emptyDayView").show();
         var dayToDelete = $(this).closest('button').attr('id');
-        model.deleteDay(dayToDelete);
+        $('.btn-warning').remove();
+        //model.deleteDay(dayToDelete);
     });
 
 
