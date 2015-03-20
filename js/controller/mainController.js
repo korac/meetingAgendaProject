@@ -64,4 +64,6 @@ var MainController = function (container, model) {
 		$("#MainView").show();
 	});
 
+	$('.connectedSortable').sortable();
+
 }
