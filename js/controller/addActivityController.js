@@ -37,7 +37,7 @@ var AddActivityController = function (view, model) {
         console.log(_this._model.parkedActivities[0].getName());
 
         $('#addActBtn').removeClass('active');
-        console.log(_this._model.parkedActivities[0]);
+ //       console.log(_this._model.parkedActivities[0]);
 
 
 

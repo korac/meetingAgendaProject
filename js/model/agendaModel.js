@@ -199,6 +199,16 @@ function Model(){
 		this.addActivity(activity,null,position);
 	};
 	
+	// edit an activity
+    this.editParkedActivity = function(oldActivity, editedActivity){
+        for (var i = 0; i < this.parkedActivities.length; i++) {
+            if (this.parkedActivities[i] == oldActivity) {
+                this.parkedActivities[i] = editedActivity;
+            }
+        }
+        this.notifyObservers();
+    }
+
 	// remove an activity on provided position from parked activites 
 	this.removeParkedActivity = function(position) {
 		act = this.parkedActivities.splice(position,1)[0];
@@ -245,14 +255,6 @@ function Model(){
 	    this.listeners.push(listener);
 	};
 	//*** END OBSERVABLE PATTERN ***
-		//function that returns a day of specific ID
-	/*this.getDay = function (id) {
-	  for(key in days){
-			if(key.id == id) {
-				return days[key];
-			}
-		}
-	}*/
 }
 
 
