@@ -98,6 +98,7 @@ var DayView = function (container, model, day, view) {
                         activityDiv.addClass('greenBack'); break;
                     case 3:
                         activityDiv.addClass('yellowBack'); break;  
+
                 }
 
        
