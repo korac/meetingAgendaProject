@@ -54,7 +54,7 @@ var ScheduleController = function (view, model, day) {
       //generating the button, its functionality and looks
       $('<button type="button" class="btn btn-lg btn-default dayButton active btn-warning">'+ $("#newDayName").val()
         +'<br>'+ $("#newDayDate").val() +'<span class="col-md-1 glyphicon glyphicon-remove-circle dayEraser"></span></button>').attr("id", "day" + dayIDGenerator++).appendTo('.btn-group-vertical');
-      
+
       //making the adddaybutton look inactive again
             $('#addDayBtn').removeClass('active');
             $('#addDayBtn').removeClass('btn-warning');
@@ -65,13 +65,11 @@ var ScheduleController = function (view, model, day) {
             $("#emptyDayView").hide();
             $("#dayView").show();
 
-  
-            console.log("schnabbeldibu");
       //assign id of days to the button
             //idOfdays = mode.days.lenght+1
 
             model.loadDay(dayIDGenerator-1);
-
+            console.log(dayIDGenerator-1);
             event.preventDefault();
             return true ;
       
