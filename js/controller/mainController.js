@@ -40,12 +40,16 @@ var MainController = function (container, model) {
        $('#scheduleDayButtons').on('click','.dayButton',function () {
         var dayButtonID = $(this).attr('id');
         var dayId = parseInt(dayButtonID.substring('day'.length));
+        $("#emptyDayView").hide();
+        $("#dayView").show();
         model.loadDay(dayId);
         //Looks of the button
+        model.setProperId();
         $('.active').not($(this)).removeClass('active');
         $('.btn-warning').not($(this)).removeClass('btn-warning');
     	$(this).addClass('active');
     	$(this).addClass('btn-warning');
+
        });
 	
     $('#editActivityCancelButton').on('click', function() {
