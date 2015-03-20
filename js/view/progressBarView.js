@@ -1,14 +1,16 @@
 /**
  * Created by Kristijan on 7.3.2015..
  */
-var ProgressBarView = function(container, model){
+var ProgressBarView = function(container, model, day){
 
     model.addObserver(this);
 
     this._container = container;
     this._model = model;
 
+
     var _this = this;
+
 
     this.presentationBar = this._container.find("#presentationPercentage");
     this.groupworkBar = this._container.find("#groupworkPercentage");
@@ -30,6 +32,7 @@ var ProgressBarView = function(container, model){
         }
 
 
+        if(day != null) {
         var totalLength = day.getTotalLength();
         console.log(totalLength);
 
@@ -48,6 +51,13 @@ var ProgressBarView = function(container, model){
         var breakLength = day.getLengthByType(3);
         breakLength /= totalLength;
         breakLength *= 100;
+        } else{
+            totalLength = 0;
+            presentationLength = 0;
+            groupworkLength = 0;
+            discussionLength = 0;
+            breakLength = 0;
+            }
 
         var discussionHtml = '<div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: '
             + discussionLength + '%"><span class="sr-only">(discussion)</span></div>';

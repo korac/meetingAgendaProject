@@ -58,4 +58,10 @@ var MainController = function (container, model) {
 		$("#MainView").show();
 	});
 
+	$('#editSaveButton').on('click', function() {
+		//console.log("Clicked saveButton to change view to MainView");
+		$(".page").hide();
+		$("#MainView").show();
+	});
+
 }

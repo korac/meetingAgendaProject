@@ -116,6 +116,9 @@ function Day(startH,startM) {
 		return min;
 	};
 	
+	this.getActivities = function(){
+        return this._activities;
+    };
 	// adds an activity to specific position
 	// if the position is not provided then it will add it to the 
 	// end of the list
@@ -212,6 +215,16 @@ function Model(){
 		this.addActivity(activity,null,position);
 	};
 	
+	// edit an activity
+    this.editParkedActivity = function(oldActivity, editedActivity){
+        for (var i = 0; i < this.parkedActivities.length; i++) {
+            if (this.parkedActivities[i] == oldActivity) {
+                this.parkedActivities[i] = editedActivity;
+            }
+        }
+        this.notifyObservers();
+    }
+
 	// remove an activity on provided position from parked activites 
 	this.removeParkedActivity = function(position) {
 		act = this.parkedActivities.splice(position,1)[0];
