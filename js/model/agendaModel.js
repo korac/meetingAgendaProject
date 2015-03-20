@@ -4,8 +4,8 @@
 var ActivityType = ["Presentation","Group Work","Discussion","Break"];
 
 //array for activity storage
-
 var activityStorage = [];
+
 // This is an activity constructor
 // When you want to create a new activity you just call
 // var act = new Activity("some activity",20,1,"Some description);
@@ -71,10 +71,6 @@ function Activity(model,name,length,typeid,description){
 // days to the model, so you don't need call this yourself.
 function Day(startH,startM) {
 
-
-	
-
-
 	this._start = startH * 60 + startM;
 	this._activities = [];
 
@@ -119,6 +115,9 @@ function Day(startH,startM) {
 		return min;
 	};
 	
+	this.getActivities = function(){
+        return this._activities;
+    };
 	// adds an activity to specific position
 	// if the position is not provided then it will add it to the 
 	// end of the list
@@ -155,7 +154,6 @@ function Day(startH,startM) {
 
 // this is our main module that contains days and praked activites
 function Model(){
-
 	this.days = [];
 	this.parkedActivities = [];
 	this.currentDay = 0;
@@ -254,7 +252,7 @@ function Model(){
 // you can use this method to create some test data and test your implementation
 function createTestData(model){
 
-
+	//model.addDay();
 	model.addParkedActivity(new Activity(model,"Introduction",10,0,""),0);
     model.addParkedActivity(new Activity(model,"Idea 1",30,0,""),0);
 	model.addParkedActivity(new Activity(model,"Working in groups",35,1,""),0);
@@ -272,7 +270,6 @@ function createTestData(model){
 	//console.log("Day Length: " + model.days[0].getTotalLength() + " min");
 	//$.each(ActivityType,function(index,type){
 	//	console.log("Day '" + ActivityType[index] + "' Length: " +  model.days[0].getLengthByType(index) + " min");
-
 
 
 }

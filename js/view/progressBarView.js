@@ -1,14 +1,16 @@
 /**
  * Created by Kristijan on 7.3.2015..
  */
-var ProgressBarView = function(container, model){
+var ProgressBarView = function(container, model, day){
 
     model.addObserver(this);
 
     this._container = container;
     this._model = model;
 
+
     var _this = this;
+
 
     this.presentationBar = this._container.find("#presentationPercentage");
     this.groupworkBar = this._container.find("#groupworkPercentage");

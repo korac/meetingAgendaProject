@@ -29,12 +29,12 @@ var DayController = function (view, model) {
             if(ui.item.attr('day')!= null)
             {
                 model.moveActivity(parseFloat(ui.item.attr('day')),parseFloat(ui.item.attr('position')),parseFloat(this.id),ui.item.index());
-                console.log("ekane to move elements to day list");
+                //console.log("ekane to move elements to day list");
             }
             else
             {    
                 model.moveActivity(null,parseFloat(ui.item.attr('position')),parseFloat(this.id),ui.item.index());
-                console.log("ekane to move apo to parked activity sto day");
+                //console.log("ekane to move apo to day sto day");
             }
             
         }

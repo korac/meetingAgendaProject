@@ -8,10 +8,8 @@ $(function(){
     var model = new Model();
 
 
-
    createTestData(model);
     //model.addDay();
-
 
 
 
@@ -22,7 +20,7 @@ $(function(){
     var dayView = new DayView($("#dayView"), model);
     var progressBarView = new ProgressBarView($("#percentage"), model);
     var scheduleView = new ScheduleView($("#scheduleView"), model);
-    //var activityEditView = new ActivityEditView($("#ActivityEditView"), model);
+    var activityEditView = new ActivityEditView($("#ActivityEditView"), model);
 
     // Controllers
     var addActivityController = new AddActivityController(addActivityView, model);
@@ -31,7 +29,7 @@ $(function(){
     var dayController = new DayController(dayView, model);
     var mainController = new MainController(mainView, model);
     var scheduleController = new ScheduleController(mainView, model);
-    //var activityEditController = new ActivityEditController(activityEditView, model);
+    var activityEditController = new ActivityEditController(activityEditView, model);
 
 
     
