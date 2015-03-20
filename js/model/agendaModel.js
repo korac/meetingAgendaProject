@@ -183,7 +183,7 @@ function Model(){
 	//Delete Day
 	this.deleteDay = function(dayId) {
 		this.days.delete[dayId];
-		console.log(this.days);
+		//console.log(this.days);
 		this.notifyObservers();
 	}
 

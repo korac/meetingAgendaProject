@@ -38,7 +38,6 @@ var ScheduleController = function (view, model, day) {
             $('#newDayNameInfo').text("*");
             $('#newDayNameInfo').removeClass("error");
 
-
             $('#newDayTime').removeClass("error");
             $('#newDayTimeInfo').text("*");
             $('#newDayTimeInfo').removeClass("error");
