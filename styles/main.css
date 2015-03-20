@@ -22,12 +22,13 @@ ul{
     border-radius: 10px;
     padding: 0;
     border: 5px double black;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     width: 70%;
 }
 #parkedactBox{
     margin-top: 46px;
-    overflow: auto;
+    overflow: hidden;
 }
 .activityBox > div > .glyphicon-remove {
     visibility: hidden;
@@ -42,7 +43,8 @@ ul{
     border-radius: 10px;
     padding: 0;
     border: 5px double black;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 
@@ -51,7 +53,8 @@ ul{
     border-radius: 10px;
     padding: 0;
     border: 5px double black;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     background: lightgrey;
 }
 
@@ -64,9 +67,14 @@ ul{
     font-size:20px;
     color: red;
 }
-
+#scheduleDayButtons{
+  height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 .connectedSortable {
   height: 200px;
+ 
 }
 
 /*printing the red 30% line*/
