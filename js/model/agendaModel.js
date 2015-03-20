@@ -5,6 +5,7 @@ var ActivityType = ["Presentation","Group Work","Discussion","Break"];
 
 //array for activity storage
 var activityStorage = [];
+var _properId = "";
 
 // This is an activity constructor
 // When you want to create a new activity you just call
@@ -115,6 +116,9 @@ function Day(startH,startM) {
 		return min;
 	};
 	
+	this.getActivities = function(){
+        return this._activities;
+    };
 	// adds an activity to specific position
 	// if the position is not provided then it will add it to the 
 	// end of the list
@@ -170,13 +174,28 @@ function Model(){
 
 	//load a day
 	this.loadDay = function(dayId) {
-		console.log(dayId);
+		//console.log(dayId);
 		var day = this.days[dayId];
 		this.currentDay = day;
 		//console.log(day._activities);
 		this.notifyObservers();
 	}
 	
+	//Delete Day
+	this.deleteDay = function(dayId) {
+		this.days.delete[dayId];
+		console.log(this.days);
+		this.notifyObservers();
+	}
+
+	this.setProperId = function(dayId) {
+		this._properId = dayId;
+		this.notifyObservers();
+	}
+
+	this.getProperId = function() {
+		return this._properId;
+	}
 	// add an activity to model
 	this.addActivity = function (activity,day,position) {
 		console.log(day);
@@ -196,6 +215,16 @@ function Model(){
 		this.addActivity(activity,null,position);
 	};
 	
+	// edit an activity
+    this.editParkedActivity = function(oldActivity, editedActivity){
+        for (var i = 0; i < this.parkedActivities.length; i++) {
+            if (this.parkedActivities[i] == oldActivity) {
+                this.parkedActivities[i] = editedActivity;
+            }
+        }
+        this.notifyObservers();
+    }
+
 	// remove an activity on provided position from parked activites 
 	this.removeParkedActivity = function(position) {
 		act = this.parkedActivities.splice(position,1)[0];

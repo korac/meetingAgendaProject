@@ -5,10 +5,8 @@ var ParkedActivityController = function (view, model) {
     this._model = model;
 
     var _this = this;
+    var parkedActivities = model.parkedActivities;
 
-   // $('.parkedActivity').mouseover(function() {
-   //console.log('id');
-   //});
 	view.connectedSortable1.sortable({
 		appendTo: document.body,
 		helper: "clone",
@@ -31,9 +29,8 @@ var ParkedActivityController = function (view, model) {
 			}
 		},
 	}).disableSelection();
-
 	
-	$(document).find('.connectedSortable1').on('dblclick', this, function(event) {
+	$(document).find('.connectedSortable1').on('dblclick', '.activityBox', function(event) {
 
 		var target = event.target;
 		while (!target.classList.contains('activityBox')) {
@@ -41,25 +38,28 @@ var ParkedActivityController = function (view, model) {
         }
 
 	    var selectedActivityIndex = -1;
-        for (var i = 0; i < model.parkedActivities.length; i++) {
-            if (model.parkedActivities[i] == target) {
+        for (var i = 0; i < view.connectedSortable1.children().length; i++) {
+            if (view.connectedSortable1.children()[i] == target) {
                 selectedActivityIndex = i;
+                console.log(selectedActivityIndex);
                 break;
             }
         }
-        console.log(target);
+       // console.log(target);
         //alert("clicked");
-        /*if (selectedActivityIndex == -1) {
+        if (selectedActivityIndex == -1) {
             console.log("Error: did not found selected activity ");
             return;	
-        }*/
-        alert("clicked");
-        var selectedActivity = model.parkedActivities[selectedActivityIndex];
+        }
+       // alert("clicked");
+        var selectedActivity = parkedActivities[selectedActivityIndex];
+        console.log(selectedActivity.getName());
         var activityEditView = new ActivityEditView($('#ActivityEditView'), model, selectedActivity);
         var activityEditController = new ActivityEditController(activityEditView, model, selectedActivity);
-		console.log("change to editview");
 		$(".page").hide();       
         $("#ActivityEditView").show();
+        //console.log("change to editview");
+
     });
 
 }
