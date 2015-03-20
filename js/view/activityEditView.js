@@ -1,7 +1,6 @@
 var ActivityEditView = function (container, model,selectedActivity,day){
 
 	model.addObserver(this);
-    
     this._container = container;
     this._model = model;
 

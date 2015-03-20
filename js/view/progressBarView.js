@@ -23,7 +23,7 @@ var ProgressBarView = function(container, model, day){
 
         var dayId = model.getProperId;
         //var dayId = model.getProperId();
-        console.log(dayId);
+        //console.log(dayId);
         for(var i = 0; i < _this._model.days.length; i++){
             var iday = "day" + i;
             if(iday === "day" + i){
