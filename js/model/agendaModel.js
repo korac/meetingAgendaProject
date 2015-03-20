@@ -5,6 +5,7 @@ var ActivityType = ["Presentation","Group Work","Discussion","Break"];
 
 //array for activity storage
 var activityStorage = [];
+var _properId = "";
 
 // This is an activity constructor
 // When you want to create a new activity you just call
@@ -170,13 +171,28 @@ function Model(){
 
 	//load a day
 	this.loadDay = function(dayId) {
-		console.log(dayId);
+		//console.log(dayId);
 		var day = this.days[dayId];
 		this.currentDay = day;
 		//console.log(day._activities);
 		this.notifyObservers();
 	}
 	
+	//Delete Day
+	this.deleteDay = function(dayId) {
+		this.days.delete[dayId];
+		console.log(this.days);
+		this.notifyObservers();
+	}
+
+	this.setProperId = function(dayId) {
+		this._properId = dayId;
+		this.notifyObservers();
+	}
+
+	this.getProperId = function() {
+		return this._properId;
+	}
 	// add an activity to model
 	this.addActivity = function (activity,day,position) {
 		console.log(day);
