@@ -106,6 +106,7 @@ var AddActivityController = function (view, model) {
 
         $("#addActivityView").show();
         $("#MainView").hide();
+        $('#inputLength').val(1);
  //       console.log(_this._model.parkedActivities[0]);
             return false;
         };
