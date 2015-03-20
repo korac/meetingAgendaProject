@@ -177,6 +177,15 @@ function Model(){
 		this.notifyObservers();
 	}
 	
+	//Delete Day
+	this.deleteDay = function(dayId) {
+		//var day = this.days[dayId];
+		//this.currentDay = day;
+		this.days.splice(dayId);
+		console.log(this.days);
+		this.notifyObservers();
+	}
+
 	// add an activity to model
 	this.addActivity = function (activity,day,position) {
 		console.log(day);

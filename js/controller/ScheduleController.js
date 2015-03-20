@@ -116,16 +116,24 @@ var ScheduleController = function (view, model, day) {
     });
 
 //Delete a day (So far only the button but not the view)
-  $('#scheduleView').on('mouseover','.dayEraser', function() {
-    $(this).on('click', function() {
+  $('#scheduleView').on('click','.dayEraser', function() {
         $('.btn-warning').remove();
+        var dayToDelete = $(this).closest('button').attr('id');
+        //console.log(dayToDelete);
+        model.deleteDay(dayToDelete);
     });
-  });
+
 
 
 }
 
 
-
+        /*if (model.day.length === 0){
+          $("#dayView").hide();
+          $("#emptyDayView").show();
+        } else {
+          model.loadDay();
+        }*/
+        //model.moveActivity(currentday, );
 
 
