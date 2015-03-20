@@ -183,7 +183,7 @@ function Model(){
 	//Delete Day
 	this.deleteDay = function(dayId) {
 		this.days.delete[dayId];
-		console.log(this.days);
+		//console.log(this.days);
 		this.notifyObservers();
 	}
 
@@ -250,7 +250,7 @@ function Model(){
 			this.addParkedActivity(activity,newposition);
 		} else {
 			var activity = this.days[oldday]._removeActivity(oldposition);
-			this.days[newday]._addActivity(activity,newposition);
+			this.days[oldday]._addActivity(activity,newposition);
 		}
 		this.notifyObservers();
 	};
