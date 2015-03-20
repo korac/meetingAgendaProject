@@ -1,4 +1,4 @@
-var ActivityEditView = function (container, model,selectedActivity,day){
+var ActivityEditView = function (container, model,selectedActivity){
 
 	model.addObserver(this);
     this._container = container;

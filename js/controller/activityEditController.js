@@ -6,27 +6,29 @@ var ActivityEditController = function (view, model, activity) {
     var _this = this;
 
     var newName;
-    var newLength; 
-    var newType;
-    var newDescription;
+        var newLength; 
+        var newType;
+        var newDescription;
 
-    var temporaryType;
+        var temporaryType;
 
-    temporaryType = this._view.oldactType;
-  
-    this._view.changeType.change(function(){
-      
-        switch(_this._view.changeType.val()){
+        temporaryType = _this._view.oldactType;
+        
+        _this._view.changeType.change(function(){
+          
+            switch(_this._view.changeType.val()){
 
-            case "Presentation": temporaryType = 0; break;
-            case "Group work": temporaryType = 1; break;
-            case "Discussion": temporaryType = 2; break;
-            case "Break": temporaryType = 3; break;
+                case "Presentation": temporaryType = 0; break;
+                case "Group work": temporaryType = 1; break;
+                case "Discussion": temporaryType = 2; break;
+                case "Break": temporaryType = 3; break;
 
-        }
-    });
+            }
+        });    
 
     view.editSaveButton.on('click', function() {
+
+        
         
         if(_this._view.oldactName != _this._view.changeName.val()){
             newName = _this._view.changeName.val();
@@ -52,10 +54,10 @@ var ActivityEditController = function (view, model, activity) {
             newDescription = _this._view.oldactDescription;
         }
 		var editedActivity = new Activity(_this._model, newName, parseInt(newLength), temporaryType, newDescription);
-		//console.log(editedActivity.getName());		
-		//console.log(editedActivity.getLength());
-		//console.log(editedActivity.getType());
-		//console.log(editedActivity.getDescription());
+		console.log(newName);		
+		console.log(newLength);
+		console.log(editedActivity.getType());
+		console.log(editedActivity.getDescription());
 		//selectedActivity = editedActivity;
         _this._model.editParkedActivity(activity, editedActivity);
 
