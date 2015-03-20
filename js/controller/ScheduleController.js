@@ -115,11 +115,12 @@ var ScheduleController = function (view, model, day) {
             $('#addDayBtn').removeClass('active');
     });
 
-//Delete a day (So far only the button but not the view)
+//Delete a day
   $('#scheduleView').on('click','.dayEraser', function() {
         $('.btn-warning').remove();
+          $("#dayView").hide();
+          $("#emptyDayView").show();
         var dayToDelete = $(this).closest('button').attr('id');
-        //console.log(dayToDelete);
         model.deleteDay(dayToDelete);
     });
 
@@ -128,12 +129,7 @@ var ScheduleController = function (view, model, day) {
 }
 
 
-        /*if (model.day.length === 0){
-          $("#dayView").hide();
-          $("#emptyDayView").show();
-        } else {
-          model.loadDay();
-        }*/
+        
         //model.moveActivity(currentday, );
 
 
