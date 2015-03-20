@@ -83,6 +83,16 @@ ul{
 
 }
 
+#percentage-grey{
+  transform: translate(0px, 45px) rotate(90deg) scale(3.5, 2);
+}
+
+.readonly{
+  cursor: not-allowed;
+  background-color: #EEE;
+  color: #9E9999;
+}
+
 .blueBack{
     background-color: rgba(0, 191, 255, 0.49);
 }
@@ -121,9 +131,21 @@ ul{
 }
 
 #emptyDayView{
-
+  cursor: not-allowed;
 }
 
-.glyphicon-trash {
-  color: invert;
+.dayEraser {
+  transform: translate(-20px, -20px) scale(1.5, 1.5);
+}
+
+.dayEraser:hover {
+  color: red;
+}
+
+.dayButton >  .dayEraser {
+ visibility: hidden; 
+} 
+
+.btn-warning:hover >  .dayEraser {
+ visibility: visible;
 }

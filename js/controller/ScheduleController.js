@@ -53,7 +53,7 @@ var ScheduleController = function (view, model, day) {
             $('.btn-warning').removeClass('btn-warning');
       //generating the button, its functionality and looks
       $('<button type="button" class="btn btn-lg btn-default dayButton active btn-warning">'+ $("#newDayName").val()
-        +'<br>'+ $("#newDayDate").val() +'<span class="col-md-1 glyphicon glyphicon-trash"></span></button>').attr("id", "day" + dayIDGenerator++).appendTo('.btn-group-vertical');
+        +'<br>'+ $("#newDayDate").val() +'<span class="col-md-1 glyphicon glyphicon-remove-circle dayEraser"></span></button>').attr("id", "day" + dayIDGenerator++).appendTo('.btn-group-vertical');
       
       //making the adddaybutton look inactive again
             $('#addDayBtn').removeClass('active');
@@ -115,10 +115,11 @@ var ScheduleController = function (view, model, day) {
             $('#addDayBtn').removeClass('active');
     });
 
-  $('#deleteDayBtn').on('mouseover', function() {
-  $(this).on('click', function() {
-      $('.btn-warning').remove();
-  });
+//Delete a day (So far only the button but not the view)
+  $('#scheduleView').on('mouseover','.dayEraser', function() {
+    $(this).on('click', function() {
+        $('.btn-warning').remove();
+    });
   });
 
 
