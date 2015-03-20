@@ -48,17 +48,16 @@ var ScheduleController = function (view, model, day) {
             $("#newDayModal").modal("hide");
 
 
-
+      //switch off possible visible settings
             $('.active').removeClass('active');
             $('.btn-warning').removeClass('btn-warning');
-      //generating the button and its functionality
-            $('<button type="button" class="btn btn-lg btn-default dayButton active btn-warning">'+ $("#newDayName").val()
-              +'<br>'+ $("#newDayDate").val() +'</button>').attr("id", "day" + dayIDGenerator++).appendTo('.btn-group-vertical');
+      //generating the button, its functionality and looks
+      $('<button type="button" class="btn btn-lg btn-default dayButton active btn-warning">'+ $("#newDayName").val()
+        +'<br>'+ $("#newDayDate").val() +'<span class="col-md-1 glyphicon glyphicon-remove-circle dayEraser"></span></button>').attr("id", "day" + dayIDGenerator++).appendTo('.btn-group-vertical');
       
       //making the adddaybutton look inactive again
             $('#addDayBtn').removeClass('active');
             $('#addDayBtn').removeClass('btn-warning');
-      
       //connecting the button to the freshly added day in the day array
             var time = $('#newDayTime').val().split(":");
             model.addDay(parseInt(time[0]),parseInt(time[1]));
@@ -115,6 +114,14 @@ var ScheduleController = function (view, model, day) {
 
             $('#addDayBtn').removeClass('active');
     });
+
+//Delete a day (So far only the button but not the view)
+  $('#scheduleView').on('mouseover','.dayEraser', function() {
+    $(this).on('click', function() {
+        $('.btn-warning').remove();
+    });
+  });
+
 
 }
 

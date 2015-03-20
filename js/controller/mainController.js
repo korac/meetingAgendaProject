@@ -41,10 +41,11 @@ var MainController = function (container, model) {
         var dayButtonID = $(this).attr('id');
         var dayId = parseInt(dayButtonID.substring('day'.length));
         model.loadDay(dayId);
+        //Looks of the button
         $('.active').not($(this)).removeClass('active');
         $('.btn-warning').not($(this)).removeClass('btn-warning');
-    	$(this).toggleClass('active');
-    	$(this).toggleClass('btn-warning');
+    	$(this).addClass('active');
+    	$(this).addClass('btn-warning');
        });
 	
     $('#editActivityCancelButton').on('click', function() {
