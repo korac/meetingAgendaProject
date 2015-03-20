@@ -143,8 +143,12 @@ ul{
   color: red;
 }
 
+.dayButton {
+  text-align: right; 
+}
+
 .dayButton >  .dayEraser {
- visibility: hidden; 
+ visibility: hidden;
 } 
 
 .btn-warning:hover >  .dayEraser {
