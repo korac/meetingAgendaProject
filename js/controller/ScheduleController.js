@@ -65,7 +65,9 @@ var ScheduleController = function (view, model, day) {
             $("#emptyDayView").hide();
             $("#dayView").show();
 
-
+            var smth = dayIDGenerator - 1;
+            _this._model.setProperId("day" + smth);
+            console.log("day" + smth);
 
       //assign id of days to the button
             //idOfdays = mode.days.lenght+1
