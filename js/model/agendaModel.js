@@ -242,14 +242,6 @@ function Model(){
 	    this.listeners.push(listener);
 	};
 	//*** END OBSERVABLE PATTERN ***
-		//function that returns a day of specific ID
-	/*this.getDay = function (id) {
-	  for(key in days){
-			if(key.id == id) {
-				return days[key];
-			}
-		}
-	}*/
 }
 
 
