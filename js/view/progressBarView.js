@@ -21,16 +21,18 @@ var ProgressBarView = function(container, model, day){
 
         this._container.empty();
 
-        var dayId = $("#scheduleDayButtons .active").attr("id");
+        var dayId = model.getProperId;
+        //var dayId = model.getProperId();
         console.log(dayId);
         for(var i = 0; i < _this._model.days.length; i++){
             var iday = "day" + i;
-            if(iday === dayId){
+            if(iday === "day" + i){
                 var day = _this._model.days[i];
             }
         }
 
 
+        if(day != null) {
         var totalLength = day.getTotalLength();
         console.log(totalLength);
 
@@ -49,6 +51,13 @@ var ProgressBarView = function(container, model, day){
         var breakLength = day.getLengthByType(3);
         breakLength /= totalLength;
         breakLength *= 100;
+        } else{
+            totalLength = 0;
+            presentationLength = 0;
+            groupworkLength = 0;
+            discussionLength = 0;
+            breakLength = 0;
+            }
 
         var discussionHtml = '<div class="progress-bar progress-bar-success" id="discussionPercentage" style="width: '
             + discussionLength + '%"><span class="sr-only">(discussion)</span></div>';

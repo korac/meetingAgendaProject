@@ -38,10 +38,10 @@ var ParkedActivityController = function (view, model) {
         }
 
 	    var selectedActivityIndex = -1;
-        for (var i = 0; i < parkedActivities.length; i++) {
-            if (parkedActivities[i] == target) {
+        for (var i = 0; i < view.connectedSortable1.children().length; i++) {
+            if (view.connectedSortable1.children()[i] == target) {
                 selectedActivityIndex = i;
-                console.log(selectedActivityIndex.val());
+                console.log(selectedActivityIndex);
                 break;
             }
         }
@@ -51,13 +51,15 @@ var ParkedActivityController = function (view, model) {
             console.log("Error: did not found selected activity ");
             return;	
         }
-        alert("clicked");
+       // alert("clicked");
         var selectedActivity = parkedActivities[selectedActivityIndex];
+        console.log(selectedActivity.getName());
         var activityEditView = new ActivityEditView($('#ActivityEditView'), model, selectedActivity);
         var activityEditController = new ActivityEditController(activityEditView, model, selectedActivity);
-		console.log("change to editview");
 		$(".page").hide();       
         $("#ActivityEditView").show();
+        //console.log("change to editview");
+
     });
 
 }

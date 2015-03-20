@@ -51,6 +51,7 @@ ul{
     text-align: center;
     vertical-align: middle;
     font-size:20px;
+    color: red;
 }
 
 .connectedSortable {
@@ -87,7 +88,7 @@ ul{
   transform: translate(0px, 45px) rotate(90deg) scale(3.5, 2);
 }
 
-.readonly{
+.readonly {
   cursor: not-allowed;
   background-color: #EEE;
   color: #9E9999;
