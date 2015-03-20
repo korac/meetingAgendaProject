@@ -18,12 +18,14 @@ var ParkedActivityController = function (view, model) {
 		update:function(event,ui){
 			if (this === ui.item.parent()[0]) {
 				if(ui.item.attr('day')== null){
+                    //Day Controller moving activity inside parked activities
 					model.moveActivity(null,parseFloat(ui.item.attr('position')),null,ui.item.index());
-					//console.log("ekane to move sto activity list");
+					console.log("Day Controller moving activity inside parked activities");
 				}
 				else{
+                    //Day Controller moving activity from day to parked activities
 					model.moveActivity(parseFloat(ui.item.attr('day')),parseFloat(ui.item.attr('position')),null,ui.item.index());
-					//console.log("ekane to move apo to activity sto day");
+					console.log("Day Controller moving activity from day to parked activities");
 				}
 				
 			}
@@ -61,7 +63,7 @@ var ParkedActivityController = function (view, model) {
 		while (!target.classList.contains('activityBox')) {
             target = target.parentNode;
         }
-
+ // determine the index of the activity
 	    var selectedActivityIndex = -1;
         for (var i = 0; i < view.connectedSortable1.children().length; i++) {
             if (view.connectedSortable1.children()[i] == target) {
@@ -70,20 +72,18 @@ var ParkedActivityController = function (view, model) {
                 break;
             }
         }
-       // console.log(target);
-        //alert("clicked");
+     
         if (selectedActivityIndex == -1) {
             console.log("Error: did not found selected activity ");
             return;	
         }
-       // alert("clicked");
+      
         var selectedActivity = parkedActivities[selectedActivityIndex];
         console.log(selectedActivity.getName());
         var activityEditView = new ActivityEditView($('#ActivityEditView'), model, selectedActivity);
         var activityEditController = new ActivityEditController(activityEditView, model, selectedActivity);
 		$(".page").hide();       
         $("#ActivityEditView").show();
-        //console.log("change to editview");
 
     });
 
