@@ -14,6 +14,7 @@ var MainController = function (container, model) {
 	$("#dayView").hide();
     $("#emptyDayView").show();
 
+
 	//add activity button, when clicked it hides the page and shows the addActivity page
  	$('#addActBtn').on('click', function() {
 		$(".page").hide();

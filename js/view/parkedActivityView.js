@@ -15,7 +15,7 @@ var ParkedActivityView = function (container, model) {
 
         this.listbody.empty();
         console.log(model.parkedActivities);
-        if(model.parkedActivities.length > 0){
+    if(model.parkedActivities.length > 0){
         for(var i = 0; i < model.parkedActivities.length; i++){
 
             var activityBoxDiv = $('<div>');
@@ -23,10 +23,10 @@ var ParkedActivityView = function (container, model) {
             activityBoxDiv.attr('position',i);
             activityBoxDiv.attr('id',i);
 
+
             var activityDiv = $('<div>');
             activityDiv.addClass('row');
             activityDiv.addClass('list-group-item parkedActivity');
-            
             activityDiv.attr('draggable', true);
 
             var lengthSpan = $('<span>');
@@ -63,23 +63,24 @@ var ParkedActivityView = function (container, model) {
             }
    
             activityBoxDiv.append(activityDiv);
-
-          //  $(activityBoxDiv).mouseover(function(){
-          //         var showID = _this._model.parkedActivities[i].getDescription().val();
-                     //alert(showID);
-            //         console.log(showID.val());
-          //  });
-
+           // console.log(i);
+           // $(activityBoxDiv).mouseover(function(){
+            //var showID = _this._model.parkedActivities[i].getDescription();
+            //console.log(showID);
+            //});
+            
             activityBoxDiv.tooltip({
-                title: 'Description: ' + _this._model.parkedActivities[i].getDescription(),
-                //track:true,
-                placement:  'bottom'
-               
+                    title: 'Description: ' + _this._model.parkedActivities[i].getDescription(),
+                    placement:  'bottom'
+
             });
+
             this.listbody.append(activityBoxDiv);
         }
-}
+        
+       
+    }
 
     }
     this.update();
-};
+}
