@@ -283,6 +283,7 @@ function createTestData(model){
 	model.addParkedActivity(new Activity(model,"Working in groups",35,1,""),0);
 	model.addParkedActivity(new Activity(model,"Idea 1 discussion",15,2,""),0);
 	model.addParkedActivity(new Activity(model,"Coffee break",20,3,""),0);
+	
 	   // console.log(model.parkedActivities);
 
 	
