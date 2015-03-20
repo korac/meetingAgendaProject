@@ -67,9 +67,14 @@ ul{
     font-size:20px;
     color: red;
 }
-
+#scheduleDayButtons{
+  height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 .connectedSortable {
   height: 200px;
+ 
 }
 
 /*printing the red 30% line*/
