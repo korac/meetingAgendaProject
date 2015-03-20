@@ -29,7 +29,32 @@ var ParkedActivityController = function (view, model) {
 			}
 		},
 	}).disableSelection();
-	
+
+    //Delete a parkedActivity
+	 $(document).find('.connectedSortable1').on('click', '.deleteThis',function(event) {
+    console.log("arxidia");
+        var target = event.target;
+        while (!target.classList.contains('activityBox')) {
+            target = target.parentNode;
+        }
+
+        // determine the index of the activity
+        var selectedActivityIndex = -1;
+        for (var i = 0; i < view.connectedSortable1.children().length; i++) {
+            if (view.connectedSortable1.children()[i] == target) {
+                selectedActivityIndex = i;
+                break;
+            }
+        }
+        if (selectedActivityIndex == -1) {
+            console.log('Error: selected activity not found');
+            return;
+        }
+
+        model.removeParkedActivity(selectedActivityIndex);
+
+    });
+// edit a ParkedActivity
 	$(document).find('.connectedSortable1').on('dblclick', '.activityBox', function(event) {
 
 		var target = event.target;
@@ -61,5 +86,6 @@ var ParkedActivityController = function (view, model) {
         //console.log("change to editview");
 
     });
+
 
 }
