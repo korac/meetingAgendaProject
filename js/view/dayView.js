@@ -14,11 +14,6 @@ var DayView = function (container, model, day, view) {
 
     this.connectedSortable = this._container.find(".connectedSortable");
 
-    /*this.presentationBar = view._container.find("#presentationPercentage");
-    this.groupworkBar = view._container.find("#groupworkPercentage");
-    this.discussionBar = view._container.find("#discussionPercentage");
-    this.breakBar = view._container.find("#breakPercentage");*/
-
 
     //prevents the dayview container from blocking when smth is dragged over it
  
@@ -37,10 +32,6 @@ var DayView = function (container, model, day, view) {
                      dayId = i;
                 }
             }   
-
-          /*  for (var j = 0; j < this._model.days[i]._activities.length; j++){*/
-
-                
                 
             for (var j = 0; j < model.currentDay._activities.length; j++){
 
@@ -48,10 +39,16 @@ var DayView = function (container, model, day, view) {
                 console.log("Day '" + ActivityType[index] + "' Length: " +  model.currentDay.getLengthByType(index) + " min");
                 });
                 console.log("Day Length: " + model.currentDay.getTotalLength() + " min");
-                
+                //console.log(model.currentDay.getLengthByType(0));
+                //console.log(model.currentDay.getLengthByType(1));
+                //console.log(model.currentDay.getLengthByType(2));
+                //console.log(model.currentDay.getLengthByType(3));
+               /* var presentationPercentage = model.currentDay.getLengthByType(0)/model.currentDay.getTotalLength()*100;
+                var groupworkPercentage = model.currentDay.getLengthByType(1)/model.currentDay.getTotalLength()*100;
+                var discussionPercentage = model.currentDay.getLengthByType(2)/model.currentDay.getTotalLength()*100;
+                var breakPercentage = model.currentDay.getLengthByType(3)/model.currentDay.getTotalLength()*100;
+                console.log(presentationPercentage);*/
 
-//                presentationBarWidth = parseInt(model.currentDay.getLengthByType(index)/model.currentDay.getTotalLength() * 100);
-  //              console.log(presentationBar.val());
 
                 // activitybox div
               //  console.log(_this._model.currentDay._activities[j].getName());

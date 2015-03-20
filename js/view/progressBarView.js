@@ -1,12 +1,13 @@
 /**
  * Created by Kristijan on 7.3.2015..
  */
-var ProgressBarView = function(container, model){
+var ProgressBarView = function(container, model, day){
 
     model.addObserver(this);
 
     this._container = container;
     this._model = model;
+    this._day = day;
     var _this = this;
 
     var presentationLength = 0;
@@ -14,25 +15,32 @@ var ProgressBarView = function(container, model){
     var discussionLength = 0;
     var breakLength = 0;
 
-
     this.update = function(){
 
-   /* var activities =
-     //   this._container.empty();
+       //this._container.empty();
+
+      /*      var dayId = 0;
+            for(var i=0; i<this._model.days.length; i++) {
+              
+                if (model.days[i] == this._model.currentDay){
+                     dayId = i;
+                }
+            }   
+
     
             for (var j = 0; j < model.currentDay._activities.length; j++) {
-                switch (_activities[j].getTypeId()) {
+                switch (model.currentDay._activities[j].getTypeId()) {
                     case 0:
-                        presentationLength += activities[j].getLength();
+                        presentationLength += model.currentDay._activities[j].getLength();
                         break;
                     case 1:
-                        groupworkLength += activities[j].getLength();
+                        groupworkLength += model.currentDay._activities[j].getLength();
                         break;
                     case 2:
-                        discussionLength += activities[j].getLength();
+                        discussionLength += model.currentDay._activities[j].getLength();
                         break;
                     case 3:
-                        breakLength += activities[j].getLength();
+                        breakLength += model.currentDay._activities[j].getLength();
                         break;
                 }
             }

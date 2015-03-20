@@ -115,6 +115,9 @@ function Day(startH,startM) {
 		return min;
 	};
 	
+	this.getActivities = function(){
+        return this._activities;
+    };
 	// adds an activity to specific position
 	// if the position is not provided then it will add it to the 
 	// end of the list
